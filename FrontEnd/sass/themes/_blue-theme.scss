@@ -1,0 +1,52 @@
+
+// ============== site used colors ============
+
+//base colors  
+$primary-color          : #3f9ddd;
+$secondary-color        : #1abc9c; 
+
+//text colors
+$default-font-color     : $black-light;
+$title-font-color       : $black-light;
+$header-text            : #312819;
+
+//Fonts
+$font-family-base       : $roboto; // options: $roboto | $openSans 
+$title-font             : $segoe-bold;
+$paragraph              : $open-sans;
+$icon                   : 'icomoon';
+
+//background color
+$bg-color               : $white;
+
+//button colors
+$primary-button         : $primary-color;
+$primary-button-hover   : $white;
+$secondary-button       : $secondary-color; 
+$secondary-button-hover : darken($secondary-color, 10%);
+$default-button         : $grey;
+$default-button-hover   : $grey-medium;
+
+//radius
+$radius                 : 4px;
+$radius-large           : 5px;
+$radius-small           : 3px;
+
+//layout
+$grid-columns           : 12;
+$grid-gutter            : 30px;
+
+//Typebase
+$baseFontSize           : 14px;
+$baseLineHeight         : 1.428571428571429;
+
+//Container sizes
+
+//Tablet screen
+$layout-sm              : (720px + $grid-gutter);
+
+//Medium screen 
+$layout-md              : (940px + $grid-gutter);
+
+//Large screen 
+$layout-lg              : (1140px + $grid-gutter);

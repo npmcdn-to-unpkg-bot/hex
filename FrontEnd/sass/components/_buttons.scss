@@ -1,0 +1,59 @@
+
+//buttons
+.btn{
+    font-family: $title-font;
+    background-color: transparent;
+    @include border-radius(0);
+    border: none;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 14px;
+    @include user-select(none);
+    &.sm{
+        font-size: 12px;
+        padding: 10px 10px;
+    }
+    &.lg{
+        font-size: 16px;
+        padding: 20px 30px;
+    }
+}
+.primary-btn{
+    @extend .btn;
+    padding: 15px 20px;
+    background-color: $primary-button;
+    color: $default-font-color;
+    &:hover,
+    &:focus{
+        background-color: $primary-button-hover;
+        color: $default-font-color;
+    }
+}
+.secondary-btn{
+    @extend .btn;
+    padding: 15px 20px;
+    background-color: $secondary-button;
+    color: $default-font-color;
+    &:hover{
+        background-color: $secondary-button-hover;
+    }
+}
+.default-btn{
+    @extend .btn;
+    padding: 15px 20px;
+    background-color: $default-button;
+    color: $white;
+    &:hover{
+        background-color: $default-button-hover;
+    }
+}
+.btn[disabled=disabled],
+.btn:disabled{
+    color: #a0a0a0;
+    background-color: $grey;
+    cursor: not-allowed;
+}

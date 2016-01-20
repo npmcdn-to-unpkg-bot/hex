@@ -1,0 +1,83 @@
+header {
+    padding: 20px 0;
+    .main-logo {
+        color: $header-text;
+        font-family: $title-font;
+        font-size: 26px;
+    }
+}
+
+.inner-header {
+    background: url(../images/inner-header.jpg) no-repeat center center;
+    @include background-size(cover);
+    position: relative;
+    &::before {
+        content: '';
+        background-color: rgba($primary-color, .8);
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include equal-size(100%);
+        z-index: 1;
+    }
+    .layout-container {
+        z-index: 2;
+    }
+    .header-content {
+        .title-text,
+        p,
+        a {
+            color: $header-text;
+        }
+        .title-text{
+            margin-bottom: 0;
+            font-size: 30px;
+        }
+        p{
+            font-size: 16px;
+            font-weight: normal;
+            font-family: $font-family-base;
+        }
+    }
+}
+
+.nav-btn {
+    $width-line: 26px;
+    $height-line: 4px;
+    float: right;
+    position: relative;
+    top: 10px;
+    @include size($width-line, 22px);
+    .menu-line {
+        width: $width-line;
+        height: $height-line;
+        display: block;
+        background-color: $header-text;
+        @include transition(all, 0.2s, ease-in);
+        &:after,
+        &:before {
+            content: "";
+            position: relative;
+            @include transition(all, 0.2s, ease-in);
+            width: 100%;
+            height: $height-line;
+            background-color: $header-text;
+            display: block;
+            left: 0;
+        }
+        &:before {
+            top: -9px;
+        }
+        &:after {
+            bottom: -5px;
+        }
+    }
+    &:hover {
+        .menu-line:before {
+            top: -7px;
+        }
+        .menu-line:after {
+            bottom: -3px;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+//social web links
+.social-links{
+    display: inline-block;
+    a{
+        $size-links: 33px;
+        @include equal-size($size-links);
+        line-height: $size-links;
+        text-align: center;
+        @include border-radius($size-links);
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 18px;
+        background-color: darken($secondary-color, 10%);
+        &:hover{
+            color: $white;
+        }
+        &.icon-linkedin{
+            font-size: 16px;
+        }
+        &.icon-fb:hover{
+            background-color: #3b5999;
+        }
+        &.icon-linkedin:hover{
+            background-color: #0077B5;
+        }
+        &.icon-twitter:hover{
+            background-color: #55acee;
+        }
+    }
+}

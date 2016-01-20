@@ -1,0 +1,52 @@
+<!--intro-stage start-->
+    <section class="intro-stage">
+    <div class="banner">
+        <div class="layout-container">
+            <h2>A Digital Agency of Designers</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+        <img src="images/banner/banner1.jpg" alt="">
+    </div>
+    <div class="mouse_scroll">
+        <div class="mouse">
+            <div class="wheel"></div>
+        </div>
+    </div>
+</section>
+<!--intro-stage end-->
+
+<!--approach start-->
+<section class="approach">
+    <div class="layout-container">
+        <h2>Great companies can come <br>from anywhere.</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+    </div>
+</section>
+<!--approach end-->
+<!--<li ng-repeat="item in home.items">{{item}} 1 </li>-->
+
+<!--home page main panel start-->
+<section class="home-main-panel">
+    <div class="layout-container">
+        <!--work-with-us start-->
+        <div class="work-with-us layout-wrapper">
+            <div class="layout-sm-6">
+                <h3 class="title">Come work with us</h3>
+                <div ng-controller="workWithUsCtrl as withUs" class="workwithus-carousel">
+                     <div ng-repeat="us in withUs.workWithUs" ng-repeat-owl-carousel carousel-init="withUs.carouselInitializer">
+                         <h3 class="semi-bold">{{us.title}}</h3>
+                         <p>{{us.description}}</p>
+                     </div>
+                </div>
+             </div>
+            <div class="layout-sm-6 zero-padd">
+                <div class="stripe-1"></div>
+                <div class="stripe-1"></div>
+                <div class="stripe-1"></div>
+                <div class="stripe-1"></div>
+            </div>
+        </div>
+        <!--work-with-us end-->
+    </div>
+</section>
+<!--home page main panel end-->

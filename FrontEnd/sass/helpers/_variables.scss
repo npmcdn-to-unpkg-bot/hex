@@ -1,0 +1,71 @@
+//color schemes
+$yellow                 : #fee252;
+$white                  : #ffffff;
+$grey                   : #cccccc;
+$grey-medium            : #666666;
+$grey-light             : #999999;
+$black                  : #000000;
+$black-light            : #151515;
+$white-grey             : #f1f1f1;
+$gray-input             : #f8f9fa;
+$danger-red             : #ec1c24;
+$success-green          : #63c24a;
+$warning-orange         : #f39c12;
+$coffee-color           : #312819;
+
+//fonts
+$open-sans              : 'Open Sans', sans-serif;
+$roboto                 : 'Roboto', sans-serif;
+$segoe-bold             : 'Segoe UI';
+
+// ============== site used colors ============
+
+//base colors  
+$primary-color          : $yellow !default;
+$secondary-color        : $white !default; 
+
+//text colors
+$default-font-color     : $black-light !default;
+$title-font-color       : $black-light !default;
+$header-text            : $coffee-color !default;
+
+//Fonts
+$font-family-base       : $roboto !default; // options: $roboto | $openSans 
+$title-font             : $segoe-bold !default;
+$paragraph              : $open-sans !default;
+$icon                   : 'icomoon' !default;
+
+//background color
+$bg-color               : $white !default;
+
+//button colors
+$primary-button         : $primary-color !default;
+$primary-button-hover   : $white !default;
+$secondary-button       : $secondary-color !default; 
+$secondary-button-hover : darken($secondary-color, 10%) !default;
+$default-button         : $grey !default;
+$default-button-hover   : $grey-medium !default;
+
+//radius
+$radius                 : 4px !default;
+$radius-large           : 5px !default;
+$radius-small           : 3px !default;
+
+//layout
+$grid-columns           : 12 !default;
+$grid-gutter            : 30px !default;
+
+//Typebase
+$baseFontSize           : 14px !default;
+$baseLineHeight         : 1.428571428571429 !default;
+
+//Container sizes
+
+//Tablet screen
+$layout-sm              : (720px + $grid-gutter) !default;
+
+//Medium screen 
+$layout-md              : (940px + $grid-gutter) !default;
+
+//Large screen 
+$layout-lg              : (1014px + $grid-gutter) !default;

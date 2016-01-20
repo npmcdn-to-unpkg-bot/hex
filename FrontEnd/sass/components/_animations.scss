@@ -1,0 +1,33 @@
+//mouse scroll animation
+.mouse_scroll {
+    width: 100%;
+    .mouse {
+        border: 2px solid rgba($header-text, .3);
+        margin: auto;
+        @include size(28px, 53px);
+        @include border-radius(14px);
+        @include transform( none);
+        @include transition(all, 0.3s, ease-in);
+        cursor: pointer;
+        &:hover{
+            border: 2px solid rgba($header-text, .5);
+        }
+    }
+    .wheel {
+        display: block;
+        margin: 5px auto;
+        background: $header-text;
+        position: relative;
+        @include border-radius(7px);
+        @include equal-size(7px);
+    }
+    .wheel {
+        @include animation(mouse-wheel 2s linear infinite);
+    }
+    @include keyframes(mouse-wheel, mouse wheel animation) {
+      0% { @include opacity(1); @include transform(translateY(0)) }
+      25% { @include transform(translateY(8px)) }
+      50% { @include transform(translateY(12px)) }
+      75% { @include opacity(0.5); @include transform(translateY(18px))  }
+    }
+}

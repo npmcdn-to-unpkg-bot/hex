@@ -1,0 +1,94 @@
+@import "compass/reset";
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    @include box-sizing(border-box); 
+}
+a,
+input[type="radio"],
+input[type="checkbox"],
+button,
+select,
+.btn,
+.form-control{
+    @include transition(all, 0.3s, ease-in-out);
+    &:hover, 
+    &:focus, 
+    &:focus{
+        text-decoration: none;
+        outline: none !important;
+        outline-style:none; 
+        outline-width:0;
+    }
+}
+p{
+	font-size: 14px;
+}
+a{
+    text-decoration: none;
+}
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+button{
+    margin: 0;
+    padding: 0;
+}
+img{
+    max-width: 100%;
+}
+//safari browser additional inner shadow remove
+input[type="text"], 
+input[type="email"], 
+input[type="search"], 
+input[type="password"] {
+	-webkit-appearance: none;
+	-moz-appearance: none; /* mobile firefox too! */
+}
+img{
+    max-width: 100%;
+}
+textarea.form-control{
+    resize: vertical;
+}
+*::-moz-selection { 
+    background: $primary-color; 
+    color: $default-font-color; 
+    text-shadow: none; 
+}
+ *::selection { 
+     background: $primary-color; 
+     color: $default-font-color; 
+     text-shadow: none; 
+}
+//margin
+.margin-bottom{
+    margin-bottom: 10px;
+}
+.margin-top{
+    margin-top: 10px;
+}
+.margin-left{
+    margin-left: 10px;
+}
+.margin-right{
+    margin-right: 10px;
+}
+.clear-margin-bottom{
+    margin-bottom: 0 !important;
+}
+.clear-margin-top{
+    margin-top: 0 !important;
+}
+.clear-margin-left{
+    margin-left: 0 !important;
+}
+.clear-margin-right{
+    margin-right: 0 !important;
+}
+.clear-margins{
+    margin: 0 !important;
+}

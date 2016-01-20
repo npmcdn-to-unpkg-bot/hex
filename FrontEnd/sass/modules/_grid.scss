@@ -1,0 +1,85 @@
+/* Grid */
+
+//common styles
+@mixin grid-cols($i: 1, $list: ".layout-xs-#{$i}, .layout-sm-#{$i}, .layout-md-#{$i}, .layout-lg-#{$i}") {
+    @for $i from (1 + 1) through $grid-columns {
+        $list: "#{$list}, .col-layout-#{$i}, .layout-sm-#{$i}, .layout-md-#{$i}, .layout-lg-#{$i}";
+    }
+    #{$list} {
+        position: relative;
+        min-height: 1px;
+        padding-left: ($grid-gutter / 2);
+        padding-right: ($grid-gutter / 2);
+    }
+}
+
+//active class styles
+@mixin grid-cols-float($class, $i: 1, $list: ".layout-#{$class}-#{$i}") {
+    @for $i from (1 + 1) through $grid-columns {
+        $list: "#{$list}, .layout-#{$class}-#{$i}";
+    }
+    #{$list} {
+        float: left;
+    }
+}
+
+//make column width
+@mixin grid-cols-width($class) {
+    @for $i from 1 through $grid-columns {
+        .layout-#{$class}-#{$i} {
+            width: 100% / 12 * $i;
+        }
+    }
+}
+
+// initiate styles
+.layout-container {
+    position: relative;
+    @include clearfix();   
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: ($grid-gutter / 2);
+    padding-right: ($grid-gutter / 2);
+}
+.layout-wrapper {
+    @include clearfix();
+}
+
+//from small to large
+@include grid-cols;
+// Extra Small grid
+@media (min-width: $screen-xs-min) {
+    @include grid-cols-float(xs);
+    @include grid-cols-width(xs);
+    .layout-wrapper {
+        margin-left: -$grid-gutter/2;
+        margin-right: -$grid-gutter/2;
+    }
+}
+
+// Small grid
+@media (min-width: $screen-sm-min) {
+    @include grid-cols-float(sm);
+    @include grid-cols-width(sm);
+    .layout-container {
+        width: $layout-sm;
+    }
+}
+
+// Medium grid
+@media (min-width: $screen-md-min) {
+    @include grid-cols-float(md);
+    @include grid-cols-width(md);
+    .layout-container {
+        width: $layout-md;
+    }
+}
+
+// Large grid
+@media (min-width: $screen-lg-min) {
+    @include grid-cols-float(lg);
+    @include grid-cols-width(lg);
+    .layout-container {
+        width: $layout-lg;
+    }
+}

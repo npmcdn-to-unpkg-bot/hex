@@ -1,0 +1,103 @@
+//set value with base font size
+body{
+    font-family: $font-family-base;  
+    color: $default-font-color;
+    background-color: $bg-color;
+    font-size: $baseFontSize;
+}
+a{
+    color: $default-font-color;
+    line-height: $baseLineHeight;
+    &:hover,
+    &:focus,
+    &:active{
+        color: $primary-color;
+        text-decoration: none;
+    }
+}
+p{
+    color: $default-font-color;
+    margin-bottom: 10px;
+    line-height: $baseLineHeight;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: $paragraph;
+}
+h1{
+    font-size: $baseFontSize * 4.285714285714286;
+}
+h2{
+    font-size: $baseFontSize * 3.571428571428571;
+}
+h3{
+    font-size: $baseFontSize * 2.857142857142857;
+}
+h4{
+    font-size: $baseFontSize * 2.142857142857143;
+}
+h5{
+    font-size: $baseFontSize * 1.714285714285714;
+}
+h6{
+    font-size: $baseFontSize * 1.428571428571429;
+}
+h1,h2,h3,h4,h5,h6{
+    color: $title-font-color;
+    line-height: $baseLineHeight;
+    font-family: $font-family-base;
+    margin-bottom: 20px;
+    small{
+        font-size: 85%;
+    }
+    &.light{
+        font-weight: 300;
+    }
+    &.semi-bold{
+        font-weight: 500;
+    }
+    &.bold{
+        font-weight: 600;
+    }
+    &.extra-bold{
+        font-weight: 900;
+    }
+    &.uppercase{
+        text-transform: uppercase;
+    }
+}
+small{
+    font-size: 85%;
+}
+
+// Alignment
+.align-text-left{
+    text-align: left;
+}
+.align-text-center{
+    text-align: center;
+}
+.align-text-right{
+    text-align: right;
+}
+.align-text-justify{
+    text-align: justify;
+}
+
+//text transformation
+.uppercase{
+    text-transform: uppercase;
+}
+.lowercase{
+    text-transform: lowercase;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+
+//font style
+b, strong{
+    font-weight: bold;
+}
+italic{
+    font-style: italic
+}

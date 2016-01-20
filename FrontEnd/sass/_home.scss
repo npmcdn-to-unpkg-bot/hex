@@ -1,0 +1,111 @@
+//header
+header{
+    position:absolute;
+    left:0;
+    top: 0;
+    right:0;
+    z-index:100;
+}
+//write something...
+.intro-stage {
+    background-color: $primary-color;
+    height: 100vh;
+    position: relative;
+    .mouse_scroll {
+        position: absolute;
+        bottom: 10vh;
+        margin: auto;
+    }
+}
+
+//banner
+.banner{
+    text-align:center;
+    padding-top:30vh;
+    h2{
+        font-family:$roboto;
+        font-weight:700;
+        font-size:30px; 
+        margin-bottom:10px;
+    }
+    p{
+        font-family:$roboto;
+        font-size:14px;
+        font-weight:700;  
+        color:lighten($black, 30%);
+        margin-bottom:20px;
+    }
+    .layout-container{
+        margin-bottom:5vh;
+    }
+}
+
+//approach
+.approach{
+    padding:30px 0;
+    h2{
+        font-family:$roboto;
+        font-weight:600;
+        font-size:34px;
+        line-height:34px;
+    }
+}
+//home-main-panel
+.home-main-panel{
+    background:url('../images/bg-home.png') no-repeat center 0;
+    padding:15px 0;
+}
+.work-with-us{
+    background:#fff;
+    .title{
+        color:#58595b;
+        text-transform:uppercase;
+        display: inline-block;
+        font-size:14px;
+        position: relative;
+        margin:20px 0 15px;
+        &:after{
+            position:absolute;
+            display: block;
+            width:3px;
+            height:12px;
+            content:'';
+            right:-10px;
+            top:50%;
+            margin-top:-5px;
+            background:#e1ca4e;
+        }
+    }
+    h3{
+        font-size:18px;
+        line-height:26px;
+    }
+    p{
+        display:none;
+    }
+    .owl-controls{
+        margin:0;
+    }
+    .owl-next, .owl-prev{
+        background:none;
+        width:50%;
+        height:120px;
+        margin:0;
+        float:left;
+        @include border-radius(0);
+        i{
+            color:$grey-medium;
+            font-size:40px;
+            top:40px;
+            left:-5px;
+            position:relative;
+        }
+        &:hover{
+            background:#f0f0f0;
+        }
+    }
+    .owl-next .icon-arrow-thin-right{
+        right:-5px;
+        left:auto;
+    }
+}

@@ -1,0 +1,24 @@
+//write something
+@mixin clearfix() {
+    *zoom: 1;
+    &:before, 
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// width and size property
+@mixin size($width, $height){
+    width: $width;
+    height: $height;
+}
+
+//equal width and height property
+@mixin equal-size($equalSize){
+    width: $equalSize;
+    height: $equalSize;
+}

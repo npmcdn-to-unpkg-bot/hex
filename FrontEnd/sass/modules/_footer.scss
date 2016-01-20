@@ -1,0 +1,77 @@
+footer{
+    .menu-block{
+        padding: 20px 0;
+        background-color: darken($secondary-color, 4.5%);
+        text-align: center;
+        .footer-logo {
+            color: $header-text;
+            font-family: $title-font;
+            font-size: 22px;
+            display: block;
+        }
+    }
+    .footer-nav{
+        display: inline-block;
+        li{
+            display: inline-block;
+            margin-left: 10px;
+        }
+        a{
+            color: lighten($header-text, 20%);
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        a:hover{
+            color: lighten($header-text, 10%);
+        }
+    }
+    .social-links{
+        display: block;
+    }
+}
+.design-quote{
+    background-color: $black;
+    .content-quote{
+        background: url(../images/LeoBurnett.png) no-repeat 100% 100% ;
+        @include background-size(40%);
+        padding: 50px 0;
+        .messages{
+            width: 100%;
+            display: inline-block;
+        }
+        p{
+            font-size: 16px;
+            font-family: $font-family-base;
+            color: $white;
+        }
+        .author{
+            display: block;
+            color: $white;
+            font-size: 14px;
+            @include opacity(0.5);
+            margin-top: 25px;
+        }
+    }
+}
+.copy-rights{
+    padding: 20px 0;
+    @include clearfix();
+    span{
+        display: inline-block;
+        font-size: 12px;
+        vertical-align: middle;
+        color: lighten($grey-medium, 7%);
+    }
+    .powered-by{
+        span{
+            margin-right: 5px;
+        }
+        .toobler{
+            display: inline-block;
+        }
+        img{
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
