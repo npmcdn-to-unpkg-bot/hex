@@ -64,6 +64,7 @@ header{
         font-size:14px;
         position: relative;
         margin:20px 0 15px;
+        font-weight:bold;
         &:after{
             position:absolute;
             display: block;
@@ -107,5 +108,62 @@ header{
     .owl-next .icon-arrow-thin-right{
         right:-5px;
         left:auto;
+    }
+}
+
+//major-works
+.major-works{
+    background:#0076b2;
+    text-align: center;
+    padding:40px 0 50px;
+    .owl-controls{
+        position:relative;
+        .owl-pagination{
+            position:absolute;
+            left:0;
+            right:0;
+            bottom:-30px;
+            .owl-page span{
+                background:#fff;
+                width:10px;
+                height:10px;
+                margin-left:5px;
+                margin-right:5px;
+            }
+        }
+    }
+}
+.major-works-img{
+    max-width:100%;
+    padding:0 12%;
+}
+.major-works-box{
+    h2{
+        color:#fff;
+        font-size:20px;
+        text-transform:uppercase;
+    }
+    p{
+        display: none;
+    }
+    .btn-major-works{
+        color:#0076b2;
+        background:#fff;
+        @include border-radius(2px);
+        padding:8px 17px;
+        font-size:16px;
+        display:inline-block;
+        &:hover{
+            color:#000;
+        }
+    }
+}
+
+.block-wrap{
+    .block{
+        width:50%;
+        background:$primary-color url('../images/ico-seemoreworks.png') no-repeat center;
+        height:calc(50vw - 10px);
+        display: block;
     }
 }

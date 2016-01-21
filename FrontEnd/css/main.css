@@ -263,6 +263,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.42857;
   font-family: "Roboto", sans-serif;
   margin-bottom: 20px;
+  font-weight: 400;
 }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-size: 85%;
@@ -476,6 +477,7 @@ italic {
 }
 .secondary-btn:hover {
   background-color: #e6e6e6;
+  color: #151515;
 }
 
 .default-btn {
@@ -851,11 +853,6 @@ italic {
   .layout-xs-12 {
     width: 100%;
   }
-
-  .layout-wrapper {
-    margin-left: -15px;
-    margin-right: -15px;
-  }
 }
 @media (min-width: 768px) {
   .layout-sm-1, .layout-sm-2, .layout-sm-3, .layout-sm-4, .layout-sm-5, .layout-sm-6, .layout-sm-7, .layout-sm-8, .layout-sm-9, .layout-sm-10, .layout-sm-11, .layout-sm-12 {
@@ -912,6 +909,11 @@ italic {
 
   .layout-container {
     width: 750px;
+  }
+
+  .layout-wrapper {
+    margin-left: -15px;
+    margin-right: -15px;
   }
 }
 @media (min-width: 992px) {
@@ -1268,6 +1270,7 @@ header {
   font-size: 14px;
   position: relative;
   margin: 20px 0 15px;
+  font-weight: bold;
 }
 .work-with-us .title:after {
   position: absolute;
@@ -1313,6 +1316,62 @@ header {
 .work-with-us .owl-next .icon-arrow-thin-right {
   right: -5px;
   left: auto;
+}
+
+.major-works {
+  background: #0076b2;
+  text-align: center;
+  padding: 40px 0 50px;
+}
+.major-works .owl-controls {
+  position: relative;
+}
+.major-works .owl-controls .owl-pagination {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+}
+.major-works .owl-controls .owl-pagination .owl-page span {
+  background: #fff;
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.major-works-img {
+  max-width: 100%;
+  padding: 0 12%;
+}
+
+.major-works-box h2 {
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.major-works-box p {
+  display: none;
+}
+.major-works-box .btn-major-works {
+  color: #0076b2;
+  background: #fff;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  padding: 8px 17px;
+  font-size: 16px;
+  display: inline-block;
+}
+.major-works-box .btn-major-works:hover {
+  color: #000;
+}
+
+.block-wrap .block {
+  width: 50%;
+  background: #fee252 url("../images/ico-seemoreworks.png") no-repeat center;
+  height: calc(50vw - 10px);
+  display: block;
 }
 
 @media (min-width: 768px) {
@@ -1380,7 +1439,6 @@ header {
 
   .work-with-us {
     position: relative;
-    height: 375px;
   }
   .work-with-us .layout-sm-6 {
     position: static;
@@ -1420,14 +1478,77 @@ header {
     top: 38px;
     left: -3px;
   }
+  .work-with-us .workwithus-carousel-wrap {
+    padding: 10% 10% 0;
+  }
+  .work-with-us .workwithus-carousel-wrap h3.title {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  .work-with-us .workwithus-carousel-wrap h3.title:after {
+    height: 15px;
+    margin-top: -7px;
+  }
   .work-with-us .workwithus-carousel {
     position: static;
+  }
+  .work-with-us .workwithus-carousel h3 {
+    font-size: 28px;
+    line-height: 35px;
+  }
+  .work-with-us .workwithus-carousel p {
+    font-size: 16px;
   }
   .work-with-us .zero-padd {
     padding: 0;
   }
   .work-with-us p {
     display: block;
+  }
+
+  .major-works {
+    padding: 0;
+  }
+  .major-works .owl-controls .owl-pagination {
+    bottom: 30px;
+  }
+
+  .major-works-img {
+    padding: 0;
+    text-align: right;
+    display: inline-block;
+    height: 100%;
+  }
+  .major-works-img .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .major-works-img img {
+    vertical-align: middle;
+    max-height: 98%;
+    max-width: 98%;
+  }
+
+  .major-works-box {
+    display: table;
+    height: 100%;
+    text-align: left;
+  }
+  .major-works-box .table-cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .major-works-box h2 {
+    font-size: 24px;
+  }
+  .major-works-box p {
+    display: block;
+    color: #abe3ff;
+    font-weight: 300;
+    line-height: 24px;
+    margin-bottom: 30px;
   }
 
   .stripe-1 {
@@ -1437,6 +1558,14 @@ header {
     height: 50%;
     float: left;
     display: block;
+  }
+
+  .work-with-us {
+    height: 375px;
+  }
+
+  .major-works, .heightset-major-works {
+    height: 562px;
   }
 }
 @media (max-width: 767px) {
@@ -1472,9 +1601,38 @@ header {
   .work-with-us {
     height: 485px;
   }
+  .work-with-us .workwithus-carousel-wrap {
+    padding: 22% 15% 0;
+  }
+  .work-with-us .owl-controls .owl-buttons div i {
+    font-size: 30px;
+    top: 46px;
+    left: 0;
+  }
+
+  .major-works-box {
+    padding-right: 10%;
+  }
+
+  .work-with-us {
+    height: 485px;
+  }
+
+  .major-works, .heightset-major-works {
+    height: 727px;
+  }
 }
 @media (min-width: 1200px) {
   .work-with-us {
-    height: 485px;
+    height: 522px;
+  }
+
+  .major-works, .heightset-major-works {
+    height: 783px;
+  }
+}
+@media (min-width: 1400px) {
+  body {
+    border: 1px solid red;
   }
 }

@@ -5,11 +5,10 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
     vm.items = [1,2,3,4,5];
 }]).controller("workWithUsCtrl", ['$scope', '$http', function($scope, $http){
       var vm = this;
-      vm.workWithUs = {},
+      vm.workWithUs = {};
       $http.get('js/api/home/workwithus.json').success(function(data){
         vm.workWithUs = data;
-        console.log(vm.workWithUs[0].title);
-      });    
+      });  
       vm.carouselInitializer = function() {
         $(".workwithus-carousel").owlCarousel({
           items: 1,
@@ -22,7 +21,23 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
         });
       };
     }
-  ]);
+]).controller('majorWorksCtrl', ['$scope', '$http', function($scope, $http){
+      var vm = this;
+      vm.portfolio = {};
+      $http.get('js/api/common/portfolio.json').success(function(data){
+          vm.portfolio = data;
+      }); 
+      vm.carouselInitializer = function() {
+        $(".owl-major-works").owlCarousel({
+          items: 1,
+          navigation: false,
+          pagination: true,
+          itemsDesktop : [1000,1],
+          itemsDesktopSmall : [900,1],
+          itemsTablet: [600,1]
+        });
+      };
+}]);
  
 
 

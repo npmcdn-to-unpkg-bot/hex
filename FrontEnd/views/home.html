@@ -27,16 +27,19 @@
 
 <!--home page main panel start-->
 <section class="home-main-panel">
+    <!--layout-container start-->
     <div class="layout-container">
         <!--work-with-us start-->
         <div class="work-with-us layout-wrapper">
             <div class="layout-sm-6">
-                <h3 class="title">Come work with us</h3>
-                <div ng-controller="workWithUsCtrl as withUs" class="workwithus-carousel">
-                     <div ng-repeat="us in withUs.workWithUs" ng-repeat-owl-carousel carousel-init="withUs.carouselInitializer">
-                         <h3 class="semi-bold">{{us.title}}</h3>
-                         <p>{{us.description}}</p>
-                     </div>
+                <div class="workwithus-carousel-wrap">
+                    <h3 class="title">Come work with us</h3>
+                    <div ng-controller="workWithUsCtrl as withUs" class="workwithus-carousel">
+                         <div ng-repeat="us in withUs.workWithUs" ng-repeat-owl-carousel carousel-init="withUs.carouselInitializer">
+                             <h3>{{us.title}}</h3>
+                             <p>{{us.description}}</p>
+                         </div>
+                    </div>
                 </div>
              </div>
             <div class="layout-sm-6 zero-padd">
@@ -47,6 +50,40 @@
             </div>
         </div>
         <!--work-with-us end-->
+        
+        <!--major-works start-->
+        <div class="major-works layout-wrapper">
+            <div class="owl-major-works" ng-controller="majorWorksCtrl as works">
+                <div ng-repeat="work in works.portfolio" ng-repeat-owl-carousel carousel-init="works.carouselInitializer">
+                    <div class="layout-sm-6 heightset-major-works">
+                        <figure class="major-works-img">
+                            <span class="helper"></span>
+                            <img ng-src="{{work.imageNormal}}" alt="">
+                        </figure>
+                    </div>
+                    <div class="layout-sm-6 heightset-major-works">
+                        <div class="major-works-box">
+                            <div class="table-cell">
+                                <h2>{{work.title}}</h2>
+                                <p>{{work.descriptionShort}}</p>
+                                <a href="#/portfolio" class="btn-major-works">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--major-works end-->
+        
+        <!--block-wrap start-->
+        <div class="block-wrap layout-wrapper">
+            <a class="block">
+                <span>see more works?</span>
+            </a>
+        </div>
+        <!--block-wrap end-->
     </div>
+    <!--layout-container end-->
+    
 </section>
 <!--home page main panel end-->

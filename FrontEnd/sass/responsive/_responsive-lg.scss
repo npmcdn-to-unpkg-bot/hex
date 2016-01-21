@@ -1,12 +1,22 @@
 @media (min-width: $screen-lg-min) { 
-    //work-with-us
+     
+     
+    
+    //===============
+    //height set
     .work-with-us{
-        height:485px;
+        height:522px; //1044/2
+    }
+    .major-works, .heightset-major-works{
+        height:783px; //1044/4*3
     }
 //end
 }
 
 @media (min-width: 1400px) {
+    body{
+        border:1px solid red;
+    }
 //end
 }
 @media (min-width: 1700px) { 

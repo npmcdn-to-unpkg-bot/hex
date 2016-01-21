@@ -12,7 +12,30 @@
     //work-with-us
     .work-with-us{
         height:485px;
+        .workwithus-carousel-wrap{
+            padding:22% 15% 0; 
+        }
+        .owl-controls .owl-buttons div i{
+            font-size:30px;
+            top:46px; 
+            left: 0;
+        }
+    }
+    
+    //major-works
+    .major-works-box{
+        padding-right:10%;
+    }
+    
+    //===============
+    //height set
+    .work-with-us{
+        height:485px; //970/2
+    }
+    .major-works, .heightset-major-works{
+        height:727px; //970/4*3
     }
 //end
 }
 
+                    

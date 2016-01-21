@@ -67,7 +67,6 @@
     
     .work-with-us{
         position:relative;
-        height:375px;
         .layout-sm-6{
             position: static;
         }
@@ -105,8 +104,27 @@
                 }
             }
         }
+        .workwithus-carousel-wrap{
+            padding:10% 10% 0;
+            h3.title{
+                font-size:18px;
+                line-height:20px;
+                margin-bottom:20px;
+                &:after{
+                    height:15px;
+                    margin-top:-7px;
+                }
+            }
+        }
         .workwithus-carousel{
             position:static;
+            h3{
+                font-size:28px;
+                line-height:35px;
+            }
+            p{
+                font-size:16px;
+            }
         }
         .zero-padd{
             padding:0;
@@ -115,9 +133,53 @@
             display:block;
         }
     }
+    //===============
     
+    //major-works
+    .major-works{
+        padding:0;
+        .owl-controls .owl-pagination{
+            bottom:30px;
+        }
+    }
+    .major-works-img{
+        padding:0;
+        text-align:right;
+        display: inline-block;
+        height: 100%;
+        .helper {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        img{
+            vertical-align: middle;
+            max-height:98%;
+            max-width:98%;
+        }
+    }
+    .major-works-box{
+        display:table;
+        height:100%;
+        text-align: left;
+        .table-cell{
+            display:table-cell;
+            vertical-align: middle;
+        }
+        h2{
+            font-size:24px;
+        }
+        p{
+            display: block;
+            color:#abe3ff;
+            font-weight:300;
+            line-height:24px;
+            margin-bottom:30px;
+        }
+    }
     
     //strip
+    //========================
     .stripe-1 {
       color: white;
       background: repeating-linear-gradient(
@@ -132,7 +194,16 @@
       float:left;
       display: block;
     }
-    //end sm	
+    
+    //===============
+    //height set
+    .work-with-us{
+        height:375px; //750/2
+    }
+    .major-works, .heightset-major-works{
+        height:562px; //750/4*3
+    }
+//end sm	
 }
 
 @media (max-width: 767px) {

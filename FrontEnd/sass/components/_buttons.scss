@@ -40,6 +40,7 @@
     color: $default-font-color;
     &:hover{
         background-color: $secondary-button-hover;
+        color: $default-font-color;
     }
 }
 .default-btn{
