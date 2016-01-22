@@ -37,6 +37,13 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
           itemsTablet: [600,1]
         });
       };
+}]).controller('homeTeamCtrl', ['designAppFactory', function(designAppFactory){
+    var vm = this;
+    vm.teamMembers = {};
+    designAppFactory.teamMembersFtry().success(function(response){ 
+        vm.teamMembers = response;
+        console.log(vm.teamMembers[0].name);
+    });
 }]);
  
 

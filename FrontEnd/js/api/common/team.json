@@ -1,0 +1,14 @@
+[
+    {
+        "id": "0",
+        "name": "Bobin George",
+        "Desigination": "CEO",
+        "image": "images/team/bobin-george.png"
+    },
+    {
+        "id": "2",
+        "name": "Jerry Don",
+        "Desigination": "CTO",
+        "image": "images/team/jerry-don.png"
+    }
+]

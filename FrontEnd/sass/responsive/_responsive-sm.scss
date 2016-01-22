@@ -65,7 +65,20 @@
         }
     }
     
-    .work-with-us{
+    // common start
+    //=============
+     %titleSm{
+        font-size:18px;
+        line-height:20px;
+        margin-bottom:20px;
+        &:after{
+            height:15px;
+            margin-top:-7px;
+        }
+    }
+    // common sm end
+    //====================
+    .work-with-us-panel{
         position:relative;
         .layout-sm-6{
             position: static;
@@ -106,19 +119,13 @@
         }
         .workwithus-carousel-wrap{
             padding:10% 10% 0;
-            h3.title{
-                font-size:18px;
-                line-height:20px;
-                margin-bottom:20px;
-                &:after{
-                    height:15px;
-                    margin-top:-7px;
-                }
+            .title{
+                 @extend %titleSm;
             }
         }
         .workwithus-carousel{
             position:static;
-            h3{
+            h4{
                 font-size:28px;
                 line-height:35px;
             }
@@ -135,8 +142,8 @@
     }
     //===============
     
-    //major-works
-    .major-works{
+    //major-works-panel
+    .major-works-panel{
         padding:0;
         .owl-controls .owl-pagination{
             bottom:30px;
@@ -177,7 +184,32 @@
             margin-bottom:30px;
         }
     }
+    //========================
     
+    //block-wrap
+    //=========================
+    .block-wrap{
+        width:50%;
+        .block{
+            span{
+                font-size:14px;
+            }
+        }
+    }
+    //========================
+    
+    //meet-our-team
+    //======================
+    .meet-our-team-content{
+        padding:10% 10% 0;
+        .title{
+            @extend %titleSm;
+        }
+        h4{
+            font-size: 28px;
+            line-height: 35px;
+        }
+    }
     //strip
     //========================
     .stripe-1 {
@@ -197,11 +229,14 @@
     
     //===============
     //height set
-    .work-with-us{
-        height:375px; //750/2
+    .work-with-us-panel{
+        height:375px; // (750/4)*2
     }
-    .major-works, .heightset-major-works{
-        height:562px; //750/4*3
+    .major-works-panel, .heightset-major-works{
+        height:562px; // (750/4)*3
+    }
+    .block-wrap .block{
+        height:187px; // (750/4)*1
     }
 //end sm	
 }

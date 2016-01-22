@@ -4,11 +4,14 @@
     
     //===============
     //height set
-    .work-with-us{
-        height:522px; //1044/2
+    .work-with-us-panel{
+        height:522px; // (1044/4)*2
     }
-    .major-works, .heightset-major-works{
-        height:783px; //1044/4*3
+    .major-works-panel, .heightset-major-works{
+        height:783px; // (1044/4)*3
+    }
+    .block-wrap .block{
+        height:261px; // (1044/4)*1
     }
 //end
 }

@@ -29,14 +29,14 @@
 <section class="home-main-panel">
     <!--layout-container start-->
     <div class="layout-container">
-        <!--work-with-us start-->
-        <div class="work-with-us layout-wrapper">
+        <!--work-with-us-panel start-->
+        <div class="work-with-us-panel layout-wrapper">
             <div class="layout-sm-6">
                 <div class="workwithus-carousel-wrap">
                     <h3 class="title">Come work with us</h3>
                     <div ng-controller="workWithUsCtrl as withUs" class="workwithus-carousel">
                          <div ng-repeat="us in withUs.workWithUs" ng-repeat-owl-carousel carousel-init="withUs.carouselInitializer">
-                             <h3>{{us.title}}</h3>
+                             <h4>{{us.title}}</h4>
                              <p>{{us.description}}</p>
                          </div>
                     </div>
@@ -49,10 +49,10 @@
                 <div class="stripe-1"></div>
             </div>
         </div>
-        <!--work-with-us end-->
+        <!--work-with-us-panel end-->
         
         <!--major-works start-->
-        <div class="major-works layout-wrapper">
+        <div class="major-works-panel layout-wrapper">
             <div class="owl-major-works" ng-controller="majorWorksCtrl as works">
                 <div ng-repeat="work in works.portfolio" ng-repeat-owl-carousel carousel-init="works.carouselInitializer">
                     <div class="layout-sm-6 heightset-major-works">
@@ -76,14 +76,47 @@
         <!--major-works end-->
         
         <!--block-wrap start-->
-        <div class="block-wrap layout-wrapper">
-            <a class="block">
-                <span>see more works?</span>
-            </a>
+        <div class="layout-wrapper">
+            <aside class="block-wrap">
+                <a class="block more-works">
+                    <span>see more works?</span>
+                </a>
+                <a class="block work-with-us-link">
+                    <span>work with us?</span>
+                </a>
+            </aside>
         </div>
         <!--block-wrap end-->
+        
+    <!--meet-our-team start-->
+    <div class="meet-our-team-panel layout-wrapper">
+        <div class="layout-sm-6">
+            <div class="meet-our-team-content"> 
+                <h3 class="title">Meet our team</h3>
+                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+            </div>
+        </div>
+        <div class="layout-sm-6">
+            <div class="meet-our-team" ng-controller="homeTeamCtrl as homeTeam">
+                <ul>
+                    <li ng-repeat="team in homeTeam.teamMembers">
+                        <figure>
+                            <img src="" alt="">
+                        </figure>
+                        <h5>{{team.name}}</h5>
+                        <p></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--meet-our-team end-->
+    
+    
     </div>
     <!--layout-container end-->
+    
+
     
 </section>
 <!--home page main panel end-->

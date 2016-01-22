@@ -1260,10 +1260,7 @@ header {
   padding: 15px 0;
 }
 
-.work-with-us {
-  background: #fff;
-}
-.work-with-us .title {
+.work-with-us-panel .title, .meet-our-team-content .title {
   color: #58595b;
   text-transform: uppercase;
   display: inline-block;
@@ -1272,7 +1269,7 @@ header {
   margin: 20px 0 15px;
   font-weight: bold;
 }
-.work-with-us .title:after {
+.work-with-us-panel .title:after, .meet-our-team-content .title:after {
   position: absolute;
   display: block;
   width: 3px;
@@ -1283,17 +1280,21 @@ header {
   margin-top: -5px;
   background: #e1ca4e;
 }
-.work-with-us h3 {
+
+.work-with-us-panel {
+  background: #fff;
+}
+.work-with-us-panel h4 {
   font-size: 18px;
   line-height: 26px;
 }
-.work-with-us p {
+.work-with-us-panel p {
   display: none;
 }
-.work-with-us .owl-controls {
+.work-with-us-panel .owl-controls {
   margin: 0;
 }
-.work-with-us .owl-next, .work-with-us .owl-prev {
+.work-with-us-panel .owl-next, .work-with-us-panel .owl-prev {
   background: none;
   width: 50%;
   height: 120px;
@@ -1303,36 +1304,36 @@ header {
   -webkit-border-radius: 0;
   border-radius: 0;
 }
-.work-with-us .owl-next i, .work-with-us .owl-prev i {
+.work-with-us-panel .owl-next i, .work-with-us-panel .owl-prev i {
   color: #666666;
   font-size: 40px;
   top: 40px;
   left: -5px;
   position: relative;
 }
-.work-with-us .owl-next:hover, .work-with-us .owl-prev:hover {
+.work-with-us-panel .owl-next:hover, .work-with-us-panel .owl-prev:hover {
   background: #f0f0f0;
 }
-.work-with-us .owl-next .icon-arrow-thin-right {
+.work-with-us-panel .owl-next .icon-arrow-thin-right {
   right: -5px;
   left: auto;
 }
 
-.major-works {
+.major-works-panel {
   background: #0076b2;
   text-align: center;
   padding: 40px 0 50px;
 }
-.major-works .owl-controls {
+.major-works-panel .owl-controls {
   position: relative;
 }
-.major-works .owl-controls .owl-pagination {
+.major-works-panel .owl-controls .owl-pagination {
   position: absolute;
   left: 0;
   right: 0;
   bottom: -30px;
 }
-.major-works .owl-controls .owl-pagination .owl-page span {
+.major-works-panel .owl-controls .owl-pagination .owl-page span {
   background: #fff;
   width: 10px;
   height: 10px;
@@ -1369,9 +1370,48 @@ header {
 
 .block-wrap .block {
   width: 50%;
-  background: #fee252 url("../images/ico-seemoreworks.png") no-repeat center;
-  height: calc(50vw - 10px);
+  height: calc(50vw - 5px);
   display: block;
+  position: relative;
+  cursor: pointer;
+  float: left;
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+}
+.block-wrap .block span {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 4vw;
+}
+.block-wrap .block:hover span {
+  color: #000;
+}
+.block-wrap .block:hover span {
+  text-decoration: none;
+}
+.block-wrap .more-works {
+  background: #fee252 url("../images/ico-seemoreworks.png") no-repeat center;
+}
+.block-wrap .work-with-us-link {
+  background: #f1f1f1 url("../images/ico-work-with-us-link.png") no-repeat center;
+}
+.block-wrap .work-with-us-link span {
+  color: #2c2e30;
+}
+
+.meet-our-team-panel {
+  background: #fff;
+}
+
+.meet-our-team-content h4 {
+  font-size: 18px;
+  line-height: 26px;
 }
 
 @media (min-width: 768px) {
@@ -1437,16 +1477,26 @@ header {
     font-size: 16px;
   }
 
-  .work-with-us {
+  .work-with-us-panel .workwithus-carousel-wrap .title, .meet-our-team-content .title {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  .work-with-us-panel .workwithus-carousel-wrap .title:after, .meet-our-team-content .title:after {
+    height: 15px;
+    margin-top: -7px;
+  }
+
+  .work-with-us-panel {
     position: relative;
   }
-  .work-with-us .layout-sm-6 {
+  .work-with-us-panel .layout-sm-6 {
     position: static;
   }
-  .work-with-us .zero-padd {
+  .work-with-us-panel .zero-padd {
     height: 100%;
   }
-  .work-with-us .owl-controls {
+  .work-with-us-panel .owl-controls {
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -1454,63 +1504,54 @@ header {
     height: 50%;
     z-index: 100;
   }
-  .work-with-us .owl-controls .owl-buttons {
+  .work-with-us-panel .owl-controls .owl-buttons {
     height: 100%;
     background: #fff;
   }
-  .work-with-us .owl-controls .owl-buttons .owl-prev {
+  .work-with-us-panel .owl-controls .owl-buttons .owl-prev {
     bottom: 0;
     left: 0;
   }
-  .work-with-us .owl-controls .owl-buttons .owl-next {
+  .work-with-us-panel .owl-controls .owl-buttons .owl-next {
     top: 0;
     right: 0;
   }
-  .work-with-us .owl-controls .owl-buttons div {
+  .work-with-us-panel .owl-controls .owl-buttons div {
     background: #f0f0f0;
     filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
     opacity: 1;
     height: 50%;
     position: absolute;
   }
-  .work-with-us .owl-controls .owl-buttons div i {
+  .work-with-us-panel .owl-controls .owl-buttons div i {
     font-size: 20px;
     top: 38px;
     left: -3px;
   }
-  .work-with-us .workwithus-carousel-wrap {
+  .work-with-us-panel .workwithus-carousel-wrap {
     padding: 10% 10% 0;
   }
-  .work-with-us .workwithus-carousel-wrap h3.title {
-    font-size: 18px;
-    line-height: 20px;
-    margin-bottom: 20px;
-  }
-  .work-with-us .workwithus-carousel-wrap h3.title:after {
-    height: 15px;
-    margin-top: -7px;
-  }
-  .work-with-us .workwithus-carousel {
+  .work-with-us-panel .workwithus-carousel {
     position: static;
   }
-  .work-with-us .workwithus-carousel h3 {
+  .work-with-us-panel .workwithus-carousel h4 {
     font-size: 28px;
     line-height: 35px;
   }
-  .work-with-us .workwithus-carousel p {
+  .work-with-us-panel .workwithus-carousel p {
     font-size: 16px;
   }
-  .work-with-us .zero-padd {
+  .work-with-us-panel .zero-padd {
     padding: 0;
   }
-  .work-with-us p {
+  .work-with-us-panel p {
     display: block;
   }
 
-  .major-works {
+  .major-works-panel {
     padding: 0;
   }
-  .major-works .owl-controls .owl-pagination {
+  .major-works-panel .owl-controls .owl-pagination {
     bottom: 30px;
   }
 
@@ -1551,6 +1592,21 @@ header {
     margin-bottom: 30px;
   }
 
+  .block-wrap {
+    width: 50%;
+  }
+  .block-wrap .block span {
+    font-size: 14px;
+  }
+
+  .meet-our-team-content {
+    padding: 10% 10% 0;
+  }
+  .meet-our-team-content h4 {
+    font-size: 28px;
+    line-height: 35px;
+  }
+
   .stripe-1 {
     color: white;
     background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
@@ -1560,12 +1616,16 @@ header {
     display: block;
   }
 
-  .work-with-us {
+  .work-with-us-panel {
     height: 375px;
   }
 
-  .major-works, .heightset-major-works {
+  .major-works-panel, .heightset-major-works {
     height: 562px;
+  }
+
+  .block-wrap .block {
+    height: 187px;
   }
 }
 @media (max-width: 767px) {
@@ -1598,13 +1658,13 @@ header {
     font-size: 17px;
   }
 
-  .work-with-us {
+  .work-with-us-panel {
     height: 485px;
   }
-  .work-with-us .workwithus-carousel-wrap {
+  .work-with-us-panel .workwithus-carousel-wrap {
     padding: 22% 15% 0;
   }
-  .work-with-us .owl-controls .owl-buttons div i {
+  .work-with-us-panel .owl-controls .owl-buttons div i {
     font-size: 30px;
     top: 46px;
     left: 0;
@@ -1614,21 +1674,29 @@ header {
     padding-right: 10%;
   }
 
-  .work-with-us {
+  .work-with-us-panel {
     height: 485px;
   }
 
-  .major-works, .heightset-major-works {
+  .major-works-panel, .heightset-major-works {
     height: 727px;
+  }
+
+  .block-wrap .block {
+    height: 242px;
   }
 }
 @media (min-width: 1200px) {
-  .work-with-us {
+  .work-with-us-panel {
     height: 522px;
   }
 
-  .major-works, .heightset-major-works {
+  .major-works-panel, .heightset-major-works {
     height: 783px;
+  }
+
+  .block-wrap .block {
+    height: 261px;
   }
 }
 @media (min-width: 1400px) {

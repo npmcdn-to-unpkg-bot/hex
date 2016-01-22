@@ -55,29 +55,32 @@ header{
     background:url('../images/bg-home.png') no-repeat center 0;
     padding:15px 0;
 }
-.work-with-us{
+%title{
+    color:#58595b;
+    text-transform:uppercase;
+    display: inline-block;
+    font-size:14px;
+    position: relative;
+    margin:20px 0 15px;
+    font-weight:bold;
+    &:after{
+        position:absolute;
+        display: block;
+        width:3px;
+        height:12px;
+        content:'';
+        right:-10px;
+        top:50%;
+        margin-top:-5px;
+        background:#e1ca4e;
+    }
+}
+.work-with-us-panel{
     background:#fff;
     .title{
-        color:#58595b;
-        text-transform:uppercase;
-        display: inline-block;
-        font-size:14px;
-        position: relative;
-        margin:20px 0 15px;
-        font-weight:bold;
-        &:after{
-            position:absolute;
-            display: block;
-            width:3px;
-            height:12px;
-            content:'';
-            right:-10px;
-            top:50%;
-            margin-top:-5px;
-            background:#e1ca4e;
-        }
+         @extend %title
     }
-    h3{
+    h4{
         font-size:18px;
         line-height:26px;
     }
@@ -110,9 +113,9 @@ header{
         left:auto;
     }
 }
-
-//major-works
-.major-works{
+ 
+//major-works-panel 
+.major-works-panel{
     background:#0076b2;
     text-align: center;
     padding:40px 0 50px;
@@ -162,8 +165,51 @@ header{
 .block-wrap{
     .block{
         width:50%;
-        background:$primary-color url('../images/ico-seemoreworks.png') no-repeat center;
-        height:calc(50vw - 10px);
+        height:calc(50vw - 5px);
         display: block;
+        position: relative;
+        cursor:pointer;
+        float:left;
+        @include transition(none);
+        span{
+            position:absolute;
+            bottom:10%;
+            left:0;
+            right:0;
+            text-align:center;
+            text-decoration:underline;
+            font-size:4vw;
+        }
+        &:hover{
+            span{
+                color:#000;
+            }
+            span{
+                text-decoration:none;
+            }
+        }
+    }
+    .more-works{
+        background:$primary-color url('../images/ico-seemoreworks.png') no-repeat center;
+    }
+    .work-with-us-link{
+        background:$white-grey url('../images/ico-work-with-us-link.png') no-repeat center;
+        span{
+            color:#2c2e30;
+        }
+    }
+}
+ 
+//meet-our-team-panel
+.meet-our-team-panel{
+    background:#fff;
+}
+.meet-our-team-content{
+    .title{
+        @extend %title;
+    }
+    h4{
+        font-size: 18px;
+        line-height: 26px;
     }
 }
