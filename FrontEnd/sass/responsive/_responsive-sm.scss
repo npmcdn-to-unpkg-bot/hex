@@ -210,6 +210,25 @@
             line-height: 35px;
         }
     }
+    //=========================
+    
+    //meet-our-team
+    //=========================
+    .meet-our-team{
+        margin:0 -15px;
+        li{
+            width:50%;
+            float:left;
+            margin:0;
+            padding:0;
+            p{
+                font-size:15px;
+            }
+        }
+        li.team-1, li.team-2{
+            background:#fff;  
+        }
+    }
     //strip
     //========================
     .stripe-1 {
@@ -236,6 +255,9 @@
         height:562px; // (750/4)*3
     }
     .block-wrap .block{
+        height:187px; // (750/4)*1
+    }
+    .meet-our-team li{
         height:187px; // (750/4)*1
     }
 //end sm	

@@ -98,13 +98,20 @@
         </div>
         <div class="layout-sm-6">
             <div class="meet-our-team" ng-controller="homeTeamCtrl as homeTeam">
-                <ul>
-                    <li ng-repeat="team in homeTeam.teamMembers">
-                        <figure>
-                            <img src="" alt="">
-                        </figure>
-                        <h5>{{team.name}}</h5>
-                        <p></p>
+                <button ng-click="homeTeam.incri(homeTeam.start, homeTeam.end)">incriment</button>
+                <button ng-click="homeTeam.decrement(homeTeam.start, homeTeam.end)">incriment</button>
+                <ul> 
+                    <li ng-repeat="team in homeTeam.teamMembers.slice(homeTeam.start, homeTeam.end)" ng-class="['team-'+$index]">
+                        <div class="v-middle-wrap">
+                            <span class="helper"></span>
+                            <div class="v-middle">
+                                <figure>
+                                    <img ng-src="{{team.image}}" alt="">
+                                </figure>
+                                <h5>{{team.name}}</h5>
+                                <p>{{team.desigination}}</p>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>

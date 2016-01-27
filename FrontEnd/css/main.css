@@ -1405,13 +1405,50 @@ header {
   color: #2c2e30;
 }
 
+.v-middle-wrap {
+  vertical-align: middle;
+  height: 100%;
+  display: inline-block;
+}
+.v-middle-wrap .helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.v-middle-wrap .v-middle {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 5px;
+}
+
 .meet-our-team-panel {
   background: #fff;
 }
 
+.meet-our-team-content {
+  margin-bottom: 30px;
+}
 .meet-our-team-content h4 {
   font-size: 18px;
   line-height: 26px;
+}
+
+.meet-our-team li {
+  text-align: center;
+  margin-bottom: 15px;
+  background: #f1f1f1;
+  padding: 10% 0 9%;
+}
+.meet-our-team li figure {
+  margin-bottom: 5px;
+}
+.meet-our-team li h5 {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+.meet-our-team li p {
+  color: #757677;
+  font-size: 16px;
 }
 
 @media (min-width: 768px) {
@@ -1607,6 +1644,22 @@ header {
     line-height: 35px;
   }
 
+  .meet-our-team {
+    margin: 0 -15px;
+  }
+  .meet-our-team li {
+    width: 50%;
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+  .meet-our-team li p {
+    font-size: 15px;
+  }
+  .meet-our-team li.team-1, .meet-our-team li.team-2 {
+    background: #fff;
+  }
+
   .stripe-1 {
     color: white;
     background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
@@ -1625,6 +1678,10 @@ header {
   }
 
   .block-wrap .block {
+    height: 187px;
+  }
+
+  .meet-our-team li {
     height: 187px;
   }
 }
@@ -1674,6 +1731,10 @@ header {
     padding-right: 10%;
   }
 
+  .meet-our-team-content {
+    padding: 22% 15% 0;
+  }
+
   .work-with-us-panel {
     height: 485px;
   }
@@ -1683,6 +1744,10 @@ header {
   }
 
   .block-wrap .block {
+    height: 242px;
+  }
+
+  .meet-our-team li {
     height: 242px;
   }
 }
@@ -1696,6 +1761,10 @@ header {
   }
 
   .block-wrap .block {
+    height: 261px;
+  }
+
+  .meet-our-team li {
     height: 261px;
   }
 }

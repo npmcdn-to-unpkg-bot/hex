@@ -44,6 +44,23 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
         vm.teamMembers = response;
         console.log(vm.teamMembers[0].name);
     });
+    vm.start = 0;
+    vm.end = 2;
+    vm.incri = function(start, end){
+        if( vm.teamMembers.length > vm.end){
+            vm.start = start += 2;
+            vm.end = end += 2 ;
+            console.log(vm.start);
+        }else{
+            vm.start = 0;
+            vm.end = 2;
+        }
+    }
+    vm.decrement = function(start, end){
+        vm.start = start -= 2;
+        vm.end = end -= 2 ;
+        console.log(vm.start);
+    }
 }]);
  
 

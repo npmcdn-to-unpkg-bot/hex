@@ -26,7 +26,11 @@
     .major-works-box{
         padding-right:10%;
     }
-    
+    //meet-our-team
+    //======================
+    .meet-our-team-content{
+        padding:22% 15% 0; 
+    }
     //===============
     //height set
     .work-with-us-panel{
@@ -36,6 +40,9 @@
         height:727px; // (970/4)*3
     }
     .block-wrap .block{
+        height:242px; // (970/4)*1
+    }
+    .meet-our-team li{
         height:242px; // (970/4)*1
     }
 //end

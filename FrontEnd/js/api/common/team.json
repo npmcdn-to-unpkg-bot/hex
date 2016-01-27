@@ -2,13 +2,37 @@
     {
         "id": "0",
         "name": "Bobin George",
-        "Desigination": "CEO",
+        "desigination": "CEO",
         "image": "images/team/bobin-george.png"
     },
     {
-        "id": "2",
+        "id": "1",
         "name": "Jerry Don",
-        "Desigination": "CTO",
+        "desigination": "CTO",
         "image": "images/team/jerry-don.png"
+    },
+    {
+        "id": "2",
+        "name": "Dinu Danial",
+        "desigination": "Project Manager",
+        "image": "images/team/dinu-danial.png"
+    },
+    {
+        "id": "3",
+        "name": "Shibin Ragh",
+        "desigination": "Team Lead",
+        "image": "images/team/shibin-ragh.png"
+    },
+    {
+        "id": "4",
+        "name": "Divek",
+        "desigination": "Team Lead",
+        "image": "images/team/shibin-ragh.png"
+    },
+    {
+        "id": "5",
+        "name": "Niyas",
+        "desigination": "Team Lead",
+        "image": "images/team/shibin-ragh.png"
     }
 ]

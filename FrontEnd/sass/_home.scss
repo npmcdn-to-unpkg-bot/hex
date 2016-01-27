@@ -199,17 +199,52 @@ header{
         }
     }
 }
- 
+
+.v-middle-wrap{
+    vertical-align:middle;
+    height:100%;
+    display:inline-block;
+    .helper{
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .v-middle{
+        display:inline-block;
+        vertical-align:middle;
+        margin-top:5px;
+    }
+}
 //meet-our-team-panel
 .meet-our-team-panel{
     background:#fff;
 }
 .meet-our-team-content{
+    margin-bottom:30px;
     .title{
         @extend %title;
     }
     h4{
         font-size: 18px;
         line-height: 26px;
+    }
+}
+.meet-our-team{
+    li{
+        text-align: center;
+        margin-bottom:15px;
+        background:$white-grey;
+        padding:10% 0 9%;
+        figure{
+            margin-bottom:5px;
+        }
+        h5{
+            font-size:16px;
+            margin-bottom:0;
+        }
+        p{
+            color:#757677;
+            font-size:16px;
+        }
     }
 }
