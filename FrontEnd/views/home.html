@@ -42,11 +42,13 @@
                     </div>
                 </div>
              </div>
-            <div class="layout-sm-6 zero-padd">
-                <div class="stripe-1"></div>
-                <div class="stripe-1"></div>
-                <div class="stripe-1"></div>
-                <div class="stripe-1"></div>
+            <div class="layout-sm-6">
+                <aside class="strip-wrap">
+                    <div class="stripe-1"></div>
+                    <div class="stripe-1"></div>
+                    <div class="stripe-1"></div>
+                    <div class="stripe-1"></div>
+                </aside>
             </div>
         </div>
         <!--work-with-us-panel end-->
@@ -76,54 +78,108 @@
         <!--major-works end-->
         
         <!--block-wrap start-->
-        <div class="layout-wrapper">
-            <aside class="block-wrap">
-                <a class="block more-works">
+        <div class="block-wrap layout-wrapper">
+            <div class="layout-sm-6">
+                <a class="block more-works layout-xs-6">
                     <span>see more works?</span>
                 </a>
-                <a class="block work-with-us-link">
+                <a class="block work-with-us-link layout-xs-6">
                     <span>work with us?</span>
                 </a>
-            </aside>
+            </div>
         </div>
         <!--block-wrap end-->
-        
-    <!--meet-our-team start-->
-    <div class="meet-our-team-panel layout-wrapper">
-        <div class="layout-sm-6">
-            <div class="meet-our-team-content"> 
-                <h3 class="title">Meet our team</h3>
-                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
+     
+    <!--homeCtrl start-->       
+    <div ng-controller="homeTeamCtrl as homeTeam"> 
+        <!--meet-our-team start-->
+        <div class="meet-our-team-panel layout-wrapper">
+            <div class="layout-sm-6">
+                <div class="meet-our-team-content"> 
+                    <h3 class="title">Meet our team</h3>
+                    <h4>Lorem Ipsum is simply dummy text of the printing.</h4>
+                    <p>Bound by a passion for pragmatic problem-solving, we want to find simple solutions to complicated problems.</p>
+                </div>
             </div>
-        </div>
-        <div class="layout-sm-6">
-            <div class="meet-our-team" ng-controller="homeTeamCtrl as homeTeam">
-                <button ng-click="homeTeam.incri(homeTeam.start, homeTeam.end)">incriment</button>
-                <button ng-click="homeTeam.decrement(homeTeam.start, homeTeam.end)">incriment</button>
-                <ul> 
-                    <li ng-repeat="team in homeTeam.teamMembers.slice(homeTeam.start, homeTeam.end)" ng-class="['team-'+$index]">
-                        <div class="v-middle-wrap">
-                            <span class="helper"></span>
-                            <div class="v-middle">
-                                <figure>
-                                    <img ng-src="{{team.image}}" alt="">
-                                </figure>
-                                <h5>{{team.name}}</h5>
-                                <p>{{team.desigination}}</p>
+            <div class="layout-sm-6">
+                <div class="meet-our-team">
+                    <ul> 
+                        <li ng-repeat="team in homeTeam.teamMembers.slice(homeTeam.start, homeTeam.end)" ng-class="['team-'+$index]">
+                            <div class="v-middle-wrap">
+                                <span class="helper"></span>
+                                <div class="v-middle">
+                                    <figure>
+                                        <img ng-src="{{team.image}}" alt="">
+                                    </figure>
+                                    <h5>{{team.name}}</h5>
+                                    <p>{{team.desigination}}</p>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
+        <!--meet-our-team end-->
+
+        <!--block-wrap start-->
+        <div class="block-wrap layout-wrapper">
+            <div class="pull-right layout-sm-6">
+                <div class="prev-next-wrap layout-sm-6">
+                    <div class="owl-prev" ng-click="homeTeam.prev(homeTeam.start, homeTeam.end)"><i class="icon-arrow-thin-left"></i></div>
+                    <div class="owl-next" ng-click="homeTeam.next(homeTeam.start, homeTeam.end)"><i class="icon-arrow-thin-right"></i></div>
+                </div>
+                <a class="block about-team layout-sm-6">
+                    <span>about the design team</span>
+                </a>
+            </div>
+        </div>
+        <!--block-wrap end-->
     </div>
-    <!--meet-our-team end-->
-    
+    <!--homeCtrl end-->
     
     </div>
     <!--layout-container end-->
     
-
+    <!--layout-container start-->
+    <div class="layout-container">
+        <!--block-wrap start-->
+        <aside class="block-wrap">
+            <a class="block deployed layout-sm-3">
+                <span>
+                    <cite class="bold">200</cite>
+                    Deployed Projects
+                </span>
+            </a>
+            <a class="block music layout-sm-3">
+                <span>
+                    <cite>500</cite>
+                    Music in our playlist
+                </span>
+            </a>
+            <a class="block cup layout-sm-3">
+                <span>
+                    <cite>1000</cite>
+                    Cup of tea
+                </span>
+            </a>
+        </aside>
+        <!--block-wrap end-->
+        
+         <div class="hex-block layout-wrapper block-wrap">
+             <div class="layout-sm-6 strip-wrap">
+                <div class="stripe-1"></div>
+                <div class="hex block layout-sm-6">
+                    <h2>HEX</h2>
+                    <span>Want you know more?</span>
+                </div>
+                <div class="stripe-1"></div>
+                <div class="stripe-1"></div>
+             </div>
+         </div> 
+        
+    </div>
+    <!--layout-container end-->
     
 </section>
 <!--home page main panel end-->

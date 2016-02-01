@@ -1,16 +1,16 @@
 @media (min-width: $screen-lg-min) { 
      
+ 
      
-    
     //===============
     //height set
-    .work-with-us-panel{
+    .work-with-us-panel, .strip-wrap{
         height:522px; // (1044/4)*2
     }
     .major-works-panel, .heightset-major-works{
         height:783px; // (1044/4)*3
     }
-    .block-wrap .block{
+    .block-wrap .block, .block-wrap .prev-next-wrap{
         height:261px; // (1044/4)*1
     }
     .meet-our-team li{

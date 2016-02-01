@@ -1,11 +1,17 @@
 
-@media (max-width: 319px){
-     
-//end  
-}
+ 
 
-@media (max-width: 420px){  
-       
+@media (max-width: 319px){  
+    /*.block-wrap .more-works, .block-wrap .work-with-us-link{
+        background-size:20% auto;
+    } */ 
+    .block-wrap .block{
+        height:calc(100vw - 25vw);
+        span{
+            font-size:5vw !important;
+            bottom:16% !important;
+        }
+    }
 //end
 }
 

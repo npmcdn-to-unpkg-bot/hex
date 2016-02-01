@@ -2,7 +2,6 @@
 var designAppControllers = angular.module('designAppControllers',[]);
 designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, $http){
     var vm = this;
-    vm.items = [1,2,3,4,5];
 }]).controller("workWithUsCtrl", ['$scope', '$http', function($scope, $http){
       var vm = this;
       vm.workWithUs = {};
@@ -37,29 +36,73 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
           itemsTablet: [600,1]
         });
       };
-}]).controller('homeTeamCtrl', ['designAppFactory', function(designAppFactory){
+}]).controller('homeTeamCtrl', ['$scope', '$window','$timeout', 'designAppFactory', function($scope, $window, $timeout, designAppFactory){
     var vm = this;
     vm.teamMembers = {};
+    
+    
+
     designAppFactory.teamMembersFtry().success(function(response){ 
         vm.teamMembers = response;
-        console.log(vm.teamMembers[0].name);
     });
-    vm.start = 0;
-    vm.end = 2;
-    vm.incri = function(start, end){
-        if( vm.teamMembers.length > vm.end){
-            vm.start = start += 2;
-            vm.end = end += 2 ;
-            console.log(vm.start);
-        }else{
+    
+    $scope.homeTeammembersShow = function(){
+        var currentWindow = $window.innerWidth;
+        if( currentWindow < 768 ){
             vm.start = 0;
             vm.end = 2;
+        }else{
+            vm.start = 0;
+            vm.end = 4;
         }
     }
-    vm.decrement = function(start, end){
-        vm.start = start -= 2;
-        vm.end = end -= 2 ;
-        console.log(vm.start);
+    $scope.homeTeammembersShow();
+    angular.element($window).on('resize', function () {
+        $scope.$apply(function() {
+            $scope.homeTeammembersShow();
+        });
+    });
+
+    
+    vm.next = function(start, end){
+        var currentWindow = $window.innerWidth;
+        if(currentWindow < 768){
+            if( vm.teamMembers.length > vm.end){
+                vm.start = start + 2;
+                vm.end = end + 2 ;
+            }else{
+                /*vm.start = 0;*/
+                vm.end = vm.teamMembers.length;
+            }  
+        }else{
+            if( vm.teamMembers.length > vm.end){
+                vm.start = start + 4;
+                vm.end = end + 4 ;
+            }else{
+                /*vm.start = 0;*/
+                vm.end = vm.teamMembers.length;
+            }
+        }
+    }
+    vm.prev = function(start, end){
+        var currentWindow = $window.innerWidth;
+        if(currentWindow < 768){
+            if( vm.teamMembers.length < vm.end){
+                vm.start = start - 2;
+                vm.end = end - 2 ;
+            }else{
+                vm.start = 0;
+                vm.end = 2;
+            }  
+        }else{
+            if( vm.teamMembers.length < vm.end){
+                vm.start = start - 4;
+                vm.end = end - 4 ;
+            }else{
+                vm.start = 0;
+                vm.end = 4;
+            }
+        }
     }
 }]);
  

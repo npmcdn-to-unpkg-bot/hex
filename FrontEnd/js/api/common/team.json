@@ -26,13 +26,31 @@
     {
         "id": "4",
         "name": "Divek",
-        "desigination": "Team Lead",
+        "desigination": "Front-end Developer",
         "image": "images/team/shibin-ragh.png"
     },
     {
         "id": "5",
-        "name": "Niyas",
-        "desigination": "Team Lead",
+        "name": "Niyas Khan",
+        "desigination": "Designer",
+        "image": "images/team/shibin-ragh.png"
+    },
+    {
+        "id": "6",
+        "name": "Bibin Babu",
+        "desigination": "Designer",
+        "image": "images/team/shibin-ragh.png"
+    },
+    {
+        "id": "7",
+        "name": "Nikhil Krshnan",
+        "desigination": "Front-end Developer",
+        "image": "images/team/shibin-ragh.png"
+    },
+    {
+        "id": "8",
+        "name": "Ashraf",
+        "desigination": "Front-end Developer",
         "image": "images/team/shibin-ragh.png"
     }
 ]

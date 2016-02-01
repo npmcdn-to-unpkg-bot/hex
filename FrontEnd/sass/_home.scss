@@ -52,7 +52,7 @@ header{
 }
 //home-main-panel
 .home-main-panel{
-    background:url('../images/bg-home.png') no-repeat center 0;
+    background:#909090 url('../images/bg-home.png') no-repeat center 0;
     padding:15px 0;
 }
 %title{
@@ -75,10 +75,39 @@ header{
         background:#e1ca4e;
     }
 }
+    %owl-buttons{
+        margin:0 -15px;
+        height:calc(50vw - 30px);
+    }
+    %next-arrow, %prev-arrow{
+        background:none;
+        width:50%;
+        height:calc(50vw - 30px);
+        margin:0;
+        float:left;
+        @include border-radius(0);
+        position: relative;
+        i{
+            color:$grey-medium;
+            font-size:12vw;
+            top:50%;
+            left:0;
+            right:0;
+            margin-top:-13%;
+            position:absolute;
+        }
+        &:hover{
+            background:#f0f0f0;
+        }
+    }
+
 .work-with-us-panel{
     background:#fff;
+    .workwithus-carousel-wrap{
+        padding:15px 15px 0;
+    }
     .title{
-         @extend %title
+         @extend %title;
     }
     h4{
         font-size:18px;
@@ -90,28 +119,17 @@ header{
     .owl-controls{
         margin:0;
     }
-    .owl-next, .owl-prev{
-        background:none;
-        width:50%;
-        height:120px;
-        margin:0;
-        float:left;
-        @include border-radius(0);
-        i{
-            color:$grey-medium;
-            font-size:40px;
-            top:40px;
-            left:-5px;
-            position:relative;
-        }
-        &:hover{
-            background:#f0f0f0;
-        }
+    .owl-buttons{
+        @extend %owl-buttons; 
     }
-    .owl-next .icon-arrow-thin-right{
+    .owl-next, .owl-prev{
+        @extend %next-arrow;
+        @extend %prev-arrow;
+    }
+    /*.owl-next .icon-arrow-thin-right{
         right:-5px;
         left:auto;
-    }
+    }*/
 }
  
 //major-works-panel 
@@ -164,21 +182,21 @@ header{
 
 .block-wrap{
     .block{
-        width:50%;
-        height:calc(50vw - 5px);
+        height:calc(100vw - 25vw);
         display: block;
         position: relative;
         cursor:pointer;
-        float:left;
+        text-align:center;
         @include transition(none);
         span{
             position:absolute;
-            bottom:10%;
+            bottom:21%;
             left:0;
             right:0;
-            text-align:center;
             text-decoration:underline;
-            font-size:4vw;
+            font-size:5vw;
+            color:$grey-medium2;
+            text-transform:lowercase;
         }
         &:hover{
             span{
@@ -189,17 +207,72 @@ header{
             }
         }
     }
+    .more-works, .work-with-us-link{
+        height:calc(50vw - 30px);
+        span{
+            font-size:4vw;
+            bottom:14%;
+        }
+    }
     .more-works{
-        background:$primary-color url('../images/ico-seemoreworks.png') no-repeat center;
+        background:$primary-color url('../images/ico-seemoreworks.png') no-repeat center calc(50% - 10px);
     }
     .work-with-us-link{
-        background:$white-grey url('../images/ico-work-with-us-link.png') no-repeat center;
+        background:$white-grey url('../images/ico-work-with-us-link.png') no-repeat center calc(50% - 10px);
+    }
+    .about-team{
+        background:$primary-color url('../images/ico-about.png') no-repeat center calc(50% - 20px);
+    }
+    .deployed{
+        background:$white-grey2 url('../images/ico-deployed-projects.png') no-repeat center calc(50% - 20px);
+        @extend %hexblock;
+    }
+    .music{
+        background:#fff url('../images/ico-music.png') no-repeat center calc(50% - 20px);
+        @extend %hexblock;
+    }
+    .cup{
+        background:$white-grey2 url('../images/ico-cup.png') no-repeat center calc(50% - 20px);
+        @extend %hexblock;
+    }
+    .hex{
+        background:$white-grey2;
+        h2{
+            font-family:$title-font;
+            font-size:30px;
+            margin-top:35%;
+            display: inline-block;
+            color:$grey-medium2;
+        }
         span{
-            color:#2c2e30;
+            bottom:35%;
         }
     }
 }
-
+%hexblock{
+    span{
+        text-decoration:none;
+        cite{
+            font-weight:bold;
+            display: block;
+            font-size:6vw;
+            line-height:12px;
+        }
+        &:hover{
+            text-decoration:underline;
+        }
+    }
+}
+.prev-next-wrap{
+    text-align:center;
+    height:calc(50vw - 30px);
+    background:#fff;
+    .owl-next, .owl-prev{
+        cursor:pointer;
+        @extend %next-arrow;
+        @extend %prev-arrow; 
+    }
+}
 .v-middle-wrap{
     vertical-align:middle;
     height:100%;
@@ -221,6 +294,7 @@ header{
 }
 .meet-our-team-content{
     margin-bottom:30px;
+    padding:15px 15px 0;
     .title{
         @extend %title;
     }
@@ -232,7 +306,6 @@ header{
 .meet-our-team{
     li{
         text-align: center;
-        margin-bottom:15px;
         background:$white-grey;
         padding:10% 0 9%;
         figure{

@@ -10,15 +10,14 @@
         }
     }
     //work-with-us
+    //===============
     .work-with-us-panel{
         height:485px;
         .workwithus-carousel-wrap{
             padding:22% 15% 0; 
         }
         .owl-controls .owl-buttons div i{
-            font-size:30px;
             top:46px; 
-            left: 0;
         }
     }
     
@@ -31,19 +30,36 @@
     .meet-our-team-content{
         padding:22% 15% 0; 
     }
+    
+     //block-wrap
+    //=========================
+    .block-wrap{
+        .block{
+            background-position:center calc(50% - 30px);
+            span{
+                bottom:18%;
+                cite{
+                    font-size:30px;
+                    line-height:28px;
+                }
+            }
+        }
+    }
+     
+    
     //===============
     //height set
-    .work-with-us-panel{
+    .work-with-us-panel, .strip-wrap{
         height:485px; // (970/4)*2
     }
     .major-works-panel, .heightset-major-works{
         height:727px; // (970/4)*3
     }
-    .block-wrap .block{
-        height:242px; // (970/4)*1
+    .block-wrap .block, .block-wrap .prev-next-wrap{
+        height:243px; // (970/4)*1
     }
     .meet-our-team li{
-        height:242px; // (970/4)*1
+        height:243px; // (970/4)*1
     }
 //end
 }
