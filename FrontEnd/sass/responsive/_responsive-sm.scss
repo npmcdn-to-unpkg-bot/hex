@@ -141,7 +141,7 @@
                  @extend %titleSm;
             }
         }
-        .workwithus-carousel{
+        .owl-work-withus{
             position:static;
             h4{
                 font-size:28px;
@@ -242,11 +242,14 @@
     //meet-our-team
     //=========================
     .meet-our-team{
+        position: relative;
+        overflow:hidden;
         li{
             width:50%;
             float:left;
             margin:0;
             padding:0;
+            position: absolute;
             p{
                 font-size:15px;
             }
@@ -255,10 +258,237 @@
             background:$white-grey2;
         }
     }
+    
+   
+    
+    //hex-download-stuff
+    //==================
+    .hex-download-stuff{
+        padding:50px;
+        h2{
+            font-size:28px;
+            line-height:30px;
+        }
+        p{
+            margin-bottom:30px;
+        }
+    }
+    //testimonials
+    //==================
+    .testimonial-panel{
+        h2{
+            font-size:26px;
+            margin-left:15px;
+        }
+        .owl-pagination{
+            left:15px;
+        }
+    }
+    
+    .testimonial{
+        margin-left:15px;
+        margin-right:15px;
+        height:360px;
+        figure{
+            left:auto;
+            right:-15px; 
+            top:-40px;
+            border-right:0;
+            img{
+                width:100px;
+            }
+        }
+    }
+//====================================
+//=============end home===============
+
+    //portfolio
+    //=====================
+    .inner-banner{
+        text-align:left;
+        h1{
+            font-size:50px;
+        }
+    }
+    .portfolio-filter{
+        text-align: left;
+        li{
+            padding:24px 6px;
+            font-size:15px;
+            font-weight:400;
+            margin:0 15px;
+        }
+        .move{
+            height:4px;
+        }
+    }
+    //================
+    .portfolio-block{
+        margin-bottom:0;
+    }
+    .portfolio-block:nth-child(even){
+        .block-wrap, .portfolio-dec{
+            float:right !important;
+        }
+    }
+    .portfolio-link{
+        i{
+            display:block;
+            color:#fff;
+            left:0;
+            right:0;
+            font-size:30px;
+            opacity:0.5;
+        }
+    }
+    .portfolio-view-more{
+        float:left;
+        i{
+            font-size:40px;
+            top:40%;
+        }
+        span{
+            display: block;
+        }
+    }
+    .portfolio-img{
+        display:block;
+    }
+    .portfolio-dec-panel{
+        .portfolio-dec, .portfolio-img, .portfolio-img img{
+            height:100%;
+        }
+    }
+    .portfolio-dec{
+        padding:40px 40px 0;
+    }
+    
+    
+    
+    
+    
+    //==================================
+    // animation
+    /*start animation meet-our-team*/
+    .meet-our-team li{
+      -webkit-transition: 1s;
+      transition: 1s;
+        &:nth-child(odd){
+                left:0;
+                top:0;
+        }
+        &:nth-child(even){
+                left:50%;
+                top:0;
+        }
+        &:nth-child(3n){
+                left:0;
+                top:50%;
+        }
+        &:nth-child(4n){
+                left:50%;
+                top:50%;
+        }
+    }
+    .meet-our-team li.ng-enter, .meet-our-team li.ng-leave{
+        &:nth-child(odd){
+                left:25%;
+                top:25%;
+        }
+        &:nth-child(even){
+                left:25%;
+                top:25%;
+        }
+        &:nth-child(3n){
+                left:25%;
+                top:25%;
+        }
+        &:nth-child(4n){
+                left:25%;
+                top:25%;
+        }
+    }
+    .meet-our-team li.ng-enter {
+      opacity:0;
+      -webkit-transition: 0s !important;
+      transition: 0s !important;
+    }
+    .meet-our-team li.ng-enter-active {
+        opacity:0.2;
+    }
+    .meet-our-team li.ng-leave {
+        -webkit-transition: all 1s ease 0s !important;
+        transition:all 1s ease 0s !important;
+        opacity:0.2;
+        z-index:100;
+    }
+    .meet-our-team li.ng-leave-active {
+        opacity:0;
+    }
+    .meet-our-team li.ng-move {
+    }
+    .meet-our-team li.ng-move-active {
+    }
+    /*end animation meet-our-team*/ 
+    
+    
+    .portfolio-panel{
+        .layout-container{
+            overflow:hidden;
+        }
+    }
+    .portfolio-block {
+        -webkit-transition: all 1s ease 0s;
+        transition:all 1s ease 0s;
+        position:relative;
+        top:0;
+        &.ng-enter{
+            /*top:-1000px;*/
+            -webkit-transition: all 1s ease 0s !important;
+            transition:all 1s ease 0s !important;
+        }
+        &.ng-enter-active{
+            opacity:1;
+            top:0;
+        }
+        &.ng-leave{
+            -webkit-transition: all 1s ease 0s !important;
+            transition:all 1s ease 0s !important;
+            top:0;
+            opacity:1;
+            height:500px;
+        }
+        &.ng-leave-active{
+            /*top:-1000px;*/
+           /* opacity:0;*/
+            height:0;
+            overflow: hidden;
+        }
+        &.ng-move{
+            border:1px solid red;
+        }
+        &.ng-move-active{}
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //strip
     //========================
     .strip-wrap{
-        /*margin-left:-15px;*/
+        .hex{
+            height:50% !important;
+        }
     }
     .stripe-1 {
       color: white;
@@ -277,17 +507,17 @@
     
     //===============
     //height set
-    .work-with-us-panel, .strip-wrap{
+    .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team{
         height:375px; // (750/4)*2
+        height:360px; // (720/4)*2  
     }
     .major-works-panel, .heightset-major-works{
         height:562px; // (750/4)*3
+        height:540px; // (720/4)*3
     }
-    .block-wrap .block, .block-wrap .prev-next-wrap{
+    .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li{
         height:188px; // (750/4)*1
-    }
-    .meet-our-team li{
-        height:188px; // (750/4)*1
+        height:180px; // (720/4)*1
     }
 //end sm	
 }
@@ -296,9 +526,6 @@
     .layout-container{
         padding-left:30px;
         padding-right:30px;
-    }
-    .home-main-panel{
-        padding:30px 0;
     }
     .meet-our-team li:nth-child(2n){
         background:$white-grey2;
@@ -333,8 +560,39 @@
         }
     }
     
+    .testimonial-panel{
+        .layout-container{
+            padding:0;
+        }
+        h2{
+            padding:0 30px;
+        }
+    }
+    //==================
+    //===== home end
+    
+    .portfolio-filter-panel{
+        margin:0 -25px;
+    }
+    
+    .block-wrap {
+        .block.portfolio-link, .block.portfolio-view-more{
+            height:calc(100vw - 50vw);
+        }
+    }
+    .portfolio-link{
+        width:65%;
+        float:left;
+    }
+    .portfolio-view-more{
+        width:35%;
+        float:left;
+    }
+    
 //end
 }
+
+ 
 
 @media (min-width: 768px) and (max-width: 900px) {
     //end

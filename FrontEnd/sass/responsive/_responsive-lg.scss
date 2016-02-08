@@ -1,27 +1,53 @@
 @media (min-width: $screen-lg-min) { 
      
+    //home-main-panel
+    //==================
+    .home-main-panel{
+        padding:50px 0;
+    }
+    //hex-download-stuff
+    //==================
+    .hex-download-stuff{
+        padding:115px;
+    }
+    .testimonial{
+        height:280px;
+    }
+    //=================
+    //end home
+    
  
-     
+    
     //===============
     //height set
-    .work-with-us-panel, .strip-wrap{
+    .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team{
         height:522px; // (1044/4)*2
+        height:507px; // (1014/4)*2
     }
     .major-works-panel, .heightset-major-works{
         height:783px; // (1044/4)*3
+        height:761px; // (1014/4)*3
     }
-    .block-wrap .block, .block-wrap .prev-next-wrap{
+    .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li{
         height:261px; // (1044/4)*1
-    }
-    .meet-our-team li{
-        height:261px; // (1044/4)*1
+        height:254px; // (1014/4)*1
     }
 //end
 }
 
 @media (min-width: 1400px) {
-    body{
-        border:1px solid red;
+    //testimonials
+    //==================
+    .testimonial-panel{
+        padding:90px 0;
+    }
+    .testimonial{
+        margin-top:90px;
+    }
+    .owl-testimonial{
+        .owl-pagination{
+            top:5px;
+        }
     }
 //end
 }

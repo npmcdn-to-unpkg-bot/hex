@@ -35,10 +35,12 @@
 @import "modules/grid";
 @import "modules/header";
 @import "modules/footer";
-@import "modules/forms";
+@import "modules/forms"; 
 
 //pages
 @import "home";
+@import "inner-pages";
+@import "portfolio";
 @import "about-us";
 @import "contact-us";
 

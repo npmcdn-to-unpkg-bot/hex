@@ -5,11 +5,11 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
 }]).controller("workWithUsCtrl", ['$scope', '$http', function($scope, $http){
       var vm = this;
       vm.workWithUs = {};
-      $http.get('js/api/home/workwithus.json').success(function(data){
-        vm.workWithUs = data;
+      $http.get('js/api/home/workwithus.json').success(function(response){
+        vm.workWithUs = response;
       });  
       vm.carouselInitializer = function() {
-        $(".workwithus-carousel").owlCarousel({
+        $(".owl-work-withus").owlCarousel({
           items: 1,
           navigation: true,
           pagination: false,
@@ -20,12 +20,12 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
         });
       };
     }
-]).controller('majorWorksCtrl', ['$scope', '$http', function($scope, $http){
+]).controller('majorWorksCtrl', ['$scope', 'designAppFactory', function($scope, designAppFactory){
       var vm = this;
       vm.portfolio = {};
-      $http.get('js/api/common/portfolio.json').success(function(data){
-          vm.portfolio = data;
-      }); 
+      designAppFactory.portfolioFtry().success(function(response){
+         vm.portfolio = response;
+      });
       vm.carouselInitializer = function() {
         $(".owl-major-works").owlCarousel({
           items: 1,
@@ -39,9 +39,6 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
 }]).controller('homeTeamCtrl', ['$scope', '$window','$timeout', 'designAppFactory', function($scope, $window, $timeout, designAppFactory){
     var vm = this;
     vm.teamMembers = {};
-    
-    
-
     designAppFactory.teamMembersFtry().success(function(response){ 
         vm.teamMembers = response;
     });
@@ -104,7 +101,58 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
             }
         }
     }
-}]);
+}]).controller('homeTestimonialCtrl', ['$scope', 'designAppFactory', function($scope, designAppFactory){
+      var vm = this;
+      vm.carouselInitializer = function() {
+        $(".owl-testimonial").owlCarousel({ 
+          items: 2,
+          navigation: false,
+          pagination: true,
+          scrollPerPage : false, 
+          itemsDesktop : [1000,2],
+          itemsDesktopSmall : [900,2],
+          itemsTablet: [750,1]
+        });
+      };
+    vm.testimonials = {};
+    designAppFactory.testimonialFtry().success(function(response){
+        vm.testimonials = response;
+    });
+}]).controller('portfolioCtrl', ['$scope', 'designAppFactory', function($scope, designAppFactory){
+    var vm = this;
+    designAppFactory.portfolioFtry().success(function(response){
+        vm.portfolioData = response;
+    });
+    var currentPos = $('.portfolio-filter li.active').position().left;
+    var currentWid = $('.portfolio-filter li.active').outerWidth();
+    var lessMargin = $('.portfolio-filter li.active').css("marginLeft");
+    function moving(){
+        $('.portfolio-filter .move').css({
+            "left" : currentPos,
+            "width": currentWid,
+            "margin-left": lessMargin
+        });
+    }
+    $('.portfolio-filter li').hover(function(){
+        currentPos = $(this).position().left;
+        currentWid = $(this).outerWidth();
+        moving();
+    }, 
+    function () {
+    });
+    $('.portfolio-filter ul').hover(function(){},
+    function(){
+        currentPos = $('.portfolio-filter li.active').position().left;
+        currentWid = $('.portfolio-filter li.active').outerWidth();
+        moving();
+    });
+    $('.portfolio-filter li').on('click', function(){
+        $('.portfolio-filter li').removeClass('active');
+        $(this).addClass('active');
+        moving();
+    });
+    $('.portfolio-filter li:first-child').trigger('click');
+}])
  
 
 

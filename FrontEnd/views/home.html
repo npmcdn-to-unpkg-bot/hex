@@ -1,19 +1,4 @@
-<!--intro-stage start-->
-    <section class="intro-stage">
-    <div class="banner">
-        <div class="layout-container">
-            <h2>A Digital Agency of Designers</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <img src="images/banner/banner1.jpg" alt="">
-    </div>
-    <div class="mouse_scroll">
-        <div class="mouse">
-            <div class="wheel"></div>
-        </div>
-    </div>
-</section>
-<!--intro-stage end-->
+
 
 <!--approach start-->
 <section class="approach">
@@ -34,7 +19,7 @@
             <div class="layout-sm-6">
                 <div class="workwithus-carousel-wrap">
                     <h3 class="title">Come work with us</h3>
-                    <div ng-controller="workWithUsCtrl as withUs" class="workwithus-carousel">
+                    <div ng-controller="workWithUsCtrl as withUs" class="owl-work-withus">
                          <div ng-repeat="us in withUs.workWithUs" ng-repeat-owl-carousel carousel-init="withUs.carouselInitializer">
                              <h4>{{us.title}}</h4>
                              <p>{{us.description}}</p>
@@ -60,14 +45,14 @@
                     <div class="layout-sm-6 heightset-major-works">
                         <figure class="major-works-img">
                             <span class="helper"></span>
-                            <img ng-src="{{work.imageNormal}}" alt="">
+                            <img ng-src="{{work.image.imageHome}}" alt="">
                         </figure>
                     </div>
                     <div class="layout-sm-6 heightset-major-works">
                         <div class="major-works-box">
                             <div class="table-cell">
-                                <h2>{{work.title}}</h2>
-                                <p>{{work.descriptionShort}}</p>
+                                <h2>{{work.name}}</h2>
+                                <p>{{work.description | limitTo:150}}</p>
                                 <a href="#/portfolio" class="btn-major-works">View more</a>
                             </div>
                         </div>
@@ -104,7 +89,7 @@
             <div class="layout-sm-6">
                 <div class="meet-our-team">
                     <ul> 
-                        <li ng-repeat="team in homeTeam.teamMembers.slice(homeTeam.start, homeTeam.end)" ng-class="['team-'+$index]">
+                        <li ng-repeat="team in homeTeam.teamMembers.slice(homeTeam.start, homeTeam.end)" ng-class="['team-'+$index]" class="angular-animate">
                             <div class="v-middle-wrap">
                                 <span class="helper"></span>
                                 <div class="v-middle">
@@ -166,6 +151,7 @@
         </aside>
         <!--block-wrap end-->
         
+         <!--hex-block start-->
          <div class="hex-block layout-wrapper block-wrap">
              <div class="layout-sm-6 strip-wrap">
                 <div class="stripe-1"></div>
@@ -176,10 +162,42 @@
                 <div class="stripe-1"></div>
                 <div class="stripe-1"></div>
              </div>
-         </div> 
+             <div class="layout-sm-6 hex-download-stuff">
+                 <h3 class="semi-bold">Free stuff download ?</h3>
+                 <h2 class="semi-bold">Every designer loves free stuff.</h2>
+                 <p> Here we bring together  monstrously delicious creative assets in the form of free stuff and resources for web, mobile, and everything in between! </p>
+                 <a href="#" class="download">Download free stuff</a>
+             </div>
+         </div>
+         <!--hex-block end--> 
         
     </div>
     <!--layout-container end-->
     
 </section>
 <!--home page main panel end-->
+
+<!--testimonial-panel start-->
+<section class="testimonial-panel" ng-controller="homeTestimonialCtrl as testi">
+    <!--layout-container start-->
+    <div class="layout-container">
+        <h2 class="bold">WHAT OUR CLIENT SAYS</h2>
+        <div class="owl-testimonial">
+            <div ng-repeat="testimo in testi.testimonials" ng-repeat-owl-carousel carousel-init="testi.carouselInitializer">
+                <div class="testimonial">
+                    <h3 class="semi-bold">{{testimo.name}}</h3>
+                    <span>{{testimo.project}}</span>
+                    <p>{{testimo.testimonial}}</p>
+                    <figure>
+                        <img ng-src="{{testimo.image}}" alt="">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--layout-container end-->
+</section>
+<!--testimonial-panel end-->
+
+
+                     

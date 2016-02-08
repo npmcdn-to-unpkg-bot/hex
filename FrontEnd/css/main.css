@@ -1250,7 +1250,7 @@ header {
 
 .home-main-panel {
   background: #909090 url("../images/bg-home.png") no-repeat center 0;
-  padding: 15px 0;
+  padding: 30px 0;
 }
 
 .work-with-us-panel .title, .meet-our-team-content .title {
@@ -1464,6 +1464,7 @@ header {
 .v-middle-wrap {
   vertical-align: middle;
   height: 100%;
+  width: 100%;
   display: inline-block;
 }
 .v-middle-wrap .helper {
@@ -1475,6 +1476,10 @@ header {
   display: inline-block;
   vertical-align: middle;
   margin-top: 5px;
+}
+.v-middle-wrap img.v-middle {
+  max-width: 96%;
+  margin-left: -2px;
 }
 
 .meet-our-team-panel {
@@ -1507,6 +1512,204 @@ header {
   font-size: 16px;
 }
 
+.hex-download-stuff {
+  background: #fff;
+  padding: 30px;
+}
+.hex-download-stuff h3 {
+  font-size: 14px;
+  color: #58595b;
+  text-transform: uppercase;
+}
+.hex-download-stuff h2 {
+  font-size: 20px;
+  color: #58595b;
+}
+.hex-download-stuff p {
+  font-size: 16px;
+}
+.hex-download-stuff a {
+  color: #58595b;
+  text-decoration: underline;
+}
+.hex-download-stuff a:hover {
+  text-decoration: none;
+}
+
+.testimonial-panel {
+  padding: 30px 0;
+}
+.testimonial-panel h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.testimonial-panel .owl-pagination {
+  position: absolute;
+  top: 0;
+  left: 30px;
+}
+.testimonial-panel .owl-page span {
+  background: #151515;
+  margin: 0 5px 0 0 !important;
+  width: 11px !important;
+  height: 11px !important;
+}
+.testimonial-panel .owl-page.active span {
+  background: #fee252;
+}
+
+.testimonial {
+  margin: 60px 30px 30px;
+  background: #fee252;
+  padding: 30px 35px;
+  position: relative;
+}
+.testimonial h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.testimonial span {
+  color: #6f6b51;
+  font-size: 16px;
+  margin-bottom: 25px;
+  display: block;
+}
+.testimonial p {
+  color: #535134;
+}
+.testimonial figure {
+  position: absolute;
+  top: -50px;
+  right: -15px;
+  border: 7px solid #fff;
+}
+.testimonial figure img {
+  width: 77px;
+  display: block;
+}
+
+.inner-banner {
+  background: url("/images/banner/banner-inner.jpg") no-repeat center;
+  text-align: center;
+  height: 100vw;
+  max-height: 350px;
+  padding-top: 145px;
+}
+.inner-banner h1 {
+  font-size: 8vw;
+  margin: 0;
+  color: #312819;
+}
+.inner-banner p {
+  color: #312819;
+  font-size: 16px;
+}
+
+.portfolio-filter-panel {
+  background: #fff;
+  position: relative;
+}
+
+.portfolio-filter {
+  position: relative;
+  text-align: center;
+}
+.portfolio-filter li {
+  color: #999999;
+  display: inline-block;
+  font-size: 12px;
+  padding: 15px 2px 15px;
+  margin: 0 2px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.portfolio-filter li.active {
+  color: #312819;
+}
+.portfolio-filter .move {
+  height: 3px;
+  display: block;
+  width: 5px;
+  background: #312819;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.portfolio-panel {
+  background: url("../images/portfolio/bg-portfolio.jpg") no-repeat center 0;
+  padding-top: 30px;
+}
+
+.portfolio-block {
+  margin-bottom: 30px;
+}
+
+.portfolio-link {
+  position: relative;
+}
+.portfolio-link i {
+  position: absolute;
+  top: 70%;
+  display: none;
+}
+
+.portfolio-view-more {
+  position: relative;
+  background: #fafafa;
+  text-align: center;
+  cursor: pointer;
+}
+.portfolio-view-more i {
+  position: absolute;
+  top: 18vw;
+  font-size: 14vw;
+  left: 0;
+  right: 0;
+}
+.portfolio-view-more span {
+  display: none;
+}
+
+.portfolio-dec {
+  background: #fff;
+  padding: 30px;
+}
+.portfolio-dec .status {
+  color: #666666;
+  font-size: 13px;
+  position: relative;
+  display: inline-block;
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+.portfolio-dec .status:after {
+  height: 3px;
+  width: 25px;
+  display: block;
+  content: '';
+  background: #fee252;
+  position: absolute;
+  left: 0px;
+  top: 8px;
+}
+.portfolio-dec h2 {
+  font-weight: 300;
+  font-size: 30px;
+  margin-bottom: 13px;
+}
+.portfolio-dec p {
+  line-height: 28px;
+}
+
+.portfolio-img {
+  display: none;
+}
+
 @media (max-width: 319px) {
   /*.block-wrap .more-works, .block-wrap .work-with-us-link{
       background-size:20% auto;
@@ -1517,6 +1720,12 @@ header {
   .block-wrap .block span {
     font-size: 5vw !important;
     bottom: 16% !important;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .portfolio-filter li {
+    padding: 20px 10px;
+    font-size: 13px;
   }
 }
 @media (min-width: 768px) {
@@ -1653,14 +1862,14 @@ header {
   .work-with-us-panel .workwithus-carousel-wrap {
     padding: 10% 10% 0;
   }
-  .work-with-us-panel .workwithus-carousel {
+  .work-with-us-panel .owl-work-withus {
     position: static;
   }
-  .work-with-us-panel .workwithus-carousel h4 {
+  .work-with-us-panel .owl-work-withus h4 {
     font-size: 28px;
     line-height: 35px;
   }
-  .work-with-us-panel .workwithus-carousel p {
+  .work-with-us-panel .owl-work-withus p {
     font-size: 16px;
   }
   .work-with-us-panel .zero-padd {
@@ -1736,11 +1945,16 @@ header {
     line-height: 35px;
   }
 
+  .meet-our-team {
+    position: relative;
+    overflow: hidden;
+  }
   .meet-our-team li {
     width: 50%;
     float: left;
     margin: 0;
     padding: 0;
+    position: absolute;
   }
   .meet-our-team li p {
     font-size: 15px;
@@ -1749,8 +1963,199 @@ header {
     background: #f5f5f5;
   }
 
-  .strip-wrap {
-    /*margin-left:-15px;*/
+  .hex-download-stuff {
+    padding: 50px;
+  }
+  .hex-download-stuff h2 {
+    font-size: 28px;
+    line-height: 30px;
+  }
+  .hex-download-stuff p {
+    margin-bottom: 30px;
+  }
+
+  .testimonial-panel h2 {
+    font-size: 26px;
+    margin-left: 15px;
+  }
+  .testimonial-panel .owl-pagination {
+    left: 15px;
+  }
+
+  .testimonial {
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 360px;
+  }
+  .testimonial figure {
+    left: auto;
+    right: -15px;
+    top: -40px;
+    border-right: 0;
+  }
+  .testimonial figure img {
+    width: 100px;
+  }
+
+  .inner-banner {
+    text-align: left;
+  }
+  .inner-banner h1 {
+    font-size: 50px;
+  }
+
+  .portfolio-filter {
+    text-align: left;
+  }
+  .portfolio-filter li {
+    padding: 24px 6px;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0 15px;
+  }
+  .portfolio-filter .move {
+    height: 4px;
+  }
+
+  .portfolio-block {
+    margin-bottom: 0;
+  }
+
+  .portfolio-block:nth-child(even) .block-wrap, .portfolio-block:nth-child(even) .portfolio-dec {
+    float: right !important;
+  }
+
+  .portfolio-link i {
+    display: block;
+    color: #fff;
+    left: 0;
+    right: 0;
+    font-size: 30px;
+    opacity: 0.5;
+  }
+
+  .portfolio-view-more {
+    float: left;
+  }
+  .portfolio-view-more i {
+    font-size: 40px;
+    top: 40%;
+  }
+  .portfolio-view-more span {
+    display: block;
+  }
+
+  .portfolio-img {
+    display: block;
+  }
+
+  .portfolio-dec-panel .portfolio-dec, .portfolio-dec-panel .portfolio-img, .portfolio-dec-panel .portfolio-img img {
+    height: 100%;
+  }
+
+  .portfolio-dec {
+    padding: 40px 40px 0;
+  }
+
+  /*start animation meet-our-team*/
+  .meet-our-team li {
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .meet-our-team li:nth-child(odd) {
+    left: 0;
+    top: 0;
+  }
+  .meet-our-team li:nth-child(even) {
+    left: 50%;
+    top: 0;
+  }
+  .meet-our-team li:nth-child(3n) {
+    left: 0;
+    top: 50%;
+  }
+  .meet-our-team li:nth-child(4n) {
+    left: 50%;
+    top: 50%;
+  }
+
+  .meet-our-team li.ng-enter:nth-child(odd), .meet-our-team li.ng-leave:nth-child(odd) {
+    left: 25%;
+    top: 25%;
+  }
+  .meet-our-team li.ng-enter:nth-child(even), .meet-our-team li.ng-leave:nth-child(even) {
+    left: 25%;
+    top: 25%;
+  }
+  .meet-our-team li.ng-enter:nth-child(3n), .meet-our-team li.ng-leave:nth-child(3n) {
+    left: 25%;
+    top: 25%;
+  }
+  .meet-our-team li.ng-enter:nth-child(4n), .meet-our-team li.ng-leave:nth-child(4n) {
+    left: 25%;
+    top: 25%;
+  }
+
+  .meet-our-team li.ng-enter {
+    opacity: 0;
+    -webkit-transition: 0s !important;
+    transition: 0s !important;
+  }
+
+  .meet-our-team li.ng-enter-active {
+    opacity: 0.2;
+  }
+
+  .meet-our-team li.ng-leave {
+    -webkit-transition: all 1s ease 0s !important;
+    transition: all 1s ease 0s !important;
+    opacity: 0.2;
+    z-index: 100;
+  }
+
+  .meet-our-team li.ng-leave-active {
+    opacity: 0;
+  }
+
+  /*end animation meet-our-team*/
+  .portfolio-panel .layout-container {
+    overflow: hidden;
+  }
+
+  .portfolio-block {
+    -webkit-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+    position: relative;
+    top: 0;
+  }
+  .portfolio-block.ng-enter {
+    /*top:-1000px;*/
+    -webkit-transition: all 1s ease 0s !important;
+    transition: all 1s ease 0s !important;
+  }
+  .portfolio-block.ng-enter-active {
+    opacity: 1;
+    top: 0;
+  }
+  .portfolio-block.ng-leave {
+    -webkit-transition: all 1s ease 0s !important;
+    transition: all 1s ease 0s !important;
+    top: 0;
+    opacity: 1;
+    height: 500px;
+  }
+  .portfolio-block.ng-leave-active {
+    /*top:-1000px;*/
+    /* opacity:0;*/
+    height: 0;
+    overflow: hidden;
+  }
+  .portfolio-block.ng-move {
+    border: 1px solid red;
+  }
+
+  .strip-wrap .hex {
+    height: 50% !important;
   }
 
   .stripe-1 {
@@ -1762,30 +2167,25 @@ header {
     display: block;
   }
 
-  .work-with-us-panel, .strip-wrap {
+  .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team {
     height: 375px;
+    height: 360px;
   }
 
   .major-works-panel, .heightset-major-works {
     height: 562px;
+    height: 540px;
   }
 
-  .block-wrap .block, .block-wrap .prev-next-wrap {
+  .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li {
     height: 188px;
-  }
-
-  .meet-our-team li {
-    height: 188px;
+    height: 180px;
   }
 }
 @media (max-width: 767px) {
   .layout-container {
     padding-left: 30px;
     padding-right: 30px;
-  }
-
-  .home-main-panel {
-    padding: 30px 0;
   }
 
   .meet-our-team li:nth-child(2n) {
@@ -1813,8 +2213,37 @@ header {
   .block-wrap .cup, .block-wrap .deployed {
     display: none;
   }
+
+  .testimonial-panel .layout-container {
+    padding: 0;
+  }
+  .testimonial-panel h2 {
+    padding: 0 30px;
+  }
+
+  .portfolio-filter-panel {
+    margin: 0 -25px;
+  }
+
+  .block-wrap .block.portfolio-link, .block-wrap .block.portfolio-view-more {
+    height: calc(100vw - 50vw);
+  }
+
+  .portfolio-link {
+    width: 65%;
+    float: left;
+  }
+
+  .portfolio-view-more {
+    width: 35%;
+    float: left;
+  }
 }
 @media (min-width: 992px) {
+  .home-main-panel {
+    padding: 40px 0;
+  }
+
   .banner {
     padding-top: 20vh;
   }
@@ -1854,41 +2283,76 @@ header {
     line-height: 28px;
   }
 
-  .work-with-us-panel, .strip-wrap {
+  .hex-download-stuff {
+    padding: 105px;
+  }
+
+  .testimonial-panel {
+    padding: 80px 0;
+  }
+
+  .testimonial {
+    margin-top: 80px;
+    height: 300px;
+  }
+
+  .portfolio-dec {
+    padding: 120px 60px 0;
+  }
+
+  .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team {
     height: 485px;
+    height: 470px;
   }
 
   .major-works-panel, .heightset-major-works {
     height: 727px;
+    height: 705px;
   }
 
-  .block-wrap .block, .block-wrap .prev-next-wrap {
+  .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li {
     height: 243px;
-  }
-
-  .meet-our-team li {
-    height: 243px;
+    height: 235px;
   }
 }
 @media (min-width: 1200px) {
-  .work-with-us-panel, .strip-wrap {
+  .home-main-panel {
+    padding: 50px 0;
+  }
+
+  .hex-download-stuff {
+    padding: 115px;
+  }
+
+  .testimonial {
+    height: 280px;
+  }
+
+  .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team {
     height: 522px;
+    height: 507px;
   }
 
   .major-works-panel, .heightset-major-works {
     height: 783px;
+    height: 761px;
   }
 
-  .block-wrap .block, .block-wrap .prev-next-wrap {
+  .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li {
     height: 261px;
-  }
-
-  .meet-our-team li {
-    height: 261px;
+    height: 254px;
   }
 }
 @media (min-width: 1400px) {
-  body {
-    border: 1px solid red;
+  .testimonial-panel {
+    padding: 90px 0;
+  }
+
+  .testimonial {
+    margin-top: 90px;
+  }
+
+  .owl-testimonial .owl-pagination {
+    top: 5px;
   }
 }

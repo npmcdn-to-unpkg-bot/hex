@@ -1,54 +1,54 @@
 [
     {
-        "id": "0",
+        "id": 0,
         "name": "Bobin George",
         "desigination": "CEO",
         "image": "images/team/bobin-george.png"
     },
     {
-        "id": "1",
+        "id": 1,
         "name": "Jerry Don",
         "desigination": "CTO",
         "image": "images/team/jerry-don.png"
     },
     {
-        "id": "2",
+        "id": 2,
         "name": "Dinu Danial",
         "desigination": "Project Manager",
         "image": "images/team/dinu-danial.png"
     },
     {
-        "id": "3",
+        "id": 3,
         "name": "Shibin Ragh",
         "desigination": "Team Lead",
         "image": "images/team/shibin-ragh.png"
     },
     {
-        "id": "4",
+        "id": 4,
         "name": "Divek",
         "desigination": "Front-end Developer",
-        "image": "images/team/shibin-ragh.png"
+        "image": "images/team/jerry-don.png"
     },
     {
-        "id": "5",
+        "id": 5,
         "name": "Niyas Khan",
         "desigination": "Designer",
-        "image": "images/team/shibin-ragh.png"
+        "image": "images/team/bobin-george.png"
     },
     {
-        "id": "6",
+        "id": 6,
         "name": "Bibin Babu",
         "desigination": "Designer",
         "image": "images/team/shibin-ragh.png"
     },
     {
-        "id": "7",
+        "id": 7,
         "name": "Nikhil Krshnan",
         "desigination": "Front-end Developer",
-        "image": "images/team/shibin-ragh.png"
+        "image": "images/team/dinu-danial.png"
     },
     {
-        "id": "8",
+        "id": 8,
         "name": "Ashraf",
         "desigination": "Front-end Developer",
         "image": "images/team/shibin-ragh.png"

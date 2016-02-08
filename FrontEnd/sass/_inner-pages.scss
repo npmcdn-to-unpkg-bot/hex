@@ -1,0 +1,16 @@
+.inner-banner{
+    background:url('/images/banner/banner-inner.jpg') no-repeat center;
+    text-align:center;
+    height:100vw;
+    max-height:350px;
+    padding-top:145px;
+    h1{
+        font-size:8vw;
+        margin:0;
+        color:$header-text;
+    }
+    p{
+        color:$header-text;
+        font-size:16px;
+    }
+}

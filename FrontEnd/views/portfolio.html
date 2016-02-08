@@ -1,0 +1,55 @@
+<section class="portfolio-filter-panel">
+    <div class="layout-container">
+        <div class="portfolio-filter">
+            <ul>
+                <li class="active" ng-click=" searchText.status= '' ">ALL</li>
+                <li ng-click="searchText.status= 'web' ">WEB</li>
+                <li ng-click="searchText.status='mobile'">MOBILE APP</li>
+                <li ng-click="searchText.status='branding'">BRANDING</li>
+                <li ng-click="searchText.status='graphic'">GRAPHIC</li>
+            </ul>
+            <div class="move"></div>
+        </div>
+    </div>
+</section>
+<!--portfolio-filter-panel end-->
+<section class="portfolio-panel">
+    <div class="layout-container">
+        <input type="text" ng-model="searchText.status">
+        <div class="portfolio-block angular-animate" ng-repeat="port in portfolio.portfolioData | filter:searchText">
+            <div class="layout-wrapper">
+                <div class="block-wrap layout-sm-6">
+                    <div class="block portfolio-link layout-sm-6" style="background:{{port.color}};">
+                        <figure class="v-middle-wrap">
+                            <div class="helper"></div>
+                            <img ng-src="{{port.image.imageLogo}}" alt="" class="v-middle">
+                        </figure>
+                        <i class="icon-down-arrow-metro"></i>
+                    </div>
+                    <a class="block portfolio-view-more layout-sm-6">
+                        <i class="icon-arrow-right-metro"></i>
+                        <span>view more details</span>
+                    </a>
+                </div>
+            </div>
+            <div class="layout-wrapper portfolio-dec-panel">
+                <div class="layout-sm-6 portfolio-dec">
+                    <div class="status">{{port.status}}</div>
+                    <h2>{{port.name}}</h2>
+                    <p>{{port.description}}</p>
+                </div>
+                <figure class="layout-sm-6 portfolio-img">
+                    <img ng-src="{{port.image.imagePortfolio}}" alt="">
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+<!--portfolio-panel end-->
+ 
+
+
+        
+        
+        
+ 

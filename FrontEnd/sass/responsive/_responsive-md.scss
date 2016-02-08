@@ -1,5 +1,11 @@
 @media (min-width: $screen-md-min) {
+    //home-main-panel
+    //==================
+    .home-main-panel{
+        padding:40px 0;
+    }
     //banner
+    //===============
     .banner{
         padding-top:20vh;
         h2{
@@ -9,6 +15,7 @@
             font-size:17px;
         }
     }
+    
     //work-with-us
     //===============
     .work-with-us-panel{
@@ -45,21 +52,41 @@
             }
         }
     }
-     
+    //hex-download-stuff
+    //==================
+    .hex-download-stuff{
+        padding:105px;
+    }
+    //testimonials
+    //==================
+    .testimonial-panel{
+        padding:80px 0;
+    }
+    .testimonial{
+        margin-top:80px;
+        height:300px;
+    }
+//====================================
+//=============end home===============
+
+    
+     .portfolio-dec{
+        padding:120px 60px 0;
+    }
     
     //===============
     //height set
-    .work-with-us-panel, .strip-wrap{
+    .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team{
         height:485px; // (970/4)*2
+        height:470px; // (940/4)*2
     }
     .major-works-panel, .heightset-major-works{
         height:727px; // (970/4)*3
+        height:705px; // (940/4)*3
     }
-    .block-wrap .block, .block-wrap .prev-next-wrap{
+    .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li{
         height:243px; // (970/4)*1
-    }
-    .meet-our-team li{
-        height:243px; // (970/4)*1
+        height:235px; // (940/4)*1
     }
 //end
 }
