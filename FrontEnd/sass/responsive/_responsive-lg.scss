@@ -1,5 +1,10 @@
 @media (min-width: $screen-lg-min) { 
-     
+     //height variable
+    //===================
+    $height-lg-1 : ($layout-lg - $grid-gutter)/4*1;
+    $height-lg-2 : ($layout-lg - $grid-gutter)/4*2;
+    $height-lg-3 : ($layout-lg - $grid-gutter)/4*3;
+    $height-lg-4 : ($layout-lg - $grid-gutter)/4*4;
     //home-main-panel
     //==================
     .home-main-panel{
@@ -16,21 +21,20 @@
     //=================
     //end home
     
- 
+    .portfolio-block-list.ng-enter-active{
+        height:$height-lg-3 !important; // (1014/4)*3
+    }
     
     //===============
     //height set
     .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team{
-        height:522px; // (1044/4)*2
-        height:507px; // (1014/4)*2
+        height:$height-lg-2; // (1014/4)*2
     }
-    .major-works-panel, .heightset-major-works{
-        height:783px; // (1044/4)*3
-        height:761px; // (1014/4)*3
+    .major-works-panel, .heightset-major-works, .portfolio-block-list{
+        height:$height-lg-3; // (1014/4)*3
     }
     .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li{
-        height:261px; // (1044/4)*1
-        height:254px; // (1014/4)*1
+        height:$height-lg-1; // (1014/4)*1
     }
 //end
 }

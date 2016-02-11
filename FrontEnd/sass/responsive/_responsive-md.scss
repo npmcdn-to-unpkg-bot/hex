@@ -1,4 +1,12 @@
 @media (min-width: $screen-md-min) {
+    //height variable
+    //=================
+    $height-md-1 : ($layout-md - $grid-gutter)/4*1;
+    $height-md-2 : ($layout-md - $grid-gutter)/4*2;
+    $height-md-3 : ($layout-md - $grid-gutter)/4*3;
+    $height-md-4 : ($layout-md - $grid-gutter)/4*4;
+    
+    
     //home-main-panel
     //==================
     .home-main-panel{
@@ -70,6 +78,9 @@
 //=============end home===============
 
     
+    .portfolio-block-list.ng-enter-active{
+        height:$height-md-3 !important; // (940/4)*3
+    }
      .portfolio-dec{
         padding:120px 60px 0;
     }
@@ -77,16 +88,13 @@
     //===============
     //height set
     .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team{
-        height:485px; // (970/4)*2
-        height:470px; // (940/4)*2
+        height:$height-md-2; // (940/4)*2
     }
-    .major-works-panel, .heightset-major-works{
-        height:727px; // (970/4)*3
-        height:705px; // (940/4)*3
+    .major-works-panel, .heightset-major-works, .portfolio-block-list{
+        height:$height-md-3; // (940/4)*3
     }
     .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li{
-        height:243px; // (970/4)*1
-        height:235px; // (940/4)*1
+        height:$height-md-1; // (940/4)*1
     }
 //end
 }

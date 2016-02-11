@@ -1608,6 +1608,20 @@ header {
 .portfolio-filter-panel {
   background: #fff;
   position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.portfolio-filter-panel.fixed {
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px;
+}
+
+.portfolio-filter-panel.fixed + .mTop {
+  margin-top: 50px;
 }
 
 .portfolio-filter {
@@ -1641,11 +1655,12 @@ header {
 }
 
 .portfolio-panel {
-  background: url("../images/portfolio/bg-portfolio.jpg") no-repeat center 0;
+  background: #909090 url("../images/portfolio/bg-portfolio.jpg") no-repeat center 0;
   padding-top: 30px;
+  padding-bottom: 80px;
 }
 
-.portfolio-block {
+.portfolio-block-list {
   margin-bottom: 30px;
 }
 
@@ -1653,9 +1668,37 @@ header {
   position: relative;
 }
 .portfolio-link i {
+  display: block;
+  color: #fff;
+  left: 0;
+  right: 0;
+  font-size: 30px;
+  opacity: 0.5;
   position: absolute;
   top: 70%;
-  display: none;
+}
+.portfolio-link i, .portfolio-link img {
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.portfolio-link:hover img {
+  opacity: 0.4;
+  margin-top: -16%;
+  -moz-transform: scale(0.9, 0.9);
+  -ms-transform: scale(0.9, 0.9);
+  -webkit-transform: scale(0.9, 0.9);
+  transform: scale(0.9, 0.9);
+}
+.portfolio-link:hover .icon-down-arrow-metro {
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  top: 47%;
+  opacity: 1;
+  font-size: 60px;
 }
 
 .portfolio-view-more {
@@ -1710,6 +1753,154 @@ header {
   display: none;
 }
 
+.icon-type-list {
+  padding: 6px 5px 0px;
+}
+.icon-type-list div {
+  width: 5px;
+  height: 5px;
+  display: block;
+  margin-bottom: 3px;
+  position: relative;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background: #cccccc;
+}
+.icon-type-list div:after, .icon-type-list div:before {
+  height: 2px;
+  display: block;
+  position: absolute;
+  background: #cccccc;
+  content: '';
+  left: 6px;
+}
+.icon-type-list div:after {
+  top: 0;
+  width: 15px;
+}
+.icon-type-list div:before {
+  top: 3px;
+  width: 10px;
+}
+.icon-type-list.current {
+  background: #f2f2f2;
+}
+.icon-type-list.current div, .icon-type-list.current div:after, .icon-type-list.current div:before {
+  background: #999999;
+}
+
+.icon-type-grid {
+  padding: 6px;
+  text-align: center;
+  margin-left: 10px;
+}
+.icon-type-grid div {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #cccccc;
+  margin: 1px;
+  float: left;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.icon-type-grid.current {
+  background: #f2f2f2;
+}
+.icon-type-grid.current div {
+  background: #999999;
+}
+
+.icon-type-list, .icon-type-grid {
+  width: 33px;
+  height: 33px;
+  display: block;
+  float: right;
+  cursor: pointer;
+  opacity: 0.8;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+}
+.icon-type-list:hover, .icon-type-grid:hover {
+  opacity: 1;
+}
+.icon-type-list:hover div, .icon-type-list:hover div:after, .icon-type-list:hover div:before, .icon-type-grid:hover div, .icon-type-grid:hover div:after, .icon-type-grid:hover div:before {
+  background: #999999;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 80px auto 0;
+  display: none;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fee252;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -moz-animation: double 2s infinite ease-in-out;
+  -webkit-animation: double 2s infinite ease-in-out;
+  animation: double 2s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -moz-animation-delay: -1s;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+@-moz-keyframes double {
+  0%, 100% {
+    -moz-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+  50% {
+    -moz-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes double {
+  0%, 100% {
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+  50% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+@keyframes double {
+  0%, 100% {
+    -moz-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0);
+  }
+  50% {
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
 @media (max-width: 319px) {
   /*.block-wrap .more-works, .block-wrap .work-with-us-link{
       background-size:20% auto;
@@ -2004,8 +2195,15 @@ header {
     font-size: 50px;
   }
 
+  .portfolio-filter-panel.fixed + .mTop {
+    margin-top: 80px;
+  }
+
   .portfolio-filter {
     text-align: left;
+  }
+  .portfolio-filter ul {
+    margin: 0 -15px;
   }
   .portfolio-filter li {
     padding: 24px 6px;
@@ -2015,23 +2213,6 @@ header {
   }
   .portfolio-filter .move {
     height: 4px;
-  }
-
-  .portfolio-block {
-    margin-bottom: 0;
-  }
-
-  .portfolio-block:nth-child(even) .block-wrap, .portfolio-block:nth-child(even) .portfolio-dec {
-    float: right !important;
-  }
-
-  .portfolio-link i {
-    display: block;
-    color: #fff;
-    left: 0;
-    right: 0;
-    font-size: 30px;
-    opacity: 0.5;
   }
 
   .portfolio-view-more {
@@ -2057,10 +2238,47 @@ header {
     padding: 40px 40px 0;
   }
 
+  .portfolio-block-list {
+    margin-bottom: 0;
+  }
+  .portfolio-block-list .block-wrap {
+    float: none !important;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+
+  .portfolio-block-list:nth-child(even) .portfolio-dec {
+    float: right !important;
+  }
+  .portfolio-block-list:nth-child(even) .block-wrap {
+    margin-left: 50%;
+  }
+
+  .portfolio-block-grid {
+    width: 25%;
+    float: none !important;
+    display: inline-block !important;
+  }
+  .portfolio-block-grid .block-wrap {
+    margin: 0 !important;
+    -moz-transition: none;
+    -o-transition: none;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .portfolio-block-grid .block-wrap.layout-sm-6 {
+    width: 100% !important;
+  }
+  .portfolio-block-grid .block {
+    width: 100% !important;
+  }
+
   /*start animation meet-our-team*/
   .meet-our-team li {
-    -webkit-transition: 1s;
-    transition: 1s;
+    -webkit-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
   }
   .meet-our-team li:nth-child(odd) {
     left: 0;
@@ -2118,40 +2336,81 @@ header {
   }
 
   /*end animation meet-our-team*/
-  .portfolio-panel .layout-container {
+  .portfolio-block {
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+
+  .portfolio-block-list.ng-enter {
+    height: 0 !important;
+    overflow: hidden;
+  }
+  .portfolio-block-list.ng-enter-active {
+    height: height-sm-3 !important;
+  }
+  .portfolio-block-list.ng-leave {
+    opacity: 1;
+  }
+  .portfolio-block-list.ng-leave-active {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  .portfolio-block-grid.ng-enter {
+    opacity: 0;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    -moz-transform: scale(0.8, 0.8);
+    -ms-transform: scale(0.8, 0.8);
+    -webkit-transform: scale(0.8, 0.8);
+    transform: scale(0.8, 0.8);
+  }
+  .portfolio-block-grid.ng-enter-active {
+    opacity: 1;
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  .portfolio-block-grid.ng-leave {
+    opacity: 1;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  .portfolio-block-grid.ng-leave-active {
+    opacity: 0;
+    -moz-transform: scale(0.8, 0.8);
+    -ms-transform: scale(0.8, 0.8);
+    -webkit-transform: scale(0.8, 0.8);
+    transform: scale(0.8, 0.8);
+  }
+
+  .portfolio-block-switch {
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    opacity: 1;
     overflow: hidden;
   }
 
-  .portfolio-block {
-    -webkit-transition: all 1s ease 0s;
-    transition: all 1s ease 0s;
-    position: relative;
+  .portfolio-block-switch.ng-hide {
+    opacity: 0;
     top: 0;
-  }
-  .portfolio-block.ng-enter {
-    /*top:-1000px;*/
-    -webkit-transition: all 1s ease 0s !important;
-    transition: all 1s ease 0s !important;
-  }
-  .portfolio-block.ng-enter-active {
-    opacity: 1;
-    top: 0;
-  }
-  .portfolio-block.ng-leave {
-    -webkit-transition: all 1s ease 0s !important;
-    transition: all 1s ease 0s !important;
-    top: 0;
-    opacity: 1;
-    height: 500px;
-  }
-  .portfolio-block.ng-leave-active {
-    /*top:-1000px;*/
-    /* opacity:0;*/
-    height: 0;
-    overflow: hidden;
-  }
-  .portfolio-block.ng-move {
-    border: 1px solid red;
+    left: 15px;
+    right: 15px;
+    position: absolute;
   }
 
   .strip-wrap .hex {
@@ -2168,17 +2427,14 @@ header {
   }
 
   .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team {
-    height: 375px;
     height: 360px;
   }
 
-  .major-works-panel, .heightset-major-works {
-    height: 562px;
+  .major-works-panel, .heightset-major-works, .portfolio-block-list {
     height: 540px;
   }
 
   .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li {
-    height: 188px;
     height: 180px;
   }
 }
@@ -2195,6 +2451,30 @@ header {
   .inner-header .header-content {
     text-align: center;
     padding: 50px 0;
+  }
+
+  .icon-type-list, .icon-type-grid {
+    position: absolute;
+    top: 24px;
+    right: 0;
+    background: #f2f2f2;
+    background: #fff;
+    -moz-box-shadow: inset 0px 0px 1px #b3b3b3;
+    -webkit-box-shadow: inset 0px 0px 1px #b3b3b3;
+    box-shadow: inset 0px 0px 1px #b3b3b3;
+    opacity: 0.7;
+  }
+
+  .icon-type-list.current, .icon-type-grid.current {
+    background: #fff;
+    -moz-box-shadow: inset 0px 0px 1px #999999;
+    -webkit-box-shadow: inset 0px 0px 1px #999999;
+    box-shadow: inset 0px 0px 1px #999999;
+    opacity: 1;
+  }
+
+  .icon-type-list {
+    right: 40px;
   }
 
   footer .menu-block .footer-logo {
@@ -2229,12 +2509,11 @@ header {
     height: calc(100vw - 50vw);
   }
 
-  .portfolio-link {
+  .portfolio-block-list .portfolio-link {
     width: 65%;
     float: left;
   }
-
-  .portfolio-view-more {
+  .portfolio-block-list .portfolio-view-more {
     width: 35%;
     float: left;
   }
@@ -2296,22 +2575,23 @@ header {
     height: 300px;
   }
 
+  .portfolio-block-list.ng-enter-active {
+    height: 705px !important;
+  }
+
   .portfolio-dec {
     padding: 120px 60px 0;
   }
 
   .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team {
-    height: 485px;
     height: 470px;
   }
 
-  .major-works-panel, .heightset-major-works {
-    height: 727px;
+  .major-works-panel, .heightset-major-works, .portfolio-block-list {
     height: 705px;
   }
 
   .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li {
-    height: 243px;
     height: 235px;
   }
 }
@@ -2328,19 +2608,20 @@ header {
     height: 280px;
   }
 
+  .portfolio-block-list.ng-enter-active {
+    height: 760.5px !important;
+  }
+
   .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team {
-    height: 522px;
     height: 507px;
   }
 
-  .major-works-panel, .heightset-major-works {
-    height: 783px;
-    height: 761px;
+  .major-works-panel, .heightset-major-works, .portfolio-block-list {
+    height: 760.5px;
   }
 
   .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li {
-    height: 261px;
-    height: 254px;
+    height: 253.5px;
   }
 }
 @media (min-width: 1400px) {

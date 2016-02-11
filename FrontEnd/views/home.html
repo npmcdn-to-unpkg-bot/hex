@@ -41,7 +41,7 @@
         <!--major-works start-->
         <div class="major-works-panel layout-wrapper">
             <div class="owl-major-works" ng-controller="majorWorksCtrl as works">
-                <div ng-repeat="work in works.portfolio" ng-repeat-owl-carousel carousel-init="works.carouselInitializer">
+                <div ng-repeat="work in works.portfolio | limitTo:4" ng-repeat-owl-carousel carousel-init="works.carouselInitializer">
                     <div class="layout-sm-6 heightset-major-works">
                         <figure class="major-works-img">
                             <span class="helper"></span>

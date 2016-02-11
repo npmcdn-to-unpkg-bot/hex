@@ -1,6 +1,16 @@
 .portfolio-filter-panel{
     background:#fff;
     position: relative;
+    left:0;
+    right:0;
+    top:0;
+    z-index:100;
+}
+.portfolio-filter-panel.fixed {
+    @include box-shadow( rgba(0, 0, 0, 0.1) 1px 1px 2px);
+}
+.portfolio-filter-panel.fixed + .mTop{
+    margin-top:50px;
 }
 .portfolio-filter{
     position: relative;
@@ -29,18 +39,40 @@
     }
 }
 .portfolio-panel{
-    background:url('../images/portfolio/bg-portfolio.jpg') no-repeat center 0; 
+    background:$sub-bg url('../images/portfolio/bg-portfolio.jpg') no-repeat center 0; 
     padding-top:30px;
+    padding-bottom:80px;
 }
-.portfolio-block{
+.portfolio-block-list{
     margin-bottom:30px;
 }
 .portfolio-link{
     position: relative;
     i{
+        display:block;
+        color:#fff;
+        left:0;
+        right:0;
+        font-size:30px;
+        opacity:0.5;
         position:absolute;
         top:70%;
-        display: none;
+    }
+    i, img{
+        @include transition(all 0.3s ease);
+    }
+    &:hover{
+        img{
+            opacity:0.4;
+            margin-top:-16%;
+            @include scale(0.9);
+        }
+        .icon-down-arrow-metro{
+            @include rotate(-90deg);
+            top:47%;
+            opacity:1;
+            font-size:60px;
+        }
     }
 }
 .portfolio-view-more{
@@ -92,5 +124,109 @@
 .portfolio-img{
     display:none;
 }
+    //grid/list icon
+    //===============
+    .icon-type-list{
+        padding:6px 5px 0px;
+        div{
+            width:5px;
+            height:5px;
+            display: block;
+            margin-bottom:3px;
+            position: relative;
+            @include transition(all 0.3s ease);
+            background:lighten($grey-light, 20%);
+            &:after, &:before {
+                height:2px;
+                display:block;
+                position: absolute;
+                background:lighten($grey-light, 20%);
+                content:'';
+                left:6px;
+            }
+            &:after{
+                top:0;
+                width:15px;
+            }
+            &:before{
+                top:3px;
+                width:10px;
+            } 
+        }
+        &.current{
+            background:lighten($grey-light, 35%);
+            div, div:after, div:before{
+                background:$grey-light;
+            }
+        }
+    }
+    .icon-type-grid{
+        padding:6px;
+        text-align: center;
+        margin-left:10px;
+        div{
+            display:inline-block;
+            width:5px;
+            height:5px;
+            background:lighten($grey-light, 20%);
+            margin:1px;
+            float:left;
+            @include transition(all 0.3s ease);
+        }
+        &.current{
+            background:lighten($grey-light, 35%);
+            div{
+                background:$grey-light;
+            }
+        }
+    }
+     .icon-type-list, .icon-type-grid{
+        width:33px;
+        height:33px;
+        display:block;
+        float:right;
+        cursor:pointer;
+        opacity:0.8;
+        @include transition(all 0.3s ease);
+        margin-top:16px;
+        &:hover{
+            opacity:1;
+            div, div:after, div:before{
+                background:$grey-light;
+            }
+        }
+    } 
+.fixed{
+    position:fixed;
+}
 
+//===========================
+//loader animation
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin:80px auto 0;
+  display:none;
+}
 
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color:$primary-color;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include animation(double 2.0s infinite ease-in-out);
+}
+
+.double-bounce2 {
+    @include animation-delay(-1.0s);
+}
+
+@include keyframes(double) {
+    0%, 100% { @include scale(0.0) }
+    50% { @include scale(1.0) }
+}

@@ -1,7 +1,25 @@
-<section class="portfolio-filter-panel">
+<section class="portfolio-filter-panel" ng-class="{'fixed': wOffset > bnrHeight}">  
     <div class="layout-container">
-        <div class="portfolio-filter">
-            <ul>
+        <div class="portfolio-filter" ng-init="mySwitch=true">
+            <div class="icon-type-grid" ng-click="mySwitch=false" ng-class="{'current': !mySwitch}">
+                <div></div>
+                <div></div>
+                <div></div>
+                
+                <div></div>
+                <div></div>
+                <div></div>
+                
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="icon-type-list " ng-click="mySwitch=true" ng-class="{'current' : mySwitch}">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <ul>  
                 <li class="active" ng-click=" searchText.status= '' ">ALL</li>
                 <li ng-click="searchText.status= 'web' ">WEB</li>
                 <li ng-click="searchText.status='mobile'">MOBILE APP</li>
@@ -13,36 +31,10 @@
     </div>
 </section>
 <!--portfolio-filter-panel end-->
-<section class="portfolio-panel">
+<!--portfolio-panel start-->
+<section class="portfolio-panel" ng-class="{'mTop': wOffset > bnrHeight}">
     <div class="layout-container">
-        <input type="text" ng-model="searchText.status">
-        <div class="portfolio-block angular-animate" ng-repeat="port in portfolio.portfolioData | filter:searchText">
-            <div class="layout-wrapper">
-                <div class="block-wrap layout-sm-6">
-                    <div class="block portfolio-link layout-sm-6" style="background:{{port.color}};">
-                        <figure class="v-middle-wrap">
-                            <div class="helper"></div>
-                            <img ng-src="{{port.image.imageLogo}}" alt="" class="v-middle">
-                        </figure>
-                        <i class="icon-down-arrow-metro"></i>
-                    </div>
-                    <a class="block portfolio-view-more layout-sm-6">
-                        <i class="icon-arrow-right-metro"></i>
-                        <span>view more details</span>
-                    </a>
-                </div>
-            </div>
-            <div class="layout-wrapper portfolio-dec-panel">
-                <div class="layout-sm-6 portfolio-dec">
-                    <div class="status">{{port.status}}</div>
-                    <h2>{{port.name}}</h2>
-                    <p>{{port.description}}</p>
-                </div>
-                <figure class="layout-sm-6 portfolio-img">
-                    <img ng-src="{{port.image.imagePortfolio}}" alt="">
-                </figure>
-            </div>
-        </div>
+        <div portfolio-dir></div>
     </div>
 </section>
 <!--portfolio-panel end-->

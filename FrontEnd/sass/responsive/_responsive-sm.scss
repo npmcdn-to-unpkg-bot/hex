@@ -1,4 +1,11 @@
 @media (min-width: $screen-sm-min) {
+    //===============
+    //height variable
+    $height-sm-1 : ($layout-sm - $grid-gutter)/4*1;
+    $height-sm-2 : ($layout-sm - $grid-gutter)/4*2;
+    $height-sm-3 : ($layout-sm - $grid-gutter)/4*3;
+    $height-sm-4 : ($layout-sm - $grid-gutter)/4*4;
+    
     .pull-right{
         float:right !important;
     }
@@ -310,7 +317,16 @@
             font-size:50px;
         }
     }
+    .portfolio-filter-panel.fixed + .mTop{
+        margin-top:80px;
+    }
+    
+    //portfolio-filter
+    //=====================
     .portfolio-filter{
+        ul{
+            margin:0 -15px;
+        }
         text-align: left;
         li{
             padding:24px 6px;
@@ -322,24 +338,13 @@
             height:4px;
         }
     }
-    //================
-    .portfolio-block{
-        margin-bottom:0;
-    }
-    .portfolio-block:nth-child(even){
-        .block-wrap, .portfolio-dec{
-            float:right !important;
-        }
-    }
+    
+
+
+    //portfolio block 
+    //=================
     .portfolio-link{
-        i{
-            display:block;
-            color:#fff;
-            left:0;
-            right:0;
-            font-size:30px;
-            opacity:0.5;
-        }
+
     }
     .portfolio-view-more{
         float:left;
@@ -363,7 +368,42 @@
         padding:40px 40px 0;
     }
     
+    //===================
+    //portfolio-block-list
+    .portfolio-block-list{
+        margin-bottom:0;
+        .block-wrap{
+            float:none !important;
+            @include transition(all 1s ease);
+        }
+    }
+    .portfolio-block-list:nth-child(even){
+        .portfolio-dec{
+            float:right !important;
+        }
+        .block-wrap{
+            margin-left:50%;
+        }
+    }
+    // portfolio-grid block
+    //======================
+    .portfolio-block-grid{
+        width:25%;
+        float:none !important;
+        display:inline-block !important;
+        .block-wrap{
+            margin:0 !important;
+            @include transition(none);
+        }
+        .block-wrap.layout-sm-6{
+            width:100% !important;
+        }
+        .block{
+            width:100% !important;
+        }
+    }
     
+
     
     
     
@@ -371,8 +411,8 @@
     // animation
     /*start animation meet-our-team*/
     .meet-our-team li{
-      -webkit-transition: 1s;
-      transition: 1s;
+        -webkit-transition: all 1s ease 0s;
+        transition:all 1s ease 0s;
         &:nth-child(odd){
                 left:0;
                 top:0;
@@ -430,46 +470,74 @@
     .meet-our-team li.ng-move-active {
     }
     /*end animation meet-our-team*/ 
+    //===========================
     
     
-    .portfolio-panel{
-        .layout-container{
-            overflow:hidden;
-        }
+    //==========================
+    //portfolio block animation
+    .portfolio-block{
+        @include transition(all 1s ease);
     }
-    .portfolio-block {
-        -webkit-transition: all 1s ease 0s;
-        transition:all 1s ease 0s;
-        position:relative;
-        top:0;
+    .portfolio-block-list {
         &.ng-enter{
-            /*top:-1000px;*/
-            -webkit-transition: all 1s ease 0s !important;
-            transition:all 1s ease 0s !important;
-        }
-        &.ng-enter-active{
-            opacity:1;
-            top:0;
-        }
-        &.ng-leave{
-            -webkit-transition: all 1s ease 0s !important;
-            transition:all 1s ease 0s !important;
-            top:0;
-            opacity:1;
-            height:500px;
-        }
-        &.ng-leave-active{
-            /*top:-1000px;*/
-           /* opacity:0;*/
-            height:0;
+            height:0 !important;
             overflow: hidden;
         }
+        &.ng-enter-active{
+           height:height-sm-3 !important; // (720/4)*3
+        }
+        &.ng-leave{
+            opacity:1;
+        }
+        &.ng-leave-active{
+            height:0;
+            overflow: hidden;
+            opacity:0;
+        }
         &.ng-move{
-            border:1px solid red;
         }
         &.ng-move-active{}
     }
-
+    .portfolio-block-grid {
+        &.ng-enter{
+           opacity:0;
+           @include transition(all 1s ease);
+            @include scale(0.8);
+        }
+        &.ng-enter-active{
+            opacity:1;
+            @include scale(1);
+        }
+        &.ng-leave{
+            opacity:1;
+            @include transition(all 1s ease); 
+            @include scale(1);
+        }
+        &.ng-leave-active{
+            opacity:0;
+            @include scale(0.8);
+        }
+        &.ng-move{
+        }
+        &.ng-move-active{}
+    }
+    .portfolio-block-switch{
+        @include transition(all 1s ease);
+        opacity: 1;
+        overflow:hidden;
+        
+    }
+    .portfolio-block-switch.ng-hide {
+        opacity: 0;
+        top:0;
+        left:15px;
+        right:15px;
+        position:absolute;
+    }
+    //=====================
+    //end portfolio block animation
+ 
+    
     
     
     
@@ -508,16 +576,13 @@
     //===============
     //height set
     .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team{
-        height:375px; // (750/4)*2
-        height:360px; // (720/4)*2  
+        height:$height-sm-2; // (720/4)*2  
     }
-    .major-works-panel, .heightset-major-works{
-        height:562px; // (750/4)*3
-        height:540px; // (720/4)*3
+    .major-works-panel, .heightset-major-works, .portfolio-block-list{
+        height:$height-sm-3; // (720/4)*3
     }
     .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li{
-        height:188px; // (750/4)*1
-        height:180px; // (720/4)*1
+        height:$height-sm-1; // (720/4)*1
     }
 //end sm	
 }
@@ -536,6 +601,23 @@
             text-align: center;
             padding: 50px 0;
         }
+    }
+    .icon-type-list, .icon-type-grid{
+        position:absolute;
+        top:24px;
+        right:0;
+        background:lighten($grey-light, 35%);
+        background:#fff;
+        @include box-shadow(inset 0px 0px 1px lighten($grey-light, 10%) );
+        opacity:0.7;
+    }
+    .icon-type-list.current, .icon-type-grid.current{
+        background:#fff;
+        @include box-shadow(inset 0px 0px 1px lighten($grey-light, 0%) );
+        opacity:1;
+    }
+    .icon-type-list{
+        right:40px;
     }
     footer {
         .menu-block {
@@ -580,13 +662,15 @@
             height:calc(100vw - 50vw);
         }
     }
-    .portfolio-link{
-        width:65%;
-        float:left;
-    }
-    .portfolio-view-more{
-        width:35%;
-        float:left;
+    .portfolio-block-list{
+        .portfolio-link{
+            width:65%;
+            float:left;
+        }
+        .portfolio-view-more{
+            width:35%;
+            float:left;
+        }
     }
     
 //end

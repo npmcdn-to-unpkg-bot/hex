@@ -33,7 +33,7 @@
         "id"         : 2,
         "name"       : "AdvisorFi",
         "title"      : "Accountants",
-        "status"     : "web",
+        "status"     : "mobile",
         "color"      : "#249ad3",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
         "image" :
@@ -49,7 +49,7 @@
         "name"       : "Bigplans",
         "title"      : "Event Plan",
         "status"     : "mobile",
-        "color"      : "#249ad3",
+        "color"      : "#ee255b",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
         "image" :
                 {
@@ -64,7 +64,7 @@
         "name"       : "Farm Bucket",
         "title"      : "Farms Profile",
         "status"     : "web",
-        "color"      : "#249ad3",
+        "color"      : "#9dc401",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
         "image" :
                 {
@@ -78,8 +78,8 @@
         "id"         : 5,
         "name"       : "Hapzis",
         "title"      : "Technology",
-        "status"     : "mobile",
-        "color"      : "#249ad3",
+        "status"     : "web",
+        "color"      : "#e32e7b",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
         "image" :
                 {
@@ -94,7 +94,7 @@
         "name"       : "HyperVerge",
         "title"      : "Technology",
         "status"     : "web",
-        "color"      : "#249ad3",
+        "color"      : "#000000",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
         "image" :
                 {
@@ -109,7 +109,7 @@
         "name"       : "Shoper Market",
         "title"      : "E-Commerce",
         "status"     : "web",
-        "color"      : "#249ad3",
+        "color"      : "#1c9acf",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
         "image" :
                 {
@@ -118,6 +118,65 @@
                     "imagePortfolio": "images/portfolio/shopermarket/imagePortfolio.jpg"
                 }
             
+    },
+    {
+        "id"         : 8,
+        "name"       : "Voxvibe",
+        "title"      : "Social Media",
+        "status"     : "branding",
+        "color"      : "#131519",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+        "image" :
+                {
+                    "imageLogo"     : "images/portfolio/voxvibe/logoPortfolio.png",
+                    "imageHome"     : "images/portfolio/voxvibe/imageHome.png",
+                    "imagePortfolio": "images/portfolio/voxvibe/imagePortfolio.jpg"
+                }
+            
+    },
+    {
+        "id"         : 9,
+        "name"       : "yacket",
+        "title"      : "Social Media",
+        "status"     : "branding",
+        "color"      : "#16a085",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+        "image" :
+                {
+                    "imageLogo"     : "images/portfolio/yacket/logoPortfolio.png",
+                    "imageHome"     : "images/portfolio/yacket/imageHome.png",
+                    "imagePortfolio": "images/portfolio/yacket/imagePortfolio.jpg"
+                }
+            
+    },
+    {
+        "id"         : 10,
+        "name"       : "Tobias",
+        "title"      : "Social Media",
+        "status"     : "branding",
+        "color"      : "#070707",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+        "image" :
+                {
+                    "imageLogo"     : "images/portfolio/tobias/logoPortfolio.png",
+                    "imageHome"     : "images/portfolio/tobias/imageHome.png",
+                    "imagePortfolio": "images/portfolio/tobias/imagePortfolio.jpg"
+                }
+            
+    },
+    {
+        "id"         : 11,
+        "name"       : "tradelocker",
+        "title"      : "Social Media",
+        "status"     : "branding",
+        "color"      : "#0083e9",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+        "image" :
+                {
+                    "imageLogo"     : "images/portfolio/tradelocker/logoPortfolio.png",
+                    "imageHome"     : "images/portfolio/tradelocker/imageHome.png",
+                    "imagePortfolio": "images/portfolio/tradelocker/imagePortfolio.jpg"
+                }
+            
     }
-    
 ]
