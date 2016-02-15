@@ -8,9 +8,16 @@
         font-size:8vw;
         margin:0;
         color:$header-text;
+        text-transform:uppercase;
     }
     p{
         color:$header-text;
         font-size:16px;
     }
+}
+
+//inner-page content panel
+//=======================
+.portfolio-panel, .casestudy-panel{
+    padding-top:30px;
 }

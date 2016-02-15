@@ -21,8 +21,29 @@
     //=================
     //end home
     
+    //portfolio
+    //===============
     .portfolio-block-list.ng-enter-active{
         height:$height-lg-3 !important; // (1014/4)*3
+    }
+    
+     //casestudy master image panel
+    //============================
+    .case-master-image{
+        figure{
+            height:$height-lg-2;
+        }
+        .case-master-logo{
+            width:$height-lg-1;
+            height:$height-lg-1;
+        }
+    }
+    .case-abt-project{
+        display:block;
+        height:$height-lg-2;
+    }
+    .case-project-dec, .case-project-spec{
+        padding:90px;
     }
     
     //===============

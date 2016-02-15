@@ -1198,6 +1198,14 @@ footer .social-links {
   vertical-align: middle;
 }
 
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
 header {
   position: absolute;
   left: 0;
@@ -1599,10 +1607,15 @@ header {
   font-size: 8vw;
   margin: 0;
   color: #312819;
+  text-transform: uppercase;
 }
 .inner-banner p {
   color: #312819;
   font-size: 16px;
+}
+
+.portfolio-panel, .casestudy-panel {
+  padding-top: 30px;
 }
 
 .portfolio-filter-panel {
@@ -1656,7 +1669,6 @@ header {
 
 .portfolio-panel {
   background: #909090 url("../images/portfolio/bg-portfolio.jpg") no-repeat center 0;
-  padding-top: 30px;
   padding-bottom: 80px;
 }
 
@@ -1901,6 +1913,89 @@ header {
     transform: scale(1, 1);
   }
 }
+.bnr-casestudy {
+  padding-top: 135px;
+}
+.bnr-casestudy h1 {
+  line-height: 8.5vw;
+  margin-bottom: 15px;
+}
+.bnr-casestudy h1 span {
+  display: block;
+}
+.bnr-casestudy a {
+  text-decoration: underline;
+}
+.bnr-casestudy a i {
+  display: none;
+}
+.bnr-casestudy a:hover {
+  text-decoration: none;
+  color: #312819;
+}
+
+.next-prev-project-panel {
+  background: #fff;
+  height: 45px;
+}
+.next-prev-project-panel span {
+  color: #999999;
+  font-weight: 500;
+  display: inline-block;
+  padding: 14px 0;
+  cursor: pointer;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.next-prev-project-panel span span {
+  display: none;
+}
+.next-prev-project-panel span i {
+  top: 2px;
+  position: relative;
+}
+.next-prev-project-panel span:hover {
+  color: #312819;
+}
+.next-prev-project-panel span:hover i {
+  color: #312819;
+}
+
+.casestudy-panel {
+  background: #555555;
+}
+
+.case-master-image .case-master-logo {
+  background: #fff;
+  display: block;
+  height: 50vw;
+  text-align: center;
+}
+
+.case-abt-project {
+  background: #fff;
+}
+
+.case-project-dec {
+  padding: 30px;
+}
+.case-project-dec h2 {
+  color: #0076b2;
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+.case-project-dec p {
+  line-height: 24px;
+  font-size: 15px;
+}
+
+.case-project-spec {
+  display: none;
+}
+
 @media (max-width: 319px) {
   /*.block-wrap .more-works, .block-wrap .work-with-us-link{
       background-size:20% auto;
@@ -1920,14 +2015,6 @@ header {
   }
 }
 @media (min-width: 768px) {
-  .pull-right {
-    float: right !important;
-  }
-
-  .pull-left {
-    float: left !important;
-  }
-
   header {
     padding: 40px 0;
   }
@@ -2188,11 +2275,49 @@ header {
     width: 100px;
   }
 
+  .strip-wrap .hex {
+    height: 50% !important;
+  }
+
+  .stripe-1 {
+    color: white;
+    background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
+    width: 50%;
+    height: 50%;
+    float: left;
+    display: block;
+  }
+
   .inner-banner {
     text-align: left;
   }
   .inner-banner h1 {
     font-size: 50px;
+  }
+
+  .bnr-casestudy {
+    padding-top: 150px;
+  }
+  .bnr-casestudy h1 {
+    line-height: 1.2;
+    margin: 0;
+  }
+  .bnr-casestudy h1 span {
+    display: inline;
+  }
+  .bnr-casestudy a {
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .bnr-casestudy a i {
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    font-size: 26px;
+    margin-right: 10px;
+  }
+  .bnr-casestudy a:hover {
+    text-decoration: underline;
   }
 
   .portfolio-filter-panel.fixed + .mTop {
@@ -2413,17 +2538,74 @@ header {
     position: absolute;
   }
 
-  .strip-wrap .hex {
-    height: 50% !important;
+  .next-prev-project-panel {
+    height: 63px;
+  }
+  .next-prev-project-panel span {
+    padding: 14px 0;
+  }
+  .next-prev-project-panel span span {
+    display: inline-block;
+    padding: 0;
+  }
+  .next-prev-project-panel span i {
+    font-size: 25px;
+    top: 6px;
+  }
+  .next-prev-project-panel span.pull-left i {
+    margin-right: 12px;
+  }
+  .next-prev-project-panel span.pull-right i {
+    margin-left: 12px;
+  }
+  .next-prev-project-panel span:hover, .next-prev-project-panel span:hover span {
+    color: #312819;
+  }
+  .next-prev-project-panel span:hover i, .next-prev-project-panel span:hover span i {
+    color: #fee252;
   }
 
-  .stripe-1 {
-    color: white;
-    background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
-    width: 50%;
-    height: 50%;
-    float: left;
+  .case-master-image {
+    position: relative;
+  }
+  .case-master-image figure {
+    height: 360px;
+  }
+  .case-master-image img {
+    height: 100%;
+  }
+  .case-master-image .case-master-logo {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: 0;
+    left: 0;
+  }
+
+  .case-project-dec, .case-project-spec {
+    padding: 30px;
+  }
+
+  .case-abt-project {
     display: block;
+    height: 360px;
+  }
+
+  .case-project-dec h2 {
+    font-weight: 400;
+  }
+
+  .case-project-spec {
+    display: block;
+  }
+  .case-project-spec h3 {
+    color: #0076b2;
+    font-size: 16px;
+    margin: 8px 0 2px;
+  }
+  .case-project-spec p {
+    font-size: 15px;
+    margin-bottom: 28px;
   }
 
   .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team {
@@ -2517,6 +2699,10 @@ header {
     width: 35%;
     float: left;
   }
+
+  div.f-none-mobile {
+    float: none !important;
+  }
 }
 @media (min-width: 992px) {
   .home-main-panel {
@@ -2583,6 +2769,36 @@ header {
     padding: 120px 60px 0;
   }
 
+  .case-master-image figure {
+    height: 470px;
+  }
+  .case-master-image .case-master-logo {
+    width: 235px;
+    height: 235px;
+  }
+
+  .case-abt-project {
+    display: block;
+    height: 470px;
+  }
+
+  .case-project-dec, .case-project-spec {
+    padding: 70px;
+  }
+
+  .case-project-dec p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .case-project-spec h3 {
+    margin: 10px 0 10px;
+  }
+  .case-project-spec p {
+    font-size: 16px;
+    margin-bottom: 37px;
+  }
+
   .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team {
     height: 470px;
   }
@@ -2610,6 +2826,23 @@ header {
 
   .portfolio-block-list.ng-enter-active {
     height: 760.5px !important;
+  }
+
+  .case-master-image figure {
+    height: 507px;
+  }
+  .case-master-image .case-master-logo {
+    width: 253.5px;
+    height: 253.5px;
+  }
+
+  .case-abt-project {
+    display: block;
+    height: 507px;
+  }
+
+  .case-project-dec, .case-project-spec {
+    padding: 90px;
   }
 
   .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team {

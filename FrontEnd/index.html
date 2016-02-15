@@ -29,11 +29,12 @@
         </div>
     </header>
     <!--header End-->
-    <div class="" ng-include="banner"></div>
+    
+    <section banner-dir>
+        <div ng-include="banner"></div>
+    </section>
     <!--content area start-->
-    <div class="content-area">
-         <ng-view></ng-view> 
-    </div>
+    <div ng-view class="content-area"></div> 
     <!--content area End-->
     <!-- Footer -->
     <footer>

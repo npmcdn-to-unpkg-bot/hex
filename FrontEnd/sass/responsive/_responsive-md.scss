@@ -77,7 +77,8 @@
 //====================================
 //=============end home===============
 
-    
+    //portfolio
+    //=============
     .portfolio-block-list.ng-enter-active{
         height:$height-md-3 !important; // (940/4)*3
     }
@@ -85,6 +86,39 @@
         padding:120px 60px 0;
     }
     
+    //casestudy
+    //===============
+     //casestudy master image panel
+    //============================
+    .case-master-image{
+        figure{
+            height:$height-md-2;
+        }
+        .case-master-logo{
+            width:$height-md-1;
+            height:$height-md-1;
+        }
+    }
+    .case-abt-project{
+        display:block;
+        height:$height-md-2;
+    }
+    .case-project-dec, .case-project-spec{
+        padding:70px;
+    }
+    .case-project-dec p{
+        font-size:16px;
+        line-height:28px;
+    }
+    .case-project-spec {
+        h3{
+            margin:10px 0 10px;
+        }
+        p{
+            font-size:16px;
+            margin-bottom:37px; 
+        }
+    }
     //===============
     //height set
     .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team{

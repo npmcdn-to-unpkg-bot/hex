@@ -1,18 +1,14 @@
 @media (min-width: $screen-sm-min) {
-    //===============
     //height variable
+    //===============
     $height-sm-1 : ($layout-sm - $grid-gutter)/4*1;
     $height-sm-2 : ($layout-sm - $grid-gutter)/4*2;
     $height-sm-3 : ($layout-sm - $grid-gutter)/4*3;
     $height-sm-4 : ($layout-sm - $grid-gutter)/4*4;
     
-    .pull-right{
-        float:right !important;
-    }
-    .pull-left{
-        float:left !important;
-    }
     
+    // header
+    //=========
     header {
         padding: 40px 0;
         .main-logo {
@@ -31,7 +27,9 @@
             }
         }
     }
-    //banner
+    
+    // banner 
+    //==========
     .banner{
         h2{
             font-size:50px;
@@ -40,6 +38,9 @@
             font-size:15px;
         }
     }
+    
+    // footer
+    //============
     footer {
         .menu-block {
             text-align: left;
@@ -117,8 +118,10 @@
             }
         }
     }
-    
     // common sm end
+    //====================
+    
+    // work with us panel
     //====================
     .work-with-us-panel{
         position:relative;
@@ -165,9 +168,9 @@
             display:block;
         }
     }
-    //===============
     
     //major-works-panel
+    //==================
     .major-works-panel{
         padding:0;
         .owl-controls .owl-pagination{
@@ -209,10 +212,9 @@
             margin-bottom:30px;
         }
     }
-    //========================
     
     //block-wrap
-    //=========================
+    //=====================
     .block-wrap{
         .block{
             span{
@@ -224,13 +226,14 @@
             }
         }
     }
+    //block-wrap
+    //=====================
     .prev-next-wrap{
         width:50%;
         float:right;
         position: relative;
         @extend %next-prev-arrow;
     }
-    //========================
     
     //meet-our-team
     //======================
@@ -244,10 +247,6 @@
             line-height: 35px;
         }
     }
-    //=========================
-    
-    //meet-our-team
-    //=========================
     .meet-our-team{
         position: relative;
         overflow:hidden;
@@ -265,9 +264,6 @@
             background:$white-grey2;
         }
     }
-    
-   
-    
     //hex-download-stuff
     //==================
     .hex-download-stuff{
@@ -291,7 +287,6 @@
             left:15px;
         }
     }
-    
     .testimonial{
         margin-left:15px;
         margin-right:15px;
@@ -306,10 +301,31 @@
             }
         }
     }
+    //strip
+    //========================
+    .strip-wrap{
+        .hex{
+            height:50% !important;
+        }
+    }
+    .stripe-1 {
+      color: white;
+      background: repeating-linear-gradient(
+        45deg,
+        #606dbc,
+        #606dbc 10px,
+        #465298 10px,
+        #465298 20px
+      );
+      width:50%;
+      height:50%;
+      float:left;
+      display: block;
+    }
 //====================================
 //=============end home===============
 
-    //portfolio
+    // inner common banner
     //=====================
     .inner-banner{
         text-align:left;
@@ -317,12 +333,36 @@
             font-size:50px;
         }
     }
-    .portfolio-filter-panel.fixed + .mTop{
-        margin-top:80px;
+    .bnr-casestudy{
+        padding-top:150px;
+        h1{
+            line-height:1.2;
+            margin:0;
+            span{
+                display:inline;
+            }
+        }
+        a{ 
+            text-decoration:none;
+            font-size:16px;
+            i{
+                display:inline-block;
+                position:relative;
+                top:6px;
+                font-size:26px;
+                margin-right:10px;
+            }
+            &:hover{
+                text-decoration:underline;
+            }
+        }
     }
     
     //portfolio-filter
     //=====================
+    .portfolio-filter-panel.fixed + .mTop{
+        margin-top:80px;
+    }
     .portfolio-filter{
         ul{
             margin:0 -15px;
@@ -339,8 +379,6 @@
         }
     }
     
-
-
     //portfolio block 
     //=================
     .portfolio-link{
@@ -385,6 +423,7 @@
             margin-left:50%;
         }
     }
+    
     // portfolio-grid block
     //======================
     .portfolio-block-grid{
@@ -402,10 +441,6 @@
             width:100% !important;
         }
     }
-    
-
-    
-    
     
     //==================================
     // animation
@@ -472,9 +507,8 @@
     /*end animation meet-our-team*/ 
     //===========================
     
-    
-    //==========================
     //portfolio block animation
+    //==========================
     .portfolio-block{
         @include transition(all 1s ease);
     }
@@ -538,43 +572,91 @@
     //end portfolio block animation
  
     
+    //=============================
+    // ====== end portfolio =======
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //strip
-    //========================
-    .strip-wrap{
-        .hex{
-            height:50% !important;
+    // start casestudy
+    //next-prev-project
+    //===============
+    .next-prev-project-panel{
+        height:63px;
+        span{
+            padding:14px 0;
+            span{
+                display:inline-block;
+                padding:0;
+            }
+            i{
+                font-size:25px;
+                top:6px;
+            }
+            
+            &.pull-left i{
+                margin-right:12px;
+            }
+            &.pull-right i{
+                margin-left:12px;
+            }
+            &:hover, &:hover span{
+                color:$header-text;
+                i{
+                    color:$primary-color;
+                }
+            }
         }
     }
-    .stripe-1 {
-      color: white;
-      background: repeating-linear-gradient(
-        45deg,
-        #606dbc,
-        #606dbc 10px,
-        #465298 10px,
-        #465298 20px
-      );
-      width:50%;
-      height:50%;
-      float:left;
-      display: block;
+    
+    //casestudy master image panel
+    //============================
+    .case-master-image{
+        position:relative;
+        figure{
+            height:$height-sm-2;
+        }
+        img{
+            height:100%;
+        }
+        .case-master-logo{
+            position:absolute;
+            width:$height-sm-1;
+            height:$height-sm-1;
+            top:0;
+            left:0;
+        }
+    }
+    .case-project-dec, .case-project-spec{
+        padding:30px;
+    }
+    .case-abt-project{
+        display:block;
+        height:$height-sm-2;
+    }
+    .case-project-dec h2{
+        font-weight:400;
+    }
+    .case-project-spec{
+        display:block;
+        h3{
+            color:$territory-color;
+            font-size:16px;
+            margin:8px 0 2px;
+        }
+        p{
+            font-size:15px;
+            margin-bottom:28px;
+        }
     }
     
-    //===============
+    
+    
+    
+    
+    
+    
+    
+
     //height set
+    //===============
     .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team{
         height:$height-sm-2; // (720/4)*2  
     }
@@ -584,7 +666,8 @@
     .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li{
         height:$height-sm-1; // (720/4)*1
     }
-//end sm	
+//end sm
+//=======
 }
 
 @media (max-width: 767px) {
@@ -651,7 +734,7 @@
         }
     }
     //==================
-    //===== home end
+    //===== home end ====
     
     .portfolio-filter-panel{
         margin:0 -25px;
@@ -672,12 +755,15 @@
             float:left;
         }
     }
-    
+    div.f-none-mobile{
+        float:none !important;
+    }
 //end
+//============
 }
 
  
 
 @media (min-width: 768px) and (max-width: 900px) {
-    //end
+//end
 }

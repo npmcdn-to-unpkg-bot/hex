@@ -1,3 +1,9 @@
+.pull-left{
+    float:left;
+}
+.pull-right{
+    float:right;
+}
 //header
 header{
     position:absolute;
@@ -134,7 +140,7 @@ header{
  
 //major-works-panel 
 .major-works-panel{
-    background:#0076b2;
+    background:$territory-color;
     text-align: center;
     padding:40px 0 50px;
     .owl-controls{

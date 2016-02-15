@@ -1,5 +1,5 @@
 <div class="portfolio-block-switch angular-animate"  ng-show="mySwitch">
-    <div class="portfolio-block portfolio-block-list angular-animate" ng-repeat="port in portfolio.portfolioData | filter:searchText  | limitTo:portfolioLimit">   
+    <div class="portfolio-block portfolio-block-list angular-animate" ng-repeat="port in portfolioData | filter:searchText  | limitTo:portfolioLimit">   
         <div class="layout-wrapper">
             <div class="block-wrap layout-sm-6">
                 <div class="block portfolio-link layout-sm-6" style="background:{{port.color}};">
@@ -33,7 +33,7 @@
 </div>
 
 <div class="portfolio-block-switch angular-animate"  ng-show="!mySwitch">
-    <div class="portfolio-block portfolio-block-grid layout-sm-3 angular-animate" ng-repeat="port in portfolio.portfolioData | filter:searchText">
+    <div class="portfolio-block portfolio-block-grid layout-sm-3 angular-animate" ng-repeat="port in portfolioData | filter:searchText">
         <div class="block-wrap"> 
             <div class="block portfolio-link" style="background:{{port.color}};">
                 <figure class="v-middle-wrap">

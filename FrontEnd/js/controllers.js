@@ -59,8 +59,6 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
             $scope.homeTeammembersShow();
         });
     });
-
-    
     vm.next = function(start, end){
         var currentWindow = $window.innerWidth;
         if(currentWindow < 768){
@@ -68,7 +66,6 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
                 vm.start = start + 2;
                 vm.end = end + 2 ;
             }else{
-                /*vm.start = 0;*/
                 vm.end = vm.teamMembers.length;
             }  
         }else{
@@ -76,7 +73,6 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
                 vm.start = start + 4;
                 vm.end = end + 4 ;
             }else{
-                /*vm.start = 0;*/
                 vm.end = vm.teamMembers.length;
             }
         }
@@ -118,13 +114,9 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
     designAppFactory.testimonialFtry().success(function(response){
         vm.testimonials = response;
     });
-}]).controller('portfolioCtrl', ['$scope', '$window', 'designAppFactory', function($scope, $window, designAppFactory){
+}]).controller('portfolioCtrl', ['$scope', '$window', '$timeout', 'designAppFactory', function($scope, $window, $timeout, designAppFactory){
     var vm = this;
     var w = angular.element($window);
-    designAppFactory.portfolioFtry().success(function(response){
-        vm.portfolioData = response;
-        $scope.portfolioData = response;
-    });
     var currentPos = $('.portfolio-filter li.active').position().left;
     var currentWid = $('.portfolio-filter li.active').outerWidth();
     var lessMargin = $('.portfolio-filter li.active').css("marginLeft");
@@ -156,7 +148,6 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
         currentWid = $('.portfolio-filter li.active').outerWidth();
         lessMargin = $('.portfolio-filter li.active').css("marginLeft");
         moving();
-        console.log('hi');
     });
     $('.portfolio-filter li:first-child').trigger('click');
     
@@ -166,12 +157,14 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
     }
     vm.fixedPortfolioBar();
     w.bind("scroll", function(){
-        $scope.$apply(function() {
+        $timeout(function() {
             vm.fixedPortfolioBar();
         });
         
     });
-}])
+}]).controller('casestudyCtrl',[function(){
+    
+}]);
  
 
 
