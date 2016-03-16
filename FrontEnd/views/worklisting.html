@@ -1,0 +1,46 @@
+<div class="work-block-switch angular-animate"  ng-show="mySwitch">
+    <div class="work-block work-block-list angular-animate" ng-repeat="item in workData | filter:searchText  | limitTo:workLimit">   
+        <div class="layout-wrapper">
+            <div class="block-wrap layout-sm-6">
+                <div class="block work-link layout-sm-6" style="background:{{item.color}};">
+                    <a class="link-block" ng-href="#/casestudy/{{item.name}}">
+                        <img ng-src="{{item.image.imageLogoWhite}}" alt="" class="img-middle">
+                        <i class="icon-down-arrow-metro"></i>
+                    </a>
+                </div>
+                <a class="block work-view-more layout-sm-6" ng-href="#/casestudy/{{item.name}}">
+                    <i class="icon-arrow-right-metro"></i>
+                    <span>view more details</span>
+                </a>
+            </div>
+        </div>
+        <div class="layout-wrapper work-dec-panel"> 
+            <div class="layout-sm-6 work-dec">
+                <div class="status">{{item.status}}</div>
+                <h2>{{item.name}}</h2>
+                <p>{{item.description}}</p>
+            </div>
+            <figure class="layout-sm-6 work-img">
+                <img ng-src="{{item.image.imagework}}" alt="">
+            </figure>
+        </div>
+    </div>
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+</div>
+
+<div class="work-block-switch angular-animate"  ng-show="!mySwitch">
+    <div class="work-block work-block-grid layout-sm-3 angular-animate" ng-repeat="item in workData | filter:searchText">
+        <div class="block-wrap"> 
+            <div class="block work-link" style="background:{{item.color}};">
+                <a class="link-block" ng-href="#/casestudy/{{item.name}}">
+                    <img ng-src="{{item.image.imageLogoWhite}}" alt="" class="img-middle">
+                    <i class="icon-down-arrow-metro"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

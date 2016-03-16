@@ -1,10 +1,10 @@
 footer{
     .menu-block{
         padding: 20px 0;
-        background-color: darken($secondary-color, 4.5%);
+        background-color:$grey-bg-secondary;
         text-align: center;
         .footer-logo {
-            color: $header-text;
+            color:#000;
             font-family: $title-font;
             font-size: 22px;
             display: block;
@@ -17,12 +17,12 @@ footer{
             margin-left: 10px;
         }
         a{
-            color: lighten($header-text, 20%);
+            color:$grey-text-secondary;
             font-size: 16px;
             margin-top: 5px;
         }
         a:hover{
-            color: lighten($header-text, 10%);
+            color:$grey-text-primary;
         }
     }
     .social-links{
@@ -30,7 +30,7 @@ footer{
     }
 }
 .design-quote{
-    background-color: $black;
+    background-color:$black;
     .content-quote{
         background: url(../images/LeoBurnett.png) no-repeat 100% 100% ;
         @include background-size(40%);
@@ -60,7 +60,9 @@ footer{
         display: inline-block;
         font-size: 12px;
         vertical-align: middle;
-        color: lighten($grey-medium, 7%);
+        color:$grey-text-secondary;
+        margin-top:5px;
+        line-height:20px;
     }
     .powered-by{
         span{

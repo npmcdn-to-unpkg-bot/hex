@@ -1,0 +1,120 @@
+.approach-panel{
+    background:#909090 url("../images/work/bg-work.jpg") no-repeat scroll center 0;
+}
+.approach-menu-panel{
+    background:#fff;
+    margin-bottom:30px;
+    &.fixed{
+        left:0;
+        right:0;
+        top:0;
+        z-index:2000;
+        @include box-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
+    }
+}
+.approach-menu{
+    position:relative;
+    margin:0 -15px;
+    ul{}
+    li{
+        color:$grey-text-secondary;
+        font-size:13px;
+        float:left;
+        height:46px;
+        padding:17px 0 0;
+        margin:0 8px 0 0;
+        cursor:pointer;
+        &:hover{
+            color:$title-in-theme;
+        }
+    }
+    li.active{
+        color:$title-in-theme; 
+    }
+}
+.step-count{
+    width:40px;
+    height:40px;
+    text-align:center;
+    font-weight:500;
+    font-size:16px;
+    line-height:40px;
+    display: block;
+    float:left;
+    margin-right:10px;
+    background:$title-in-theme;
+    color:$territory-color;
+    position:absolute;
+    z-index:100;
+    top:100%;
+    left:-15px;
+}
+.img-approach-frontend{
+    background:#425b71;
+    display:none;
+    padding:50px 0 0;
+    .layout-container{
+        padding:0 3px;
+    }
+    img{
+        width:100%;
+        display: block;
+    }
+}
+.approach-launch-panel{
+    background:$primary-color;
+    position:relative;
+    padding:50px 0;
+    .layout-container{
+        position:static;
+    }
+    h4{
+        font-size:14px;
+        margin:0;
+    }
+}
+.approach-content{
+    text-align:center;
+    h4{
+        font-size:18px;
+        font-weight:500;
+        margin:50px 0 10px;
+        text-transform:uppercase;
+        color:#000;
+    }
+    p{
+        font-size:16px;
+        font-family:$font-family-base;
+        a{
+            font-weight:500;
+            text-decoration:underline;
+            &:hover{
+                color:#000;
+                text-decoration:none;
+            }
+        }
+    }
+}
+.launch{
+    background:$primary-color;
+    text-align: center;
+    justify-content: center;
+    display:flex;
+    align-items: center;
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin:0;
+    left:0;
+    right:0;
+    color:$title-in-theme;
+    font-weight:800;
+    font-size:60px;
+    @include transition(all 2s ease);
+    display:none;
+}
+.approach-launch-panel.launch-animation{
+    .launch{
+        opacity:0;
+    }
+}

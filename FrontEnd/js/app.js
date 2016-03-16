@@ -6,31 +6,79 @@ designApp.config(['$routeProvider', '$animateProvider', function($routeProvider,
         templateUrl: 'views/home.html',
         controller : 'homeCtrl',
         controllerAs: 'home'
-    }).when('/portfolio',{
-        templateUrl: 'views/portfolio.html',
-        controller: 'portfolioCtrl',
-        controllerAs: 'portfolio'
+    }).when('/work',{
+        templateUrl: 'views/work.html',
+        controller: 'workCtrl',
+        controllerAs: 'work'
     }).when('/casestudy/:id',{
         templateUrl: 'views/casestudy.html',
         controller: 'casestudyCtrl',
         controllerAs: 'casestudy'
+    }).when('/approach',{
+        templateUrl: 'views/approach.html',
+        controller: 'approachCtrl',
+        controllerAs: 'approach'
+    }).when('/contact',{
+        templateUrl: 'views/contact.html',
+        controller : 'contactCtrl',
+        contact : 'contact'
+    }).when('/about',{
+        templateUrl: 'views/about.html',
+        controller : 'aboutCtrl',
+        controllerAs : 'about'
     }).otherwise(
         {redirectTo:'/'}
     )
     $animateProvider.classNameFilter(/angular-animate/)
 }]); 
-
-/*designApp.run(['$rootScope', '$location', '$routeParams', function($rootScope, $location, $routeParams){
-    $rootScope.$on('$routeChangeSuccess', function(){
+ 
+ 
+designApp.run(['$rootScope', '$routeParams', '$location', '$window', '$timeout', function($rootScope, $routeParams, $location, $window, $timeout){
+    //$rootScope.$on('$routeChangeSuccess', function(){
+        var w = angular.element($window); 
+        $rootScope.contactShow = false;
         $rootScope.pageName = $location.path().split('/')[1];
-        $rootScope.casestudyName = $routeParams.id;
-            if($rootScope.pageName){
-                $rootScope.banner = 'views/banner/bnr-' + $rootScope.pageName + '.html';
+    
+        // contact page popup or page find
+        //================================
+        $rootScope.contact =  function(){
+            if($rootScope.pageName == 'contact'){
+                $('html, body').animate({
+                    scrollTop: $('.inner-banner').innerHeight() 
+                });
             }else{
-                $rootScope.banner = 'views/banner/bnr-home.html';
+                 if ($rootScope.contactShow){
+                    $rootScope.contactShow = false;
+                }else{
+                    $rootScope.contactShow = true;
+                }
             }
-    });
-}])*/
+        };
+        
+        // adding active class on selected menu
+        //=====================================
+        $rootScope.menuClass = function(path){
+            if (path ===  $rootScope.pageName){
+                return 'active';
+            }else{
+                return '';
+            }
+        }
+        
+        //menu fixed on scroll
+        //======================
+        $rootScope.wOffset = $window.pageYOffset;
+        $rootScope.bannerArea = $('.banner-wrap').innerHeight() 
+        w.bind("scroll", function(){
+            $timeout(function() {
+                $rootScope.bannerArea = $('.banner-wrap').innerHeight() 
+                $rootScope.wOffset = $window.pageYOffset 
+            });
+        });
+        
+         
+    //});
+}])
 
 
  

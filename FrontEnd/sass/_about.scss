@@ -1,0 +1,80 @@
+//write something...
+.about{
+    background:url('../images/bg-contact.png');
+    padding:80px 0 40px;
+}
+.about-content{
+    h2{
+        margin-bottom:40px;
+        font-size:32px;
+        line-height:40px;
+        color:#fff;
+        span{
+            position:absolute;
+            color:$grey-text-secondary;
+            top:-40px;
+            font-size:14px;
+            
+        }
+    }
+    p{
+        color:$grey-text-secondary;
+    }
+}
+.toobler-hex{
+    margin:0 0 30px;
+    span{
+        color:#fff;
+        font-weight:bold;
+        font-size:25px;
+    }
+    cite{
+        width:2px;
+        height:18px;
+        display:inline-block;
+        background:$grey-text-primary;
+        margin:0 12px; 
+    }
+}
+.aboutpage-process{
+    position:relative;
+    .bg-aboutpage-process{
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background:url('../images/bg-contact.png');
+        z-index:10;
+        display:block;
+        opacity:0.8; 
+    }
+}
+.about-process{
+    position:relative;
+    img{
+        display:block;
+    }
+    h3{
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+        font-size:18px;
+        font-weight:500;
+        line-height: 26px;
+        height:26px;
+        text-align:center;
+        z-index:20;
+        color:$grey-text-secondary;
+        span{
+            margin:10px auto 0;
+            display:block;
+            width:10%;
+            height:2px;
+            background:$primary-color;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-header {
+.main-header {
     padding: 20px 0;
     .main-logo {
         color: $header-text;
@@ -7,8 +7,9 @@ header {
     }
 }
 
+/*
 .inner-header {
-    background: url(../images/inner-header.jpg) no-repeat center center;
+    background:red url(../images/inner-header.jpg) no-repeat center center;
     @include background-size(cover);
     position: relative;
     &::before {
@@ -40,13 +41,14 @@ header {
         }
     }
 }
+*/
 
 .nav-btn {
     $width-line: 26px;
     $height-line: 4px;
     float: right;
     position: relative;
-    top: 10px;
+    margin-top:10px;
     @include size($width-line, 22px);
     .menu-line {
         width: $width-line;

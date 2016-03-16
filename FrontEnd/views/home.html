@@ -28,7 +28,7 @@
                 </div>
              </div>
             <div class="layout-sm-6">
-                <aside class="strip-wrap">
+                <aside class="stripe-wrap">
                     <div class="stripe-1"></div>
                     <div class="stripe-1"></div>
                     <div class="stripe-1"></div>
@@ -41,11 +41,10 @@
         <!--major-works start-->
         <div class="major-works-panel layout-wrapper">
             <div class="owl-major-works" ng-controller="majorWorksCtrl as works">
-                <div ng-repeat="work in works.portfolio | limitTo:4" ng-repeat-owl-carousel carousel-init="works.carouselInitializer">
+                <div ng-repeat="work in works.work | limitTo:4" ng-repeat-owl-carousel carousel-init="works.carouselInitializer" style="background:{{work.primaryColor}}" class="owl-bg">
                     <div class="layout-sm-6 heightset-major-works">
                         <figure class="major-works-img">
-                            <span class="helper"></span>
-                            <img ng-src="{{work.image.imageHome}}" alt="">
+                            <img ng-src="{{work.image.imageHome}}" alt="" class="img-middle">
                         </figure>
                     </div>
                     <div class="layout-sm-6 heightset-major-works">
@@ -53,7 +52,7 @@
                             <div class="table-cell">
                                 <h2>{{work.name}}</h2>
                                 <p>{{work.description | limitTo:150}}</p>
-                                <a href="#/portfolio" class="btn-major-works">View more</a>
+                                <a ng-href="#/casestudy/{{work.name}}" class="btn-major-works" style="color:{{work.primaryColor}}">View more</a>
                             </div>
                         </div>
                     </div>
@@ -65,63 +64,70 @@
         <!--block-wrap start-->
         <div class="block-wrap layout-wrapper">
             <div class="layout-sm-6">
-                <a class="block more-works layout-xs-6">
+                <a class="block more-works layout-xs-6" ng-href="#/work">
                     <span>see more works?</span>
                 </a>
-                <a class="block work-with-us-link layout-xs-6">
+                <a class="block work-with-us-link layout-xs-6" ng-href="#/work">
                     <span>work with us?</span>
                 </a>
             </div>
         </div>
         <!--block-wrap end-->
      
-    <!--homeCtrl start-->       
-    <div ng-controller="homeTeamCtrl as homeTeam"> 
-        <!--meet-our-team start-->
-        <div class="meet-our-team-panel layout-wrapper">
-            <div class="layout-sm-6">
-                <div class="meet-our-team-content"> 
-                    <h3 class="title">Meet our team</h3>
-                    <h4>Lorem Ipsum is simply dummy text of the printing.</h4>
-                    <p>Bound by a passion for pragmatic problem-solving, we want to find simple solutions to complicated problems.</p>
+        <!--homeCtrl start-->       
+        <div ng-controller="homeTeamCtrl as homeTeam"> 
+            <!--meet-our-team start-->
+            <div class="meet-our-team-panel layout-wrapper">
+                <div class="layout-sm-6">
+                    <div class="content-half-block meet-our-team-content"> 
+                        <h3 class="title">Meet our team</h3>
+                        <h4>Lorem Ipsum is simply dummy text of the.</h4>
+                        <p>Bound by a passion for pragmatic problem-solving,  by a passion for pragmatic problem-solving we want to find simple solutions to complicated problems.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="layout-sm-6">
-                <div class="meet-our-team">
-                    <ul> 
-                        <li ng-repeat="team in homeTeam.teamMembers.slice(homeTeam.start, homeTeam.end)" ng-class="['team-'+$index]" class="angular-animate">
-                            <div class="v-middle-wrap">
-                                <span class="helper"></span>
-                                <div class="v-middle">
-                                    <figure>
-                                        <img ng-src="{{team.image}}" alt="">
-                                    </figure>
-                                    <h5>{{team.name}}</h5>
-                                    <p>{{team.desigination}}</p>
+                <div class="layout-sm-6 block-wrap">
+                    <div class="meet-our-team">
+                        <ul> 
+                            <li ng-repeat="team in homeTeam.teamMembers.slice(homeTeam.start, homeTeam.end)" ng-class="['team-'+$index]" class="angular-animate">
+                                <div class="v-middle-wrap">
+                                    <span class="helper"></span>
+                                    <div class="v-middle">
+                                        <figure>
+                                            <img ng-src="{{team.image}}" alt="">
+                                        </figure>
+                                        <h5>{{team.name}}</h5>
+                                        <p>{{team.desigination}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                        <div class="block hide-mobile"></div>
+                     <div class="prev-next-wrap layout-sm-6">
+                        <div class="owl-prev" ng-click="homeTeam.prev(homeTeam.start, homeTeam.end)"><i class="icon-arrow-thin-left"></i></div>
+                        <div class="owl-next" ng-click="homeTeam.next(homeTeam.start, homeTeam.end)"><i class="icon-arrow-thin-right"></i></div>
+                    </div>
+                    </div>
                 </div>
+                
             </div>
-        </div>
-        <!--meet-our-team end-->
+            <!--meet-our-team end-->
 
-        <!--block-wrap start-->
-        <div class="block-wrap layout-wrapper">
-            <div class="pull-right layout-sm-6 f-none-mobile">
-                <div class="prev-next-wrap layout-sm-6">
-                    <div class="owl-prev" ng-click="homeTeam.prev(homeTeam.start, homeTeam.end)"><i class="icon-arrow-thin-left"></i></div>
-                    <div class="owl-next" ng-click="homeTeam.next(homeTeam.start, homeTeam.end)"><i class="icon-arrow-thin-right"></i></div>
+            <!--block-wrap start-->
+            <div class="block-wrap layout-wrapper">
+                <div class="pull-right layout-sm-6 f-none-mobile">
+   <!--                 <div class="prev-next-wrap layout-sm-6">
+                        <div class="owl-prev" ng-click="homeTeam.prev(homeTeam.start, homeTeam.end)"><i class="icon-arrow-thin-left"></i></div>
+                        <div class="owl-next" ng-click="homeTeam.next(homeTeam.start, homeTeam.end)"><i class="icon-arrow-thin-right"></i></div>
+                    </div>-->
+                    <div class="block stripe-1"></div>
+                    <a class="block about-team layout-sm-6">
+                        <span>about the design team</span>
+                    </a>
                 </div>
-                <a class="block about-team layout-sm-6">
-                    <span>about the design team</span>
-                </a>
             </div>
+            <!--block-wrap end-->
         </div>
-        <!--block-wrap end-->
-    </div>
-    <!--homeCtrl end-->
+        <!--homeCtrl end-->
     
     </div>
     <!--layout-container end-->
@@ -130,35 +136,35 @@
     <div class="layout-container">
         <!--block-wrap start-->
         <aside class="block-wrap">
-            <a class="block deployed layout-sm-3">
+            <div class="block deployed layout-sm-3">
                 <span>
                     <cite class="bold">200</cite>
                     Deployed Projects
                 </span>
-            </a>
-            <a class="block music layout-sm-3">
+            </div>
+            <div class="block music layout-sm-3">
                 <span>
                     <cite>500</cite>
                     Music in our playlist
                 </span>
-            </a>
-            <a class="block cup layout-sm-3">
+            </div>
+            <div class="block cup layout-sm-3">
                 <span>
                     <cite>1000</cite>
                     Cup of tea
                 </span>
-            </a>
+            </div>
         </aside>
         <!--block-wrap end-->
         
          <!--hex-block start-->
          <div class="hex-block layout-wrapper block-wrap">
-             <div class="layout-sm-6 strip-wrap">
+             <div class="layout-sm-6 stripe-wrap">
                 <div class="stripe-1"></div>
-                <div class="hex block layout-sm-6">
+                <a class="hex block layout-sm-6">
                     <h2>HEX</h2>
                     <span>Want you know more?</span>
-                </div>
+                </a>
                 <div class="stripe-1"></div>
                 <div class="stripe-1"></div>
              </div>

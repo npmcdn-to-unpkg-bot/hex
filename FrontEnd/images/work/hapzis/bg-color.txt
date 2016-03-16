@@ -1,0 +1,4 @@
+#Primary Color - #ea2c67
+
+
+#Secondary Color - #302226

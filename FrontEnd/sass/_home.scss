@@ -4,14 +4,15 @@
 .pull-right{
     float:right;
 }
-//header
-header{
+//main-header
+.main-header{
     position:absolute;
     left:0;
-    top: 0;
     right:0;
-    z-index:100;
 }
+
+
+
 //write something...
 .intro-stage {
     background-color: $primary-color;
@@ -33,12 +34,13 @@ header{
         font-weight:700;
         font-size:30px; 
         margin-bottom:10px;
+        color:#000;
     }
     p{
         font-family:$roboto;
         font-size:14px;
         font-weight:700;  
-        color:lighten($black, 30%);
+        color:$text-in-theme;
         margin-bottom:20px;
     }
     .layout-container{
@@ -62,13 +64,13 @@ header{
     padding:30px 0;
 }
 %title{
-    color:$title-color1;
+    color:$sub-title-color;
     text-transform:uppercase;
     display: inline-block;
     font-size:14px;
     position: relative;
     margin:20px 0 15px;
-    font-weight:bold;
+    font-weight:300;
     &:after{
         position:absolute;
         display: block;
@@ -78,7 +80,7 @@ header{
         right:-10px;
         top:50%;
         margin-top:-5px;
-        background:#e1ca4e;
+        background:$territory-color;
     }
 }
     %owl-buttons{
@@ -94,7 +96,7 @@ header{
         @include border-radius(0);
         position: relative;
         i{
-            color:$grey-medium;
+            color:$grey-text-primary; 
             font-size:12vw;
             top:50%;
             left:0;
@@ -103,7 +105,7 @@ header{
             position:absolute;
         }
         &:hover{
-            background:#f0f0f0;
+            background:$grey-bg-primary;
         }
     }
 
@@ -142,14 +144,19 @@ header{
 .major-works-panel{
     background:$territory-color;
     text-align: center;
-    padding:40px 0 50px;
+    .owl-bg{
+        display:inline-block;
+        width:100%;
+        padding:50px 0 70px;
+    }
     .owl-controls{
         position:relative;
+        margin:0;
         .owl-pagination{
             position:absolute;
             left:0;
             right:0;
-            bottom:-30px;
+            bottom:20px;
             .owl-page span{
                 background:#fff;
                 width:10px;
@@ -163,18 +170,23 @@ header{
 .major-works-img{
     max-width:100%;
     padding:0 12%;
+    img{
+        position: static;
+    }
 }
 .major-works-box{
     h2{
         color:#fff;
         font-size:20px;
         text-transform:uppercase;
+        margin-top:15px;
     }
     p{
         display: none;
+        color:#fff;
     }
     .btn-major-works{
-        color:#0076b2;
+        color:$primary-color;
         background:#fff;
         @include border-radius(2px);
         padding:8px 17px;
@@ -191,7 +203,6 @@ header{
         height:calc(100vw - 25vw);
         display: block;
         position: relative;
-        cursor:pointer;
         text-align:center;
         @include transition(none);
         span{
@@ -199,73 +210,194 @@ header{
             bottom:21%;
             left:0;
             right:0;
-            text-decoration:underline;
             font-size:5vw;
-            color:$grey-medium2;
+            text-transform:uppercase;
+        }
+    }
+    a.block {
+        cursor:pointer;
+        span{
+            text-decoration:underline;
             text-transform:lowercase;
         }
         &:hover{
             span{
+                text-decoration:none; 
                 color:#000;
             }
-            span{
-                text-decoration:none;
-            }
         }
     }
-    .more-works, .work-with-us-link{
-        height:calc(50vw - 30px);
-        span{
-            font-size:4vw;
-            bottom:14%;
-        }
-    }
+    //home
+    //========
     .more-works{
         background:$primary-color url('../images/ico-seemoreworks.png') no-repeat center calc(50% - 10px);
+        span{
+            color:$text-in-theme;
+        }
     }
     .work-with-us-link{
-        background:$white-grey url('../images/ico-work-with-us-link.png') no-repeat center calc(50% - 10px);
+        background:$grey-bg-secondary url('../images/ico-work-with-us-link.png') no-repeat center calc(50% - 10px);
     }
     .about-team{
-        background:$primary-color url('../images/ico-about.png') no-repeat center calc(50% - 20px);
+        background:$primary-color url('../images/ico-about.png') no-repeat center calc(50% - 10px);
+        span{
+            color:$text-in-theme;
+        }
     }
     .deployed{
-        background:$white-grey2 url('../images/ico-deployed-projects.png') no-repeat center calc(50% - 20px);
+        background:$grey-bg-primary url('../images/ico-deployed-projects.png') no-repeat center calc(50% - 30px);
         @extend %hexblock;
     }
     .music{
-        background:#fff url('../images/ico-music.png') no-repeat center calc(50% - 20px);
+        background:#fff url('../images/ico-music.png') no-repeat center calc(50% - 30px);
         @extend %hexblock;
     }
     .cup{
-        background:$white-grey2 url('../images/ico-cup.png') no-repeat center calc(50% - 20px);
+        background:$grey-bg-primary url('../images/ico-cup.png') no-repeat center calc(50% - 30px);
         @extend %hexblock;
     }
     .hex{
-        background:$white-grey2;
+        background:$grey-bg-primary;
         h2{
             font-family:$title-font;
             font-size:30px;
             margin-top:35%;
             display: inline-block;
-            color:$grey-medium2;
+            color:$grey-text-primary;
         }
         span{
             bottom:35%;
+            color:$grey-text-primary;
         }
     }
+    //casestudy
+    //==============
+    /*.ux{
+        background:$grey-bg-primary url('../images/ico-ux.png') no-repeat center calc(50% - 10px);
+    }*/
+    .sketch{
+        background:$grey-bg-primary url('../images/ico-sketch.png') no-repeat center calc(50% - 10px);
+    }
+    .wireframe{
+        background:$grey-bg-secondary url('../images/ico-wireframe.png') no-repeat center calc(50% - 10px);
+    }
+    .communication{
+        background:$grey-bg-secondary url('../images/ico-communication.png') no-repeat center calc(50% - 10px);
+    }
+    .requirment{
+        background:$grey-bg-secondary url('../images/ico-requirment.png') no-repeat center calc(50% - 10px);
+    }
+    .study{
+        background:$grey-bg-primary url('../images/ico-study.png') no-repeat center calc(50% - 10px);
+    }
+    .research{
+        background:$grey-bg-secondary url('../images/ico-research.png') no-repeat center calc(50% - 10px);
+    }
+    .prototyping{
+        background:$grey-bg-secondary url('../images/ico-prototyping.png') no-repeat center calc(50% - 10px);
+    }
+    .architecture{
+        background:$grey-bg-primary url('../images/ico-architecture.png') no-repeat center calc(50% - 10px);
+    }
+    .journy{
+        background:$grey-bg-primary url('../images/ico-journy.png') no-repeat center calc(50% - 10px);
+    }
+    .testing{
+        background:$grey-bg-secondary url('../images/ico-testing.png') no-repeat center calc(50% - 10px);
+    }
+    .interactivity{
+        background:$grey-bg-secondary url('../images/ico-interactivity.png') no-repeat center calc(50% - 10px);
+    }
+    .layout{
+        background:$grey-bg-primary url('../images/ico-layout.png') no-repeat center calc(50% - 10px);
+    }
+    .illustration{
+        background:$grey-bg-primary url('../images/ico-layout.png') no-repeat center calc(50% - 10px);
+    }
+    .coding{
+        background:$grey-bg-secondary url('../images/ico-coding.png') no-repeat center calc(50% - 10px);
+    }
+    .animation{
+        background:$grey-bg-primary url('../images/ico-animation.png') no-repeat center calc(50% - 10px);
+    }
+    .quality{
+        background:$grey-bg-secondary url('../images/ico-quality.png') no-repeat center calc(50% - 10px);
+    }
+    .qa-testing{
+        background:$grey-bg-primary url('../images/ico-qa-testing.png') no-repeat center calc(50% - 10px);
+    }
+    .qa-assurance{
+        background:$grey-bg-primary url('../images/ico-qa-assurance.png') no-repeat center calc(50% - 10px);
+    }
+    /*.ui{
+        background:$white-grey2 url('../images/ico-ui.png') no-repeat center calc(50% - 10px);
+    }*/
+   /* .photoshop{
+        background:$white-grey2 url('../images/ico-ps.png') no-repeat center calc(50% - 10px);
+    }
+    .illustrator{
+        background:$white-grey url('../images/ico-ai.png') no-repeat center calc(50% - 10px);
+    }*/
+
+    .go-bottom{
+        background:$primary-color none;
+        i{
+            font-size:52px;
+            position:absolute;
+            left:0;
+            right:0;
+            top:40%;
+        }
+    }
+    .go-bottom-used{
+        background:$grey-text-primary none;
+        span,i{
+            color:$grey-text-secondary;
+        }
+    }
+    &.used-tools{
+        .block{
+            background:$grey-bg-secondary;
+            @include box-shadow(inset 0px 0px 1px lighten($grey-text-secondary, 10%));
+            img{
+                position:absolute;
+                left:0;
+                right:0;
+                top:-10px;
+                bottom:0;
+                margin:auto;
+            }
+        }
+    }
+    .project-color{
+        .color-name, .color-code{
+            color:$secondary-color;
+            opacity:0.8;
+            font-size:14px;
+            position:absolute;
+            left:18%;
+            top:25%;
+            text-transform:uppercase;
+        }
+        .color-code{
+            font-size:22px;
+            font-weight:500;
+            top:54%;
+        }
+    }
+}
+.rotate-270{
+    @include rotate(270deg);
 }
 %hexblock{
     span{
         text-decoration:none;
+        color:$grey-text-primary; 
         cite{
             font-weight:bold;
             display: block;
             font-size:6vw;
-            line-height:12px;
-        }
-        &:hover{
-            text-decoration:underline;
+            line-height:5vw;
         }
     }
 }
@@ -299,13 +431,24 @@ header{
         margin-left:-2px;
     }
 }
+%img-middle{
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    position:absolute;
+    margin:auto;
+}
+.img-middle{
+    @extend %img-middle;
+}
 //meet-our-team-panel
 .meet-our-team-panel{
     background:#fff;
 }
-.meet-our-team-content{
-    margin-bottom:30px;
-    padding:15px 15px 0;
+.content-half-block{
+    padding:15px 15px 30px;
+    background:#fff;
     .title{
         @extend %title;
     }
@@ -317,7 +460,6 @@ header{
 .meet-our-team{
     li{
         text-align: center;
-        background:$white-grey;
         padding:10% 0 9%;
         figure{
             margin-bottom:5px;
@@ -327,7 +469,7 @@ header{
             margin-bottom:0;
         }
         p{
-            color:#757677;
+            color:$grey-text-primary;
             font-size:16px;
         }
     }
@@ -338,18 +480,19 @@ header{
     padding:30px;
     h3{
         font-size:14px;
-        color:$title-color1;
+        color:$grey-text-secondary;
         text-transform:uppercase;
     }
     h2{
         font-size:20px;
-        color:$title-color1; 
+        color:$grey-text-primary; 
     }
     p{
         font-size:16px; 
+        color:$grey-text-primary;
     }
     a{
-        color:$title-color1; 
+        color:$grey-text-primary;
         text-decoration: underline;
         &:hover{
             text-decoration:none;
@@ -372,14 +515,15 @@ header{
     }
     .owl-page{
         span{
-            background:$black-light;
+            background:$grey-bg-primary !important;
             margin:0 5px 0 0 !important;
             width: 11px !important;
             height:11px !important;
+            opacity:1 !important;
         }
         &.active{
             span{
-                background:$primary-color;
+                background:$territory-color !important;
             }
         }
     }
@@ -393,15 +537,16 @@ header{
     h3{
         font-size:18px;
         margin-bottom:10px;
+        color:$title-in-theme
     }
     span{
-        color:#6f6b51;
+        color:$text-in-theme;
         font-size:16px;
         margin-bottom:25px;
         display: block;
     }
     p{
-        color:#535134;
+        color:$text-in-theme;
     }
     figure{
         position:absolute;
@@ -413,4 +558,10 @@ header{
             display: block;
         }
     }
+}
+.content-area{
+    position:relative;
+}
+.hidden{
+    visibility:hidden !important;
 }

@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('../fonts/icomoon.eot?vom9ns');
-    src:    url('../fonts/icomoon.eot?vom9ns#iefix') format('embedded-opentype'),
-        url('../fonts/icomoon.ttf?vom9ns') format('truetype'),
-        url('../fonts/icomoon.woff?vom9ns') format('woff'),
-        url('../fonts/icomoon.svg?vom9ns#icomoon') format('svg');
+    src:    url('../fonts/icomoon.eot?upg2yp');
+    src:    url('../fonts/icomoon.eot?upg2yp#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?upg2yp') format('truetype'),
+        url('../fonts/icomoon.woff?upg2yp') format('woff'),
+        url('../fonts/icomoon.svg?upg2yp#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,6 +24,33 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-close:before {
+    content: "\e916";
+}
+.icon-message:before {
+    content: "\e912";
+}
+.icon-phone:before {
+    content: "\e913";
+}
+.icon-skype:before {
+    content: "\e914";
+}
+.icon-tick:before {
+    content: "\e915";
+}
+.icon-desktop:before {
+    content: "\e90f";
+}
+.icon-mobile:before {
+    content: "\e910";
+}
+.icon-tab:before {
+    content: "\e911";
+}
+.icon-link:before {
+    content: "\e90e";
+}
 .icon-arrow-right-metro:before {
     content: "\e900";
 }
@@ -67,4 +94,3 @@
     content: "\e90d";
 }
 
-//write something...

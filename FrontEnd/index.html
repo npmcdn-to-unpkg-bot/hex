@@ -21,16 +21,27 @@
 </head>
 
 <body>
+    <!--contact start-->
+    <div ng-if="contactShow" ng-include=" 'views/contact.html' " class="contact-popup angular-animate"></div>
+    <!--contact end-->
+    
     <!--header start-->
-    <header>
+    <header class="main-header" ng-class="{'color-change': wOffset > bannerArea, 'larger-width': wOffset > 20}">
         <div class="layout-container">
-            <a href="#/home" class="main-logo">HEX</a>
+            <a href="#/home" class="main-logo" >HEX</a> 
             <button class="btn nav-btn"><i class="menu-line"></i></button>
+            <ul>
+                <li ng-class="menuClass('work')"><a href="#/work" data-hover="WORK">WORK</a></li>
+                <li ng-class="menuClass('approach')"><a href="#/approach" data-hover="APPROACH">APPROACH</a></li>
+                <li ng-class="menuClass('about')"><a href="#/about" data-hover="ABOUT">ABOUT</a></li>
+                <li ng-class="menuClass('freebies')"><a href="#freebies" data-hover="FREEBIES">FREEBIES</a></li>
+                <li ng-click="contact()" ng-class="menuClass('contact')"><a href="javascript:void(0)" data-hover="CONTACT">CONTACT</a></li>
+            </ul>
         </div>
     </header>
     <!--header End-->
     
-    <section banner-dir>
+    <section class="banner-wrap" banner-dir>
         <div ng-include="banner"></div>
     </section>
     <!--content area start-->
@@ -42,9 +53,9 @@
             <div class="layout-container">
                 <span class="footer-logo">HEX</span>
                 <ul class="footer-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About us</a></li>
-                    <li><a href="contact-us.html">Contact us</a></li>
+                    <li><a ng-href="#/">Home</a></li>
+                    <li><a ng-href="#/aboutus">About us</a></li>
+                    <li><a ng-href="#/contactus">Contact us</a></li>
                 </ul>
                 <aside class="social-links">
                     <a href="#" class="icon-fb"></a>

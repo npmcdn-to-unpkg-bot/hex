@@ -6,10 +6,10 @@ designApp.factory('designAppFactory', function($http){
             url   : 'js/api/common/team.json' 
         })
     },
-    fac.portfolioFtry = function(){
+    fac.workFtry = function(){
         return $http({
             method : 'GET',
-            url    : 'js/api/common/portfolio.json'
+            url    : 'js/api/common/work.json'
         })
     },
     fac.testimonialFtry = function(){

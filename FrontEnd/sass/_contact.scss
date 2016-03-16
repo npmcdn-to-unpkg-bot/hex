@@ -1,0 +1,251 @@
+.contact-panel{}
+/*.contact-header{
+    background:$primary-color;
+    height:68px;
+    display:none;
+    .main-logo{
+        font-family:$title-font;
+        font-size:24px;
+        font-weight:bold;
+        color:$title-in-theme;
+        margin:13px 0 0;
+        display:inline-block; 
+    }
+    .close-enquiry{
+        float:right;
+        color:$title-in-theme;
+        font-size:16px;
+        margin:23px 0 0;
+        font-size:16px;
+        font-weight:500;
+        i{
+            color:$title-in-theme;
+            margin:0 0 0 8px;
+            position:relative;
+            top:2px;
+        }
+    }
+}*/
+.contact{
+    background:url('../images/bg-contact.png');
+    padding:50px 0;
+}
+.piece {
+	background: rgba(95,144,222,0.5);
+	float: left;
+}
+.contact-close{
+    position:absolute;
+    top:-30px;
+    right:20px;
+    cursor:pointer;
+    width:20px;
+    height:20px;
+    @include transition(all 0.3s linear);
+    display:none;
+    &:after, &:before{
+        position:absolute;
+        width:2px;
+        height:100%;
+        background:#fff;
+        display:block;
+        content:'';
+        left:49%;
+        @include transition(all 1s ease);
+    }
+    &:after{
+        @include rotate(40deg);
+    }
+    &:before{
+        @include rotate(-40deg);
+    }
+    &:hover{
+        @include scale(1.5);
+        &:after, &:before{
+            background:$primary-color;
+        }
+    }
+}
+.contact-address{
+    h3{
+        font-size:24px;
+        font-weight:500;
+        color:#fff;
+        margin:0 0 20px;
+    }
+    p{
+        color:#fff;
+        line-height:20px;
+        margin-bottom:20px;
+        span, a{
+            display: block;
+            margin-bottom:24px;
+            color:#fff; 
+        }
+        a{
+             &:hover{
+                color:$primary-color; 
+             }
+        }
+    }
+    address{
+        font-size:18px;
+        line-height:33px;
+        color:#fff; 
+        margin-bottom:30px;
+    }
+    .icon-skype, .icon-message, .icon-phone{
+        color:$primary-color;
+        margin:2px 15px 0 0;
+        float:left;
+        display:inline-block;
+    }
+    .icon-message{
+        font-size:20px;
+    }
+    .icon-phone, .icon-skype{
+        font-size:23px;
+    }
+}
+.social-media{
+    margin:50px 0 0;
+    a{
+        color:$grey-bg-secondary;
+        font-size:20px;
+        margin:0 20px 0 0;
+        &:hover{
+            color:$primary-color; 
+        }
+    }
+}
+.contact-form{
+    margin-bottom:25px;
+    padding-bottom:35px;
+    border-bottom:1px solid darken($grey-text-primary, 10%);
+}
+.form-control{
+    margin-bottom:20px;
+    .field {
+        width:100%;
+        input, textarea{
+            width:100%;
+            border:none;
+            background:#4a4949;
+            height:43px;
+            padding:10px;
+            color:$grey-text-secondary;
+            font-family:$paragraph;
+        }
+        textarea{
+            height:100px;
+            max-height:100px;
+            max-width:100%;
+        }
+        input.name{
+            width:80%;
+        }
+        input.phone{
+            width:60%;
+        }
+    }
+    label{
+        display:none;    
+    }
+    @include placeholder {
+        color: $grey-text-secondary;
+        font-family:$font-family-base;
+        font-size:14px;
+        font-weight:500;
+    }
+}
+.checkbox-wrap{
+    position:relative;
+    margin-top:20px;
+    label{
+        display:inline-block;
+        margin:0 20px 15px 0;
+        color:$grey-text-secondary;
+    }
+    .checkbox{
+        visibility:hidden;
+        width:18px;
+        height:18px;
+        position:absolute;
+    }
+    .chekcbox-icon{
+        width:18px;
+        height:18px;
+        background:#4a4949;
+        display:inline-block; 
+        vertical-align:middle;
+        margin:-1px 10px 0 0;
+    }
+    .checkbox:checked + .chekcbox-icon{
+        @extend .icon-tick;
+        font-family:$icon;
+        padding:1px;
+        color:$primary-color;
+    }
+    h6{
+        color:$primary-color;
+        font-size:16px;
+        margin:0 0 15px;
+    }
+}
+.submit-query{
+    border:none;
+    background:$territory-color;
+    font-family:$font-family-base;
+    color:#000;
+    padding:0 25px;
+    font-size:14px;
+    font-weight:bold;
+    height:50px;
+    text-transform:uppercase;
+    cursor:pointer;
+    &:hover{
+        background:$primary-color;
+    }
+}
+
+.contact-popup{
+    position:absolute;
+    z-index:1003;
+    left:0;
+    right:0;
+    border-bottom:5px solid $primary-color;
+    .contact-header, .contact-close{
+        display:block;
+    }
+}
+ 
+// contact popup animation
+//========================
+.contact-popup.ng-enter{
+    top:-100%;
+    opacity:0.5;
+    height:0;
+    overflow: hidden;
+    @include transition(height 0.3s linear);
+    position:fixed;
+}
+.contact-popup.ng-enter-active{
+    top:0;
+    opacity:1;
+    position:fixed;
+    height:100vh;
+}
+.contact-popup.ng-leave{
+    top:0;
+    opacity:1;
+    position:fixed;
+    height:100vh;
+    overflow: hidden;
+    @include transition(height 0.3s linear);
+}
+.contact-popup.ng-leave-active{
+    opacity:1;
+    top:0;
+    position:fixed;
+    height:0;
+}

@@ -5,6 +5,20 @@
     $height-lg-2 : ($layout-lg - $grid-gutter)/4*2;
     $height-lg-3 : ($layout-lg - $grid-gutter)/4*3;
     $height-lg-4 : ($layout-lg - $grid-gutter)/4*4;
+    
+    
+    // main-header common
+    //===================
+    .main-header{
+        .main-logo{
+            left:50%;
+            margin-left:-$height-lg-4/2;
+        }
+        .nav-btn{
+            left:50%;
+            margin-left:($height-lg-4/2)- 26
+        }
+    }
     //home-main-panel
     //==================
     .home-main-panel{
@@ -21,9 +35,9 @@
     //=================
     //end home
     
-    //portfolio
+    //work
     //===============
-    .portfolio-block-list.ng-enter-active{
+    .work-block-list.ng-enter-active{
         height:$height-lg-3 !important; // (1014/4)*3
     }
     
@@ -45,18 +59,80 @@
     .case-project-dec, .case-project-spec{
         padding:90px;
     }
+    .complete-site{
+        img{
+            bottom:5%;
+        }
+        .screen-desktop{
+            right:-22%;
+        }
+    }
+    .screen-active-desktop{
+        .screen-mobile{
+            left:25%;
+        }
+         .screen-tab{
+            left:25%;
+        }
+         .screen-desktop{
+            left:auto;
+            right:-50px;
+            opacity:1;
+        }
+    }
+    .mail-us-panel{
+        padding-top:170px;
+    }
+    .image-front, .image-front ul{
+        width:$layout-lg;
+    }
     
-    //===============
+    .img-approach-frontend{
+        .layout-container{
+            padding:0 3px;
+        }
+    }
+    //contact
+    //=======
+    .contact-header{
+        height:90px;
+        .main-logo{
+            margin-top:23px;
+            font-size:30px;
+        }
+        .close-enquiry{
+            margin-top:36px;
+        }
+    }
+    
     //height set
-    .work-with-us-panel, .strip-wrap, .hex-download-stuff, .inner-banner, .portfolio-dec-panel, .meet-our-team{
-        height:$height-lg-2; // (1014/4)*2
-    }
-    .major-works-panel, .heightset-major-works, .portfolio-block-list{
-        height:$height-lg-3; // (1014/4)*3
-    }
-    .block-wrap .block, .block-wrap .prev-next-wrap, .meet-our-team li{
+    //==========
+    .block-wrap .block, 
+    .block-wrap .prev-next-wrap, 
+    .meet-our-team li, 
+    .ui-used-fonts, .ui-used-icons{
         height:$height-lg-1; // (1014/4)*1
     }
+    .stripe-1{
+        width:$height-lg-1;
+        height:$height-lg-1; 
+    }
+    //height set
+    .work-with-us-panel, 
+    .stripe-wrap, 
+    .hex-download-stuff, 
+    .inner-banner, 
+    .work-dec-panel, 
+    .meet-our-team,
+    .content-half-block,
+    .mail-us-panel,
+    .approach-image-panel{
+        height:$height-lg-2; // (1014/4)*2
+    }
+    .work-block-list{
+        height:$height-lg-3; // (1014/4)*3
+    }
+
 //end
 }
 

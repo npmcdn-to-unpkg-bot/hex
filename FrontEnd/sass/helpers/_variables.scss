@@ -2,12 +2,12 @@
 $yellow                 : #fee252;
 $white                  : #ffffff;
 $grey                   : #cccccc;
-$grey-medium            : #666666;
-$grey-medium2           : #58595b;
+$grey-medium            : #666666; //used
+$grey-medium2           : #58595b; //used
 $grey-light             : #999999; //used
 $black                  : #000000;
 $black-light            : #151515;
-$white-grey             : #fafafa;
+$white-grey             : #fafafa; //used
 $white-grey2            : #f5f5f5; //used
 $gray-input             : #f8f9fa;
 $danger-red             : #ec1c24;
@@ -18,7 +18,12 @@ $title-color1           : #58595b;
 
 $sub-bg                 : #909090; //used
 $casestudy-bg           : #555555; //used
-$territory-color        : #0076b2; //used
+
+
+
+ 
+ 
+
 
 //fonts
 $open-sans              : 'Open Sans', sans-serif;
@@ -30,11 +35,26 @@ $segoe-bold             : 'Segoe UI';
 //base colors  
 $primary-color          : $yellow !default;
 $secondary-color        : $white !default; 
+$territory-color        : #fec03a; //used , its used for small objective - dont use for text color in white bg
+
+$title-in-theme          :#2c2e30;
+$text-in-theme           :#574e21;
+
+$title-color             :#151515; //common title in white
+$text-color              :#111011; //common text color in white
+$sub-title-color         :#58595b; //sub title color in white
+
+$grey-bg-primary         :#f0f0f0;
+$grey-bg-secondary       :#f8f8f8;
+
+$grey-text-primary       : #666666; 
+$grey-text-secondary     : #999999; 
 
 //text colors
-$default-font-color     : $black-light !default;
-$title-font-color       : $black-light !default;
-$header-text            : $coffee-color !default;
+$default-font-color     : $text-color !default;
+$title-font-color       : $title-color !default;
+//$header-text            : $coffee-color !default;
+$header-text            : /*$text-in-white*/ $title-color !default;
 
 //Fonts
 $font-family-base       : $roboto !default; // options: $roboto | $openSans 

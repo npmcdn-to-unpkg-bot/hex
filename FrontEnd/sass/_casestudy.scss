@@ -16,7 +16,7 @@
         text-decoration:underline;
         &:hover{
             text-decoration:none;
-            color:$header-text;
+            color:#000;
         }
     }
 }
@@ -24,10 +24,15 @@
 //next-prev-project
 //===============
 .next-prev-project-panel{
+    @include box-shadow( rgba(0, 0, 0, 0.1) 1px 1px 2px);
     background:#fff;
     height:45px;
+    z-index:1000;
+    left:0;
+    right:0;
+    top:0;
     span{
-        color:$grey-light;
+        color:$grey-text-secondary;
         font-weight:500;
         display:inline-block;
         padding:14px 0;
@@ -35,15 +40,17 @@
         @include transition(color 0.3s ease);
         span{
             display:none;
+            @include transition(color 0.3s ease);
         }
         i{
             top:2px;
             position: relative;
+            @include transition(color 0.3s ease);
         }
         &:hover{
-            color:$header-text;
+            color:$grey-text-primary;
             i{
-                color:$header-text;
+                color:$territory-color;
             }
         }
     }
@@ -60,6 +67,7 @@
         display: block; 
         height:50vw;
         text-align:center;
+        position: relative;
     }
 }
 .case-abt-project{
@@ -81,3 +89,169 @@
 .case-project-spec{
     display:none;
 }
+
+.case-ux-image{
+    background:$territory-color;
+    figure{
+        text-align:center;
+        padding:80px 0;
+        img{
+            display:inline-block;
+            @include border-radius(2px);
+        }
+    }
+}
+
+.project-design{
+    img{
+        display:block;
+    }
+}
+.case-content-block{
+    background:#fff;
+    margin:0;
+    padding-bottom:30px;
+}
+.ui-used-fonts, .ui-used-icons{
+    padding:30px;
+    background:$grey-bg-primary;
+    h3{
+        @extend %title;
+        margin:0 0 30px;
+    }
+    h6{
+        font-size:14px;
+        color:$title-color1;
+        font-weight:300;
+        margin:0 0 10px;
+    }
+    .gap{
+        display:block;
+        height:20px;
+    }
+}
+.ui-used-icons{
+    background:$grey-bg-secondary;
+    margin:0; 
+    .icons-wrap{
+        display:block;
+        text-align: center;
+        margin:0 -8px; 
+        img{
+            /*margin:6px 8px;
+            display:inline-block;*/
+            /*max-width:50px;*/
+            position:absolute;
+            left:0;
+            right:0;
+            top:4%;
+            bottom:0;
+            margin:auto;
+            display:none;
+        }
+        img:first-child{
+            display:block;
+        }
+    }
+}
+.complete-site{
+    display:none;
+}
+
+.case-testimonial-panel{
+    background:$grey-bg-primary;
+    padding:80px 30px;
+    text-align:center;
+    p{
+        color:$grey-text-primary;
+        font-size:18px;
+        font-weight:100;
+        line-height:28px;
+        margin-bottom:40px;
+        font-family:$font-family-base;
+    }
+    figure{
+        margin-bottom:30px;
+    }
+    h5{
+        color:$territory-color;
+        font-size:16px;
+        font-weight:500;
+        margin:0;
+        span{
+            font-weight:300;
+            color:$grey-text-primary;
+            display:block;
+            font-size:90%;
+        }
+    }
+}
+
+.case-all-projects{
+    text-align:center;
+    font-size:0;
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background:#fff;
+    li{
+        display:inline-block;
+        width:160px;
+        height:160px;
+        position:relative;
+        @include transition(all 5s linear);
+        margin:0;
+        opacity:1;
+    }
+    li:first-child{
+        margin-left:-160px;
+    }
+}
+.mail-us-panel{
+    background:$primary-color;
+    padding:100px 0;
+    text-align:center;
+    h2{
+        color:$title-in-theme;
+        font-weight:600;
+        font-size:20px;
+    }
+}
+.mail-us{
+    border:2px solid $title-in-theme;
+    position: relative;
+    padding-right:25%;
+    @include box-shadow( 7px 6px 0px rgba(0,0,0,0.11));
+    background:rgba(0,0,0,0.1); 
+    input{
+        width:100%; 
+        border:0;
+        background:none;
+        height:40px;
+        padding:0 10px;
+        font-family:$font-family-base;
+        font-size:14px;
+        @include box-shadow( inset 5px 5px 0px $primary-color);
+    }
+    button{
+        background:$title-in-theme;
+        width:25%;
+        position: absolute;
+        right:0;
+        top:0;
+        border:0;
+        text-align:center;
+        height:40px;
+        font-family:$font-family-base;
+        color:$primary-color;
+        @include transition(all 0.3s ease);
+        &:hover{
+            color:#fff;
+        }
+    }
+    @include placeholder {
+        color: rgba(0,0,0,0.55);
+        font-family:$font-family-base;
+    }
+}
+ 

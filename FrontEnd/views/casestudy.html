@@ -1,47 +1,263 @@
 <!-- start next-prev-project-panel-->
-<section class="next-prev-project-panel">
+<section class="next-prev-project-panel" ng-class="{'fixed': wOffset > bnrHeight}">
     <div class="layout-container">
-        <span class="pull-left"><i class="icon-normal-arrow-left"></i> PREV<span>IOUS PROJECT</span></span>
-        <span class="pull-right">NEXT <span>PROJECT</span><i class="icon-normal-arrow-right"></i></span>
+        <span class="pull-left" ng-hide="casestudy.caseStart" ng-click="casestudy.casePrev()"><i class="icon-normal-arrow-left"></i> PREV<span>IOUS PROJECT</span></span>
+        
+        <span class="pull-right" ng-hide="casestudy.caseEnd" ng-click="casestudy.caseNext()">NEXT <span>PROJECT</span><i class="icon-normal-arrow-right"></i></span>
     </div>
 </section>
 <!-- end next-prev-project-panel-->
 <!--start casestudy-panel-->
-<section class="casestudy-panel">
+<section class="casestudy-panel layout-wrapper"> 
     <div class="layout-container">
         <!--start casestudy-master-image-->
         <div class="case-master-image">
             <div class="case-master-logo">
-                <div class="v-middle-wrap">
-                <span class="helper"></span>
-                <div class="v-middle">
-                    <img src="images/portfolio/advisorfi/logoCasestudy.png" alt="">
-                </div>
-                </div>  
+                 <img ng-src="{{casestudy.casestudyData.image.imageLogoColor}}" alt="" class="img-middle">
             </div>
             <figure>
-                <img src="images/portfolio/advisorfi/imageCasestudyTop.jpg" alt="">
+                <img ng-src="{{casestudy.casestudyData.image.imageCasestudyTop}}" alt="">
             </figure>
         </div>
         <!--end casestudy-master-image-->
         <div class="case-abt-project layout-wrapper">
             <aside class="case-project-dec layout-sm-7 ">
-                <h2>AdvisoryFi</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indusatry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h2 style="color:{{casestudy.casestudyData.primaryColor}}">{{casestudy.casestudyData.name}}</h2>
+                <p>{{casestudy.casestudyData.description}}</p>
             </aside>
             <aside class="case-project-spec layout-sm-5">
-                <h3>PROJECT SECTOR</h3>
-                <p>Financial and Busines</p>
+                <h3 style="color:{{casestudy.casestudyData.primaryColor}}">PROJECT SECTOR</h3>
+                <p>{{casestudy.casestudyData.projectSector}}</p>
                 
-                <h3>OUR ROLE</h3>
-                <p>UI/UX Design and Development</p>
+                <h3 style="color:{{casestudy.casestudyData.primaryColor}}">Project Requirment</h3>
+                <p>{{casestudy.casestudyData.projectRequirment}}</p>
                 
-                <h3>CLIENT</h3>
-                <p>Will Lopez</p>
+                <h3 style="color:{{casestudy.casestudyData.primaryColor}}">CLIENT</h3>
+                <p>{{casestudy.casestudyData.client}}</p>
                 
-                <a href="www.advisorfi.com" target="_blank">www.advisorfi.com</a>
+                <a href="//{{casestudy.casestudyData.website}}" target="_blank"> <i class="icon-link"></i>{{casestudy.casestudyData.website}}</a>
             </aside>
         </div>
     </div>
+
+    <!--start case-ux-panel-->
+    <div class="layout-container case-ux-panel">
+        <div class="block-wrap layout-wrapper">
+            <div class="layout-sm-6">
+                <div class="block go-bottom layout-xs-6 hide-mobile">
+                    <i class="icon-down-arrow-metro"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- start case-ux-content-wrap -->
+        <div class="case-ux-content-wrap block-wrap layout-wrapper">
+            <div class="layout-sm-6">
+                <div class="content-half-block case-content-block"> 
+                    <h3 class="title">UX PROTOTYPING</h3>
+                    <h4>Lorem Ipsum is simply dummy text of the printing.</h4>
+                    <p>Bound by a passion for pragmatic problem-solving, we want to find simple solutions to complicated problems. Bound by a passion for pragmatic problem-solving, we want to find simple solutions to complicated problems.</p>
+                </div>
+            </div>
+            <div class="layout-sm-6">
+                <div class="stripe-1"></div>
+                <div class="block-wrap layout-wrapper layout-xs-12">
+                    <div class="block sketch layout-xs-6">
+                        <span>Sketch</span>
+                    </div>
+                    <div class="block wireframe layout-xs-6">
+                        <span>Wireframe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end case-ux-content-wrap-->
+        <!--start case-ux-image-->
+        <div class="case-ux-image layout-wrapper hide-mobile" style="background:{{casestudy.casestudyData.primaryColor}}">
+            <figure>
+                <img ng-src="{{casestudy.casestudyData.image.imageUX}}" alt=""> 
+            </figure>
+        </div>
+        <!--end uxcase-ux-panel-->
+    </div>
+    <!--end case-panel-->
+    
+    <!--start case-ui-panel layout-container-->
+    <div class="case-ui-panel layout-container">
+        <div class="block-wrap layout-wrapper">
+            <div class="pull-right layout-sm-6 f-none-mobile">
+                <div class="stripe-1"></div>
+                <div class="block go-bottom layout-xs-6 hide-mobile">
+                    <i class="icon-down-arrow-metro"></i>
+                </div>
+            </div>
+        </div>
+        <!--start case-ui-content-wrap-->
+        <div class="case-ui-content-wrap">
+            <div class="layout-wrapper">
+                <div class="layout-sm-6 layout-wrapper"> 
+                <div class="content-half-block case-content-block hidden-sm"> 
+                    <h3 class="title">USER INTERFACE</h3>
+                    <h4>Lorem Ipsum is simply dummy text of the printing.</h4>
+                    <p>Bound by a passion for pragmatic problem-solving, we want to find simple solutions to complicated problems. Bound by a passion for pragmatic problem-solving, we want to find simple solutions to complicated problems.</p>
+                </div>
+                    <div class="layout-xs-12 layout-sm-6 pull-right f-none-mobile  ui-used-icons">
+                        <h3 class="title">ICON DESIGN</h3>
+                        <div class="icons-wrap">
+                            <img ng-src="{{icon}}" alt="" ng-repeat="icon in casestudy.casestudyData.icons">
+                        </div>
+                    </div>
+                    <div class="layout-xs-12 ui-used-fonts">
+                        <h3 class="title">FONTS USED</h3>
+                        <h6>Primary font</h6>
+                        <img ng-src="{{casestudy.casestudyData.fonts.primaryFont}}" alt="">
+                        <span class="gap"></span>
+                        <h6>Secondary font</h6>
+                        <img ng-show="casestudy.casestudyData.fonts.secondaryFont" ng-src="{{casestudy.casestudyData.fonts.secondaryFont}}" alt="">
+                        <span ng-show="!casestudy.casestudyData.fonts.secondaryFont">No secondary font</span>
+                    </div>
+                </div>
+                <div class="layout-sm-6 hide-mobile">
+                <div class="content-half-block case-content-block"> 
+                    <h3 class="title">USER INTERFACE</h3>
+                    <h4>Lorem Ipsum is simply dummy text of the printing.</h4>
+                    <p>Bound by a passion for pragmatic problem-solving, we want to find simple solutions to complicated problems. Bound by a passion for pragmatic problem-solving, we want to find simple solutions to complicated problems.</p>
+                </div>
+                </div>
+            </div>
+            <div class="block-wrap layout-wrapper">
+                <div class="block project-color  layout-sm-3" style="background:{{casestudy.casestudyData.primaryColor}}">
+                    <div class="color-name">#primary-color</div>
+                    <div class="color-code">{{casestudy.casestudyData.primaryColor}}</div>
+                </div>
+                <div class="block project-color layout-sm-3" style="background:{{casestudy.casestudyData.secondaryColor}}">
+                    <div class="color-name">#secondary-color</div>
+                    <div class="color-code">{{casestudy.casestudyData.secondaryColor}}</div>
+                </div>
+                <div class="block go-bottom go-bottom-used layout-sm-3"> 
+                    <i class="icon-down-arrow-metro"></i>
+                    <span>USED TOOLS</span>
+                </div>
+            </div>
+            <div class="block-wrap layout-wrapper used-tools">
+                    <div class="block pull-right-sm layout-xs-6 layout-sm-3" ng-repeat="uiTool in casestudy.casestudyData.uiTools | orderBy: '-' ">
+                        <img alt="" ng-src="{{uiTool.uiToolImage}}">
+                        <span>{{uiTool.uiToolName}}</span>
+                    </div>
+            </div>
+        </div> 
+        <!--end case-ui-content-wrap-->
+        <div class="layout-wrapper project-design">
+            <figure>
+                <img ng-src="{{casestudy.casestudyData.image.imageDesign}}" alt="">
+            </figure>
+        </div>
+    </div>
+    <!--end case-ui-panel layout-container-->
+    
+    <!--start case-frontend-panel-->
+    <div class="case-frontend-panel layout-wrapper">
+        <div class="layout-container"> 
+            <div class="block-wrap layout-wrapper">
+                <div class="layout-sm-6">
+                    <div class="block go-bottom layout-sm-6 hide-mobile">
+                        <i class="icon-down-arrow-metro"></i>
+                    </div>
+                    <div class="stripe-1"></div>
+                </div>
+            </div>
+            <!--start frontend-content-->
+            <div class="layout-wrapper case-ux-content-wrap">
+                <div class="layout-sm-6">
+                <div class="content-half-block case-content-block"> 
+                    <h3 class="title">FRONT-END DEVELOPMENT</h3>
+                    <h4>Lorem Ipsum is simply dummy text of the printing.</h4>
+                    <p>Bound by a passion for pragmatic problem-solving, we want to find simple solutions to complicated problems. Bound by a passion for pragmatic problem-solving, we want to find simple solutions to complicated problems.</p>
+                </div>
+                </div>
+                <div class="layout-sm-6 block-wrap">
+                   <div class="block hidden hide-mobile"></div>
+                   <div class="block go-bottom go-bottom-used layout-sm-6">
+                        <i class="icon-down-arrow-metro"></i>
+                        <span>USED TOOLS</span>
+                    </div>
+                </div>
+            </div>
+            <!--end frontend-content-->
+            <div class="layout-wrapper">
+                <div class="block-wrap used-tools">
+                    <div class="layout-sm-3 block pull-right-sm layout-xs-6" ng-repeat="frondendTool in casestudy.casestudyData.frontendTools | orderBy: '-' ">
+                        <img ng-src="{{frondendTool.frontendToolImage}}" alt="">
+                        <span>{{frondendTool.frontendToolName}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end case-frontend-panel-->
+    
+    <!--start complete-site-->
+    <div class="complete-site {{screenActive}}"  screen-dir>
+        <div class="screen-img-wrap">
+            <img ng-src="{{casestudy.casestudyData.screens.mobile}}" alt="" class="screen-mobile angular-animate" >
+            <img ng-src="{{casestudy.casestudyData.screens.tab}}" alt="" class="screen-tab angular-animate">
+            <img ng-src="{{casestudy.casestudyData.screens.desktop}}" alt="" class="screen-desktop angular-animate"> 
+               <span class="show-fullsite layout-container">
+                   <i class="icon-mobile" style="color:{{casestudy.mobC}}" ng-click="screenActive='screen-active-mobile'; casestudy.currentScreen('mobC')"></i> 
+                   <i class="icon-tab" style="color:{{casestudy.tabC}}" ng-click="screenActive='screen-active-tab'; casestudy.currentScreen('tabC')"></i>
+                   <i class="icon-desktop" style="color:{{casestudy.desktopC}}" ng-click="screenActive='screen-active-desktop'; casestudy.currentScreen('desktopC')"></i> 
+               </span>
+        </div> 
+        <div class="layout-container">
+            <div class="layout-sm-6">
+               <div class="content-half-block case-content-block">
+               <h4 style="color:{{casestudy.casestudyData.primaryColor}}">A Beautiful Website Solution Designed to Engage Audiences Worldwide.</h4>  
+               <p>As a business owner or manager, the decision to opt for offshore software development can be difficult. As anyone who has experience knows, there are advantages and disadvantages to outsourcing software development.</p>
+               </div>
+            </div>
+        </div>
+    </div>
+    <!--end complete-site-->
+    
+    <!--start case-testimonial-panel-->
+    <div class="case-testimonial-panel">
+        <div class="layout-container">
+            <blockquote class="layout-sm-7">
+                <p>" {{casestudy.casestudyData.testimonial}} "</p>
+                <h5 class="hide-mobile" style="color:{{casestudy.casestudyData.primaryColor}}">{{casestudy.casestudyData.client}} <span>{{casestudy.casestudyData.clientProfession}}</span></h5>
+            </blockquote>
+            <div class="layout-sm-5">
+                <figure>
+                    <span><img ng-src="{{casestudy.casestudyData.clientImage}}" alt=""></span>
+                </figure>
+            </div>
+            <h5 class="hidden-sm" style="color:{{casestudy.casestudyData.primaryColor}}">{{casestudy.casestudyData.client}} <span>{{casestudy.casestudyData.clientProfession}}</span></h5>
+        </div>
+    </div>
+    <!--end case-testimonial-panel-->
+    
+    <!--start case-all-projects-->
+    <ul class="case-all-projects">
+        <li style="background:{{logo.primaryColor}}" ng-repeat="logo in casestudy.casestudy">
+            <img ng-src="{{logo.image.imageLogoWhite}}" alt="" class="img-middle"> 
+        </li>
+    </ul>
+    <!--end case-all-projects-->
+    
+    <!--start mail-us-panel-->
+    <div class="mail-us-panel">
+        <div class="layout-container">
+            <h2>WANT TO WORK WITH US</h2>
+            <form action="">
+                <div class="mail-us">
+                    <input type="text" placeholder="Please enter your email id">
+                    <button>ENQUIRE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--end mail-us-panel-->
 </section>
 <!--end casestudy-panel-->
+
+

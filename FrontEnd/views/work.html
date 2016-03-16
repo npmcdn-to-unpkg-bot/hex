@@ -1,0 +1,47 @@
+<section class="work-filter-panel" ng-class="{'fixed': wOffset > bnrHeight}">   
+    <div class="layout-container">
+        <div class="work-filter" ng-init="mySwitch=true">
+            <div class="icon-type-grid" ng-click="mySwitch=false" ng-class="{'current': !mySwitch}">
+                <div></div>
+                <div></div>
+                <div></div>
+                
+                <div></div>
+                <div></div>
+                <div></div>
+                
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="icon-type-list " ng-click="mySwitch=true" ng-class="{'current' : mySwitch}">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <ul>  
+                <li class="active" ng-click=" searchText.status= '' ">ALL</li>
+                <li ng-click="searchText.status= 'web' ">WEB</li>
+                <li ng-click="searchText.status='mobile'">MOBILE APP</li>
+                <li ng-click="searchText.status='branding'">BRANDING</li>
+                <li ng-click="searchText.status='graphic'">GRAPHIC</li>
+            </ul>
+            <div class="move" moving-dir></div>
+        </div>
+    </div>
+</section>
+<!--work-filter-panel end-->
+<!--work-panel start-->
+<section class="work-panel">
+    <div class="layout-container">
+        <div work-dir></div>
+    </div>
+</section>
+<!--work-panel end-->
+ 
+
+
+        
+        
+        
+ 
