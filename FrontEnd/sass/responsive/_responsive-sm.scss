@@ -164,6 +164,63 @@
         }
     }
     
+    //image-flip-panel
+    //================
+    $img-block1 : 100vw/5;
+    $img-block2 : 100vw/2.5;
+    /*$img-block-width1 : 100%/5;
+    $img-block-width2 : 100%/2.5;*/
+    .layer{
+        position:absolute;
+        left:0;
+        right:0;
+        height:100%;
+        background:rgba(0,0,0,0.5);
+        z-index:100;
+    }
+    .card{
+        width:100%;
+        height:100%;
+        .front, .back{
+            width:100%;
+            height:100%;
+            position: absolute;
+        }
+    }
+    .image-flip-panel{
+        height:$img-block2 - 1;
+        overflow: hidden;
+        position:relative;
+        .flip-container{
+            width:100vw;
+        }
+        img{
+            width:100%;
+        }
+        .img-flip{
+            display:block;
+            float:left;
+            width:$img-block1;
+            height:$img-block1;
+            overflow:hidden;
+        }
+        .img-flip-1-1{
+            width:$img-block1;
+            height:$img-block1;
+        }
+        .img-flip-1-2{
+            width:$img-block1;
+            height:$img-block2
+        }
+        .img-flip-2-2{
+            width:$img-block2;
+            height:$img-block2;
+        }
+        .img-flip-2-1{
+            width:$img-block2;
+            height:$img-block1;
+        }
+    }
     // footer
     //============
     footer {
@@ -251,6 +308,36 @@
     }
     // common sm end
     //====================
+    
+    //approach
+    //========
+    .approach{
+        background:#fff;
+        overflow: hidden;
+        padding:40px 0;
+        height:100vh;
+        max-height:700px;
+        .layout-container{
+            height:100%;
+        }
+        h2{
+            font-size:52px;
+            line-height:56px;
+            margin-top:0px;
+        }
+        p{
+            max-width:70%;
+            font-size:18px;
+            font-weight:500;
+        }
+        .great-company{
+            position:absolute;
+            bottom:0px;
+            left:0;
+            right:0;
+        }
+    }
+    
     
     // work with us panel
     //====================
@@ -345,20 +432,21 @@
     //=====================
     .block-wrap{
         .block{
-            span{
+            .block-text{
                 font-size:14px;
+                margin-top:10px;
                 cite{
-                    font-size:20px;
-                    line-height:20px;
+                    font-size:22px;
+                    line-height:24px;
+                    margin:0;
                 }
             }
         }
         .hex{
             h2{
-                margin-top:35% !important;
+                margin:0;
             }
-            span{
-                bottom:35% !important;
+            .block-text{
             }
         }
         &.used-tools{
@@ -537,13 +625,13 @@
     .work-panel{
         padding-top:93px;
     }
-    .work-view-more{
+    .work-view-more{ 
         float:left;
         i{
             font-size:40px;
             top:40%;
         }
-        span{
+        .block-text{
             display: block;
         }
     }
@@ -769,6 +857,12 @@
     }
     .casestudy-panel{
         padding-top:93px;
+    }
+    .next-project{
+        margin-top:-10px;
+        span{
+            font-size:22px;
+        }
     }
     //casestudy master image panel
     //============================
@@ -1021,19 +1115,24 @@
         }
     } 
     .mail-us-panel{
-        padding-top:90px;
+        .layout-container{
+            padding:50px 15px 0;
+        }
         h2{
-            font-size:34px;
-            margin-bottom:40px;
+            font-size:28px;
+            margin-bottom:20px;
+        }
+        &.mail-us-panel-show{
+            height:$height-sm-2/4*3;
         }
     }
     .mail-us{
         margin:0 auto;
-        width:650px;
+        width:550px;
         @include box-shadow( 9px 9px 0px rgba(0,0,0,0.11));
         padding-right:140px;
         input, button{
-            height:55px;
+            height:50px;
             font-size:18px;
         }
         input{
@@ -1282,7 +1381,6 @@
     .work-dec-panel, 
     .meet-our-team,
     .content-half-block,
-    .mail-us-panel,
     .approach-image-panel{
         height:$height-sm-2; // (720/4)*2  
     }
@@ -1293,6 +1391,56 @@
     //=============
     .major-works-panel,.heightset-major-works{
         height:100vh;
+    }
+    .hide-sm{
+        display:none !important;
+    }
+    
+    //about start
+    //===========
+    .client-logo .block{
+        background:$grey-bg-secondary;
+    } 
+    .client-logo{
+        @include transition(all 0.3s linear); 
+    }
+    .client-logo-bg:nth-child(8n+1) .block, 
+    .client-logo-bg:nth-child(8n+3) .block, 
+    .client-logo-bg:nth-child(8n+6) .block, 
+    .client-logo-bg:nth-child(8n) .block{
+      background:$grey-bg-primary;
+    }
+    .client-logo-bg:nth-child(8n+2) .block,
+    .client-logo-bg:nth-child(8n+4) .block, 
+    .client-logo-bg:nth-child(8n+5) .block, 
+    .client-logo-bg:nth-child(8n+7) .block{
+      background:$grey-bg-secondary;
+    }
+    .client-logo.ng-enter{
+        width:0;
+        overflow:hidden;
+        img{
+            opacity:0;
+            @include transition(all 0.3s linear);
+        }
+    }
+    .client-logo.ng-enter-active{
+        width:25%;
+        img{
+            opacity:1;
+        }
+    }
+    @include keyframes(client-arrow-move) {
+        50%{
+            margin-left:15px;
+        }
+        0% {
+            margin-left:-15px;
+        }
+
+        100% {
+            margin-left:-15px;
+        }
     }
 //end sm
 //=======
@@ -1463,22 +1611,37 @@
     .work-filter-panel{
         margin:0 -25px;
     }
+.mail-us-panel{
+    bottom:-100%;
+    height:auto;
+    .layout-container{
+        padding:60px 15px;
+    }
+    &.mail-us-panel-show{
+        bottom:0;
+    }
+}
     //block mobile additional style
     //===========================
     
     .block-wrap {
         //home page , casestudy page
         //================
-    .more-works, .work-with-us-link, .sketch, .wireframe, .communication, .requirment, .study, .research, .prototyping, .architecture, .journy, .testing, .interactivity, .layout, .illustration, .coding, .animation, .quality, .qa-testing, .qa-assurance{
-        height:calc(50vw - 30px);
-        background-size:50% auto;
-            span{
+    .block/*more-works, .work-with-us-link, .sketch, .wireframe, .discussion, .requirment, .study, .research, .prototyping, .architecture, .journy, .testing, .interactivity, .layout, .illustration, .coding, .animation, .script, .quality, .qa-testing, .qa-assurance, .web-design, .mobileapp-design, .branding, .mvc-framework, .front-end-dev*/{
+            height:calc(50vw - 30px);
+            .item-center img{
+                max-width:50%;
+            }
+            .block-text{
                 font-size:4vw;
-                bottom:14%;
+                margin-top:2vw;
             }
         }
-        .requirment{
+        .requirment, .mobileapp-design, .interactive-animation {
             background-color:$grey-bg-primary;
+        }
+        .front-end-dev{
+            background-color:$grey-bg-secondary;
         }
         .project-color{
             height:calc(50vw - 30px);
@@ -1491,18 +1654,18 @@
         //casestudy
         //============
         &.used-tools{
-        .block{
-            height:calc(50vw - 30px);
-            img{
-                height:55px;
+            .block:nth-child(4n), .block:nth-child(4n - 3 ){
+                background:$grey-bg-primary;
+                @include box-shadow(none);
             }
-                span{
-                    font-size:4vw;
-                    bottom:14%;
-                }
+            .block:nth-child(4n - 1 ), .block:nth-child(4n - 2 ){
+                background:$grey-bg-secondary;
             }
         }
     }
+    .ui-used-icons{
+        height:calc(50vw - 30px);
+    } 
     .work-block-list{
         .work-link{
             width:65%;
@@ -1529,8 +1692,8 @@
 
  
 @media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
-    .hide-sm{
-        display:none;
+    .hide-only-sm{
+        display:none !important;
     }
 }
 

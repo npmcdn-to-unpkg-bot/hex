@@ -1,24 +1,26 @@
 'use strict';
 var designAppControllers = angular.module('designAppControllers',[]);
-designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, $http){
+designAppControllers.controller('homeCtrl',['$scope', '$http', '$window', function($scope, $http, $window){
     var vm = this;
+    vm.goMajorWorks = function(){
+        $('html, body').animate({scrollTop: $('.major-works-panel').offset().top });
+    }
+    //image flip show only desktop
+    $scope.width = $window.innerWidth;
+    angular.element($window).bind('resize', function(){
+        $scope.width = $window.innerWidth;
+        $scope.$digest();
+    });
 }]).controller("workWithUsCtrl", ['$scope', '$http', function($scope, $http){
       var vm = this;
-      vm.workWithUs = {};
-      $http.get('js/api/home/workwithus.json').success(function(response){
-        vm.workWithUs = response;
-      });  
-      vm.carouselInitializer = function() {
         $(".owl-work-withus").owlCarousel({
-          items: 1,
-          navigation: true,
+          navigation: false,
           pagination: false,
-          navigationText: ["<i class='icon-arrow-thin-left'></i>", "<i class='icon-arrow-thin-right'></i>"],
-          itemsDesktop : [1000,1],
-          itemsDesktopSmall : [900,1],
-          itemsTablet: [600,1]
+          autoPlay:5000,
+          singleItem:true,
+          rewindSpeed:0
+          /*navigationText: ["<i class='icon-arrow-thin-left'></i>", "<i class='icon-arrow-thin-right'></i>"],*/
         });
-      };
     }
 ]).controller('majorWorksCtrl', ['$scope', 'designAppFactory', function($scope, designAppFactory){
       var vm = this;
@@ -28,12 +30,9 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
       });
       vm.carouselInitializer = function() {
         $(".owl-major-works").owlCarousel({
-          items: 1,
           navigation: false,
           pagination: true,
-          itemsDesktop : [1000,1],
-          itemsDesktopSmall : [900,1],
-          itemsTablet: [600,1]
+          singleItem:true
         });
       };
 }]).controller('homeTeamCtrl', ['$scope', '$window','$timeout', 'designAppFactory', function($scope, $window, $timeout, designAppFactory){
@@ -138,6 +137,7 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
             "height": itemWidthHeight
         });
     }
+    
     // projecting moving animation
     //============================
     function projectMoving(){
@@ -174,20 +174,17 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
     });
     // show next casestudy
     //====================
+    
     vm.caseNext = function(){
+        $('html, body').animate({scrollTop: 0}, 0, function(){});
         vm.nextIndex = i + 1 ;
         if( vm.casestudy.length > vm.nextIndex ){
             vm.casestudyData = vm.casestudy[vm.nextIndex];
             vm.nextCasestudyName = vm.casestudyData.name;
             $location.path('casestudy/'+vm.nextCasestudyName);
         }
-    }
-    // show prev casestudy
-    //====================
-    vm.casePrev = function(){
-        vm.nextIndex = i - 1 ;
-        if( 0 <= vm.nextIndex ){
-            vm.casestudyData = vm.casestudy[vm.nextIndex];
+        if( vm.casestudy.length == vm.nextIndex ){
+            vm.casestudyData = vm.casestudy[0];
             vm.nextCasestudyName = vm.casestudyData.name;
             $location.path('casestudy/'+vm.nextCasestudyName);
         }
@@ -210,15 +207,14 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
             vm.tabC = '';
         } 
     };
-    //casestudy next-prev panel fixed
+    //casestudy bottom panel want to work with us
     //===============================
-    $scope.wOffset = $window.pageYOffset;
-    $scope.bnrHeight =  $('.bnr-work').innerHeight(); 
+    $scope.mailUsPanelShow = $(window).height();
+    $scope.scrollValue = 0;
     w.bind("scroll", function(){
-        $timeout(function() {
-            $scope.wOffset = $window.pageYOffset;
-            $scope.bnrHeight =  $('.bnr-casestudy').innerHeight();
-        });
+        $scope.mailUsPanelShow = $scope.mailUsPanelShow = $('footer').offset().top - $(window).height();
+        $scope.scrollValue = $window.pageYOffset;
+        $scope.$digest();
     });
     
     function InOut( elem ){ 
@@ -331,6 +327,26 @@ designAppControllers.controller('homeCtrl',['$scope', '$http', function($scope, 
     });
 }]).controller('contactCtrl', [function(){
     
+}]).controller('aboutCtrl', ['$scope', '$timeout', 'designAppFactory', function($scope, $timeout, designAppFactory){
+    var vm = this;
+    designAppFactory.clientsFtry().success(function(response){
+        vm.clients = response;
+        $scope.nextClientBtn = true;
+        $timeout (function(){
+            $('.clients .client-logo:not(:first)').addClass('client-logo-bg');
+        },100);
+    });
+    $scope.clientLimit = 4;
+    $scope.addClient = function(clientItem){
+        $scope.clientLimit = clientItem + 1;
+        $timeout (function(){
+            $('.clients .client-logo').last().addClass('client-logo-bg');
+            //$('.nex-client-btn').fadeOut(500).delay(500).fadeIn(500);
+        },100);
+        if ( vm.clients.length === $scope.clientLimit ){
+            $scope.nextClientBtn = false
+        }
+    };
 }]);
  
 

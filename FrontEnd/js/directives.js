@@ -138,4 +138,24 @@ designAppDrirective.directive('ngRepeatOwlCarousel', function() {
         }
     }
     
+}]).directive('imgFlip',['$interval', function($interval){
+    return{
+        restrict: 'A',
+        link: function(scope, element, attrs){
+            $('.flip-container').packery({
+              itemSelector: '.img-flip',
+              stamp: '.stamp'
+             });
+             $(".card").flip();
+             prevNumber = 0;
+             $interval(function(){
+                 var eqNumber = Math.floor(Math.random() * 6);
+                 if( eqNumber == prevNumber ){
+                     var eqNumber = Math.floor(Math.random() * 6) ;
+                 }
+                 $('.flip-container .img-flip').eq(eqNumber).find('.card').trigger('click');
+                 var prevNumber = eqNumber;
+             },2000);
+        }
+    }
 }])

@@ -81,7 +81,16 @@
         }
     }
     .mail-us-panel{
-        padding-top:170px;
+        .layout-container{
+            padding:65px 15px 0;
+            h2{
+                font-size:28px;
+                margin-bottom:22px;
+            }
+        }
+        &.mail-us-panel-show{
+            height:$height-lg-2/2+35;
+        }
     }
     .image-front, .image-front ul{
         width:$layout-lg;
@@ -104,7 +113,30 @@
             margin-top:36px;
         }
     }
-    
+    //image-flip-panel
+    //================
+/*    .image-flip-panel{
+        height:$height-lg-2;
+        .flip-container{
+            margin-right:-$height-lg-1;
+        }
+        .img-flip-1-1{
+            width:$height-lg-1;
+            height:$height-lg-1;
+        }
+        .img-flip-1-2{
+            width:$height-lg-1;
+            height:$height-lg-2;
+        }
+        .img-flip-2-2{
+            width:$height-lg-2;
+            height:$height-lg-2;
+        }
+        .img-flip-2-1{
+            width:$height-lg-2;
+            height:$height-lg-1;
+        }
+    }*/
     //height set
     //==========
     .block-wrap .block, 
@@ -125,7 +157,6 @@
     .work-dec-panel, 
     .meet-our-team,
     .content-half-block,
-    .mail-us-panel,
     .approach-image-panel{
         height:$height-lg-2; // (1014/4)*2
     }

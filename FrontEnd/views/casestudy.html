@@ -1,14 +1,5 @@
-<!-- start next-prev-project-panel-->
-<section class="next-prev-project-panel" ng-class="{'fixed': wOffset > bnrHeight}">
-    <div class="layout-container">
-        <span class="pull-left" ng-hide="casestudy.caseStart" ng-click="casestudy.casePrev()"><i class="icon-normal-arrow-left"></i> PREV<span>IOUS PROJECT</span></span>
-        
-        <span class="pull-right" ng-hide="casestudy.caseEnd" ng-click="casestudy.caseNext()">NEXT <span>PROJECT</span><i class="icon-normal-arrow-right"></i></span>
-    </div>
-</section>
-<!-- end next-prev-project-panel-->
-<!--start casestudy-panel-->
-<section class="casestudy-panel layout-wrapper"> 
+<!--start casestudy-panel web-->
+<section class="casestudy-panel layout-wrapper casestudy-web" ng-show="casestudy.casestudyData.type == 'Web App' ">
     <div class="layout-container">
         <!--start casestudy-master-image-->
         <div class="case-master-image">
@@ -44,8 +35,10 @@
     <div class="layout-container case-ux-panel">
         <div class="block-wrap layout-wrapper">
             <div class="layout-sm-6">
-                <div class="block go-bottom layout-xs-6 hide-mobile">
-                    <i class="icon-down-arrow-metro"></i>
+                <div class="block go-arrow layout-xs-6 hide-mobile">
+                    <div class="item-center">
+                        <i class="icon-down-arrow-metro"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -63,10 +56,16 @@
                 <div class="stripe-1"></div>
                 <div class="block-wrap layout-wrapper layout-xs-12">
                     <div class="block sketch layout-xs-6">
-                        <span>Sketch</span>
+                        <div class="item-center">
+                            <img src="images/block-icons/ico-sketch.png" alt="">
+                            <span class="block-text">Sketch</span>
+                        </div>
                     </div>
                     <div class="block wireframe layout-xs-6">
-                        <span>Wireframe</span>
+                        <div class="item-center">
+                            <img src="images/block-icons/ico-wireframe.png" alt="">
+                            <span class="block-text">Wireframe</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,8 +86,10 @@
         <div class="block-wrap layout-wrapper">
             <div class="pull-right layout-sm-6 f-none-mobile">
                 <div class="stripe-1"></div>
-                <div class="block go-bottom layout-xs-6 hide-mobile">
-                    <i class="icon-down-arrow-metro"></i>
+                <div class="block go-arrow layout-xs-6 hide-mobile">
+                    <div class="item-center">
+                        <i class="icon-down-arrow-metro"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -134,15 +135,19 @@
                     <div class="color-name">#secondary-color</div>
                     <div class="color-code">{{casestudy.casestudyData.secondaryColor}}</div>
                 </div>
-                <div class="block go-bottom go-bottom-used layout-sm-3"> 
-                    <i class="icon-down-arrow-metro"></i>
-                    <span>USED TOOLS</span>
+                <div class="block go-arrow go-arrow-grey layout-sm-3">
+                    <div class="item-center"> 
+                        <i class="icon-down-arrow-metro"></i>
+                        <span>USED TOOLS</span>
+                    </div>
                 </div>
             </div>
             <div class="block-wrap layout-wrapper used-tools">
                     <div class="block pull-right-sm layout-xs-6 layout-sm-3" ng-repeat="uiTool in casestudy.casestudyData.uiTools | orderBy: '-' ">
-                        <img alt="" ng-src="{{uiTool.uiToolImage}}">
-                        <span>{{uiTool.uiToolName}}</span>
+                        <div class="item-center">
+                            <img alt="" ng-src="{{uiTool.uiToolImage}}">
+                            <span class="block-text">{{uiTool.uiToolName}}</span>
+                        </div>
                     </div>
             </div>
         </div> 
@@ -160,8 +165,10 @@
         <div class="layout-container"> 
             <div class="block-wrap layout-wrapper">
                 <div class="layout-sm-6">
-                    <div class="block go-bottom layout-sm-6 hide-mobile">
-                        <i class="icon-down-arrow-metro"></i>
+                    <div class="block go-arrow layout-sm-6 hide-mobile">
+                        <div class="item-center">
+                            <i class="icon-down-arrow-metro"></i>
+                        </div>
                     </div>
                     <div class="stripe-1"></div>
                 </div>
@@ -177,9 +184,11 @@
                 </div>
                 <div class="layout-sm-6 block-wrap">
                    <div class="block hidden hide-mobile"></div>
-                   <div class="block go-bottom go-bottom-used layout-sm-6">
-                        <i class="icon-down-arrow-metro"></i>
-                        <span>USED TOOLS</span>
+                   <div class="block go-arrow go-arrow-grey layout-sm-6">
+                        <div class="item-center">
+                            <i class="icon-down-arrow-metro"></i>
+                            <span>USED TOOLS</span>
+                       </div>
                     </div>
                 </div>
             </div>
@@ -187,8 +196,10 @@
             <div class="layout-wrapper">
                 <div class="block-wrap used-tools">
                     <div class="layout-sm-3 block pull-right-sm layout-xs-6" ng-repeat="frondendTool in casestudy.casestudyData.frontendTools | orderBy: '-' ">
-                        <img ng-src="{{frondendTool.frontendToolImage}}" alt="">
-                        <span>{{frondendTool.frontendToolName}}</span>
+                        <div class="item-center">
+                            <img ng-src="{{frondendTool.frontendToolImage}}" alt="">
+                            <span class="block-text">{{frondendTool.frontendToolName}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -244,20 +255,30 @@
     </ul>
     <!--end case-all-projects-->
     
-    <!--start mail-us-panel-->
-    <div class="mail-us-panel">
-        <div class="layout-container">
-            <h2>WANT TO WORK WITH US</h2>
-            <form action="">
-                <div class="mail-us">
-                    <input type="text" placeholder="Please enter your email id">
-                    <button>ENQUIRE</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!--end mail-us-panel-->
+
 </section>
-<!--end casestudy-panel-->
+<!--end casestudy-panel web-->
+<!--start casestudy-panel mobile-->
+<section class="casestudy-panel layout-wrapper casestudy-mobile" ng-show="casestudy.casestudyData.type == 'Mobile App' ">
+    <div class="layout-container">
+        <img ng-src="{{casestudy.casestudyData.image.presentation}}" alt="">
+    </div>
+</section>
+<!--end casestudy-panel mobile-->
 
-
+<!--start mail-us-panel-->
+<div class="mail-us-panel" ng-class="{'mail-us-panel-show' : mailUsPanelShow <  scrollValue }">
+    <div class="layout-container">
+        <div class="next-project" ng-click="casestudy.caseNext()"><span>Next Project</span></div>
+        <h2>WANT TO WORK WITH US</h2>
+        <form action="">
+            <div class="mail-us">
+                <input type="text" placeholder="Please enter your email id">
+                <button>ENQUIRE</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--end mail-us-panel-->
+ 
+ 

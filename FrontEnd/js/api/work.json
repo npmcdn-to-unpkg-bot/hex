@@ -1,0 +1,258 @@
+[
+    {
+        "id"                               : 0,
+        "name"                             : "Shopbox",
+        "projectSector"                    : "Ecommerce App",
+        "projectRequirment"                : "UI/UX Design and Development",
+        "type"                             : "Web App",
+        "primaryColor"                     : "#bf116a",
+        "secondaryColor"                   : "#393335",
+        "client"                           : "Client name",
+        "clientProfession"                 : "Founder of shopbox",
+        "clientImage"                      : "images/work/shopbox/client.jpg",
+        "website"                          : "www.shopbox.com",
+        "description"                      : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+        "testimonial"                      :  "I believe that Toobler provided me the highest level of communication & coding during my product development. The world has greatly benefited from hands of their innovative team!", 
+        "image" :
+                {
+                    "imageLogoWhite"          : "images/work/shopbox/logo/imageLogoWhite.png",
+                    "imageHome"               : "images/work/shopbox/imageHome.png",
+                    "imageWork"               : "images/work/shopbox/imagework.jpg",
+                    "imageCasestudyTop"       : "images/work/shopbox/imageCasestudyTop.jpg",
+                    "imageLogoColor"          : "images/work/shopbox/logo/imageLogoColor.png",
+                    "imageUX"                 : "images/work/shopbox/screens/imageUX.jpg",
+                    "imageDesign"             : "images/work/shopbox/screens/imageDesign.jpg"
+                },
+        "fonts" :
+                {
+                    "primaryFont"             : "images/work/shopbox/fonts/primaryFont.png",
+                    "secondaryFont"           : ""
+                },
+        "icons" :[
+                    "images/work/shopbox/icons/icon1.png",
+                    "images/work/shopbox/icons/icon2.png",
+                    "images/work/shopbox/icons/icon3.png",
+                    "images/work/shopbox/icons/icon4.png"
+                ],
+        "uiTools" :[
+            {
+                "uiToolName"  : "PHOTOSHOP",
+                "uiToolImage" : "images/work/ui-used-tools/ico-photoshop.png"
+            },
+            {
+                "uiToolName"  : "ILLUSTRATOR",
+                "uiToolImage" : "images/work/ui-used-tools/ico-illustrator.png"
+            } 
+        ],
+        "frontendTools" :[
+            {
+                "frontendToolName"  : "HTML5",
+                "frontendToolImage" : "images/work/frontend-used-tools/ico-html5.png"
+            },
+            {
+                "frontendToolName"  : "CSS3",
+                "frontendToolImage" : "images/work/frontend-used-tools/ico-css3.png"
+            },
+            {
+                "frontendToolName"  : "SASS",
+                "frontendToolImage" : "images/work/frontend-used-tools/ico-sass.png"
+            },
+            {
+                "frontendToolName"  : "BOOTSTRAP",
+                "frontendToolImage" : "images/work/frontend-used-tools/ico-bootstrap.png"
+            }
+        ],
+        "screens" :{
+            "mobile" :  "images/work/shopbox/screens/screenMobile.png",
+            "tab"    :  "images/work/shopbox/screens/screenTab.png",
+            "desktop" :  "images/work/shopbox/screens/screenDesktop.png"
+        }
+            
+    },
+    {
+        "id"                               : 1,
+        "name"                             : "AdvisorFi",
+        "projectSector"                    : "Financial and Busines",
+        "projectRequirment"                : "UI/UX Design and Development",
+        "type"                             : "Web App",
+        "primaryColor"                     : "#099acc",
+        "secondaryColor"                   : "#333333",
+        "client"                           : "Will Lopez",
+        "clientProfession"                 : "Founder of Advisorfi",
+        "clientImage"                      : "images/work/advisorfi/client.jpg",
+        "website"                          : "www.advisorfi.com",
+        "description"                      : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+        "testimonial"                      :  "I believe that Toobler provided me the highest level of communication & coding during my product development. The world has greatly benefited from hands of their innovative team!", 
+        "image" :
+                {
+                    "imageLogoWhite"          : "images/work/advisorfi/logo/imageLogoWhite.png",
+                    "imageHome"               : "images/work/advisorfi/imageHome.png",
+                    "imageWork"               : "images/work/advisorfi/imagework.jpg",
+                    "imageCasestudyTop"       : "images/work/advisorfi/imageCasestudyTop.jpg",
+                    "imageLogoColor"          : "images/work/advisorfi/logo/imageLogoColor.png",
+                    "imageUX"                 : "images/work/advisorfi/screens/imageUX.jpg",
+                    "imageDesign"             : "images/work/advisorfi/screens/imageDesign.jpg"
+                },
+        "fonts" :
+                {
+                    "primaryFont"             : "images/work/advisorfi/fonts/primaryFont.png",
+                    "secondaryFont"           : "images/work/advisorfi/fonts/secondaryFont.png"
+                },
+        "icons" :[
+                    "images/work/advisorfi/icons/icon1.png",
+                    "images/work/advisorfi/icons/icon2.png",
+                    "images/work/advisorfi/icons/icon3.png",
+                    "images/work/advisorfi/icons/icon4.png"
+                ],
+        "uiTools" :[
+            {
+                "uiToolName"  : "PHOTOSHOP",
+                "uiToolImage" : "images/work/ui-used-tools/ico-photoshop.png"
+            },
+            {
+                "uiToolName"  : "ILLUSTRATOR",
+                "uiToolImage" : "images/work/ui-used-tools/ico-illustrator.png"
+            } 
+        ],
+        "frontendTools" :[
+            {
+                "frontendToolName"  : "HTML5",
+                "frontendToolImage" : "images/work/frontend-used-tools/ico-html5.png"
+            },
+            {
+                "frontendToolName"  : "CSS3",
+                "frontendToolImage" : "images/work/frontend-used-tools/ico-css3.png"
+            },
+            {
+                "frontendToolName"  : "SASS",
+                "frontendToolImage" : "images/work/frontend-used-tools/ico-sass.png"
+            },
+            {
+                "frontendToolName"  : "BOOTSTRAP",
+                "frontendToolImage" : "images/work/frontend-used-tools/ico-bootstrap.png"
+            }
+        ],
+        "screens" :{
+            "mobile" :  "images/work/advisorfi/screens/screenMobile.png",
+            "tab"    :  "images/work/advisorfi/screens/screenTab.png",
+            "desktop" :  "images/work/advisorfi/screens/screenDesktop.png"
+        }
+            
+    },
+    {
+        "id"                               : 2,
+        "name"                             : "Hapzis",
+        "projectSector"                    : "Financial and Busines",
+        "projectRequirment"                : "UI/UX Design and Development",
+        "type"                             : "Web App",
+        "primaryColor"                     : "#ea2c67",
+        "secondaryColor"                   : "#302226",
+        "client"                           : "Will Lopez",
+        "clientProfession"                 : "Founder of Advisorfi",
+        "clientImage"                      : "images/work/hapzis/client.jpg",
+        "website"                          : "www.ea2c67.com",
+        "description"                      : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+        "testimonial"                      :  "I believe that Toobler provided me the highest level of communication & coding during my product development. The world has greatly benefited from hands of their innovative team!", 
+        "image" :
+                {
+                    "imageLogoWhite"          : "images/work/hapzis/logo/imageLogoWhite.png",
+                    "imageHome"               : "images/work/hapzis/imageHome.png",
+                    "imageWork"               : "images/work/hapzis/imagework.jpg",
+                    "imageCasestudyTop"       : "images/work/hapzis/imageCasestudyTop.jpg",
+                    "imageLogoColor"          : "images/work/hapzis/logo/imageLogoColor.png",
+                    "imageUX"                 : "images/work/hapzis/screens/imageUX.jpg",
+                    "imageDesign"             : "images/work/hapzis/screens/imageDesign.jpg"
+                },
+        "fonts" :
+                {
+                    "primaryFont"             : "images/work/hapzis/fonts/primaryFont.png"
+                },
+        "icons" :[
+                    "images/work/hapzis/icons/icon1.png",
+                    "images/work/hapzis/icons/icon2.png",
+                    "images/work/hapzis/icons/icon3.png",
+                    "images/work/hapzis/icons/icon4.png"
+                ],
+        "uiTools" :[
+            {
+                "uiToolName"  : "PHOTOSHOP",
+                "uiToolImage" : "images/work/ui-used-tools/ico-photoshop.png"
+            },
+            {
+                "uiToolName"  : "ILLUSTRATOR",
+                "uiToolImage" : "images/work/ui-used-tools/ico-illustrator.png"
+            } 
+        ],
+        "frontendTools" :[
+            {
+                "frontendToolName"  : "HTML5",
+                "frontendToolImage" : "images/work/frontend-used-tools/ico-html5.png"
+            },
+            {
+                "frontendToolName"  : "CSS3",
+                "frontendToolImage" : "images/work/frontend-used-tools/ico-css3.png"
+            },
+            {
+                "frontendToolName"  : "LESS",
+                "frontendToolImage" : "images/work/frontend-used-tools/ico-less.png"
+            },
+            {
+                "frontendToolName"  : "BOOTSTRAP",
+                "frontendToolImage" : "images/work/frontend-used-tools/ico-bootstrap.png"
+            }
+        ],
+        "screens" :{
+            "mobile" :  "images/work/hapzis/screens/screenMobile.png",
+            "tab"    :  "images/work/hapzis/screens/screenTab.png",
+            "desktop" :  "images/work/hapzis/screens/screenDesktop.png"
+        }
+    },
+    {
+        "id"                               : 3,
+        "name"                             : "Holoptica",
+        "projectSector"                    : "Financial and Busines",
+        "projectRequirment"                : "UI/UX Design and Development",
+        "type"                             : "Mobile App",
+        "primaryColor"                     : "#ea2c67",
+        "secondaryColor"                   : "#302226",
+        "client"                           : "Will Lopez",
+        "clientProfession"                 : "Founder of Advisorfi",
+        "clientImage"                      : "images/work/hapzis/client.jpg",
+        "website"                          : "www.ea2c67.com",
+        "description"                      : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+        "testimonial"                      :  "I believe that Toobler provided me the highest level of communication & coding during my product development. The world has greatly benefited from hands of their innovative team!", 
+        "image" :
+                {
+                    "imageLogoWhite"          : "",
+                    "imageHome"               : "",
+                    "imageWork"               : "",
+                    "imageCasestudyTop"       : "",
+                    "imageLogoColor"          : "",
+                    "imageUX"                 : "",
+                    "imageDesign"             : "",
+                    "presentation"            : "images/work/holoptica/presentation.jpg"
+                },
+        "fonts" :
+                {
+                    "primaryFont"             : ""
+                },
+        "icons" :[],
+        "uiTools" :[
+            {
+                "uiToolName"  : "",
+                "uiToolImage" : ""
+            }
+        ],
+        "frontendTools" :[
+            {
+                "frontendToolName"  : "",
+                "frontendToolImage" : ""
+            } 
+        ],
+        "screens" :{
+            "mobile" :  "",
+            "tab"    :  "",
+            "desktop" :  ""
+        }
+    }
+]

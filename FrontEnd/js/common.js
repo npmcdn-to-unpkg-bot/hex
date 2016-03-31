@@ -3,29 +3,69 @@ jQuery(document).ready(function($) {
     //==================
     $('.nav-btn').on('click', function(){
         $('.main-header ul').slideToggle(500);
-    });
-    
-    //write here
-    var moveForce = 30; // max popup movement in pixels
-    var rotateForce = 20; // max popup rotation in deg
-
-    $(document).mousemove(function(e) {
-        var docX = $(document).width();
-        var docY = $(document).height();
-
-        var moveX = (e.pageX - docX/2) / (docX/2) * -moveForce;
-        var moveY = (e.pageY - docY/2) / (docY/2) * -moveForce;
-
-        var rotateY = (e.pageX / docX * rotateForce*2) - rotateForce;
-        var rotateX = -((e.pageY / docY * rotateForce*2) - rotateForce);
-/*
-        $('.contact-popup')
-            .css('left', (moveX)+'px')
-            .css('top', (moveY)+'px')
-            .css('transform', 'rotateX('+rotateX+'deg) rotateY('+rotateY+'deg)');
-    });*/
-    });
-        
-        
-   
+    });   
 });
+
+var functionDownRunning = false;
+var functionUpRunning = false;
+$(window).bind('mousewheel DOMMouseScroll', function(event){
+    // if check its home page or not
+    if ( $('.home-main-panel').length ) {
+        var isHoveredBanner = $('.banner-wrap').is(":hover");
+        var isHoveredApproach = $('.approach').is(":hover");
+        var isHoveredHomeMainPanel = $('.home-main-panel').is(":hover");
+        //offset
+        var approachOffset = $('.approach').offset().top;
+        var homeMainPanelOffset = $('.home-main-panel').offset().top;
+        var htmlBody = $('html, body');
+        
+         function scrollDown(){
+            if (!functionDownRunning) {
+                functionDownRunning = true;
+                functionUpRunning = false;
+                if(isHoveredBanner){
+                        htmlBody.animate( {scrollTop: approachOffset }, 400);
+                }
+                if(isHoveredApproach){
+                    htmlBody.animate( {scrollTop: homeMainPanelOffset }, 400);
+                }
+                setTimeout(function(){
+                    functionDownRunning = false;
+                },400);
+            }
+        }
+        function scrollUp(){
+            if (!functionUpRunning) {
+                functionUpRunning = true;
+                functionDownRunning = false;
+                if(isHoveredApproach){
+                    htmlBody.animate( {scrollTop: 0 }, 400);
+                }
+                if(isHoveredHomeMainPanel){
+                    if( $('.home-main-panel').offset().top == $(window).scrollTop()  ){
+                        htmlBody.animate( {scrollTop: approachOffset }, 400);
+                    }
+                    if( $('.home-main-panel').offset().top < $(window).scrollTop()  
+                        &&
+                        ($('.home-main-panel').offset().top + $(window).height() ) > $(window).scrollTop()  
+                      ){
+                        htmlBody.animate( {scrollTop: homeMainPanelOffset }, 400);
+                    }
+                }
+                setTimeout(function(){
+                    functionUpRunning = false;
+                },400);
+            }
+        }
+        if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+            scrollUp();
+        }else {
+            scrollDown();
+        }
+    }
+});
+
+
+ 
+
+

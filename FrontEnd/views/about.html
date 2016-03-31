@@ -11,7 +11,7 @@
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                 <p>Hex is a web agency  based in Montreal offering a wide range of creative services  and strategic  for brands, companies, foundations and organizations exciting. Our team of strategists, designers and web developers  is committed to building what you need to achieve your marketing goals. Our delivery process goes through four levels of expertise  to ensure a high quality service.</p>
             </aside>
-            <div class="layout-sm-5 hide-mobile hide-sm">
+            <div class="layout-sm-5 hide-mobile hide-only-sm">
                 <aside class="img-about">
                     <img src="images/img-about.png" alt="">
                 </aside>
@@ -21,26 +21,29 @@
     <!--end about-->
     <!--about page process start-->
         <div class="aboutpage-process layout-wrapper hide-mobile">
-            <span class="bg-aboutpage-process"></span>
             <div class="about-process plan layout-sm-3">
+                <span class="bg-aboutpage-process"></span>
                 <figure>
                     <img src="images/img-weplan.png" alt="">
                 </figure>
                 <h3>WE PLAN<span></span></h3>
             </div>
             <div class="about-process create layout-sm-3">
+                <span class="bg-aboutpage-process"></span>
                 <figure>
                     <img src="images/img-wecreate.png" alt="">
                 </figure>
                 <h3>WE CREATE<span></span></h3>
             </div>
             <div class="about-process analyze layout-sm-3">
+                <span class="bg-aboutpage-process"></span>
                 <figure>
                     <img src="images/img-weanalyze.png" alt="">
                 </figure>
                 <h3>WE ANALYZE<span></span></h3>
             </div>
             <div class="about-process result layout-sm-3">
+                <span class="bg-aboutpage-process"></span>
                 <figure>
                     <img src="images/img-getresults.png" alt="">
                 </figure>
@@ -48,5 +51,118 @@
             </div>
         </div>
     <!--about page process end-->
+    <!--about services start-->
+    <div class="services layout-wrapper">
+        <div class="layout-container">
+            <div class="layout-wrapper">
+                <aside class="layout-sm-6 pull-right-sm">
+                    <div class="content-half-block approach-content-block">
+                        <h3 class="title">Services</h3>
+                        <h4>Understand user behavior, needs and perspectives</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    </div>
+                </aside>
+                <div class="layout-sm-6 block-wrap">
+                    <div class="block hide-mobile"></div>
+                    <div class="block stripe-1 hide-mobile"></div>
+                    <div class="block web-design layout-xs-6">
+                        <div class="item-center">
+                            <img alt="" src="images/block-icons/icon-webdesign.png">
+                            <div class="block-text">WEB DESIGN</div>
+                        </div>
+                    </div>
+                    <div class="block mobileapp-design layout-xs-6 hide-sm">
+                        <div class="item-center">
+                            <img alt="" src="images/block-icons/ico-mobileapp.png">
+                            <div class="block-text">MOBILE APP DESIGN</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layout-wrapper block-wrap">
+                    <div class="block mobileapp-design layout-xs-6 layout-sm-3 hide-mobile">
+                        <div class="item-center">
+                            <img alt="" src="images/block-icons/ico-mobileapp.png">
+                            <div class="block-text">MOBILE APP DESIGN</div>
+                        </div>
+                    </div>
+                 <div class="block branding layout-xs-6 layout-sm-3">
+                    <div class="item-center">
+                        <img alt="" src="images/block-icons/ico-branding.png">
+                        <div class="block-text">BRANDING</div>
+                    </div>
+                </div>
+                <div class="block mvc-framework layout-xs-6 layout-sm-3">
+                    <div class="item-center">
+                        <img alt="" src="images/block-icons/ico-code-per-day.png">
+                        <div class="block-text">MVC FRAME WORK</div>
+                    </div>
+                </div>
+                <div class="block front-end-dev layout-xs-6 layout-sm-3">
+                    <div class="item-center">
+                        <img alt="" src="images/block-icons/ico-coding.png">
+                        <div class="block-text">FRONT-END DEV.</div>
+                    </div>
+                </div>
+                <div class="block stripe-1">
+                </div>
+                <div class="block interactive-animation layout-xs-6 layout-sm-3">
+                    <div class="item-center">
+                        <img alt="" src="images/block-icons/ico-interactive-animation.png">
+                        <div class="block-text">INTERACTIVE DESIGN</div>
+                    </div>
+                </div>
+                <div class="block layout-sm-6 quote hide-mobile">
+                    <blockquote>
+                        "More than a brand identity, we create a whole universe for your brand."
+                        <cite><i class="icon-twitter"></i> @HEX</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--about services end-->
+    <!--client services start-->
+    <div class="clients layout-wrapper">
+        <div class="layout-container">
+            <div class="layout-wrapper">
+                <aside class="layout-sm-6">
+                    <div class="content-half-block approach-content-block">
+                        <h3 class="title">Client</h3>
+                        <h4>Understand user behavior, needs and perspectives</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    </div>
+                </aside>
+                <div class="layout-sm-3 block-wrap">
+                    <div class="block hide-mobile"></div>
+                    <div class="block go-arrow go-arrow-grey">
+                        <div class="item-center">
+                            <i class="icon-right-arrow-metro hide-mobile"></i>
+                            <i class="icon-down-arrow-metro hide-sm"></i>
+                            <span>OUR CLIENTS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="layout-sm-3 block-wrap hide-mobile">
+                    <div class="block"></div>
+                </div>
+                <div class="layout-sm-3 block-wrap client-logo angular-animate" ng-repeat="client in about.clients | limitTo:clientLimit">
+                    <div class="block">
+                       <img ng-src="{{client}}" alt=""> 
+                    </div>
+                </div>
+                <div class="layout-wrapper hide-sm"></div>
+                <div class="layout-sm-3 block-wrap  nex-client-btn" ng-show="nextClientBtn">
+                    <div class="block" ng-click="addClient(clientLimit)">
+                        <div class="item-center">
+                            <i class="icon-arrow-thin-right hide-mobile"></i>
+                            <i class="icon-arrow-thin-bottom hide-sm"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--client services end-->
 </section>
 <!--end about-panel-->

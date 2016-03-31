@@ -32,13 +32,21 @@ designApp.config(['$routeProvider', '$animateProvider', function($routeProvider,
     $animateProvider.classNameFilter(/angular-animate/)
 }]); 
  
- 
 designApp.run(['$rootScope', '$routeParams', '$location', '$window', '$timeout', function($rootScope, $routeParams, $location, $window, $timeout){
-    //$rootScope.$on('$routeChangeSuccess', function(){
+    
+    $rootScope.$on('$routeChangeStart',function(){
+          $rootScope.loaderActive = false;
+     });
+    $rootScope.$on('$routeChangeSuccess', function(){
+        $rootScope.loaderActive = true;
+        $timeout(function(){
+            //$rootScope.loaderActive = false;
+        },2000);
+        
         var w = angular.element($window); 
         $rootScope.contactShow = false;
         $rootScope.pageName = $location.path().split('/')[1];
-    
+        
         // contact page popup or page find
         //================================
         $rootScope.contact =  function(){
@@ -75,9 +83,7 @@ designApp.run(['$rootScope', '$routeParams', '$location', '$window', '$timeout',
                 $rootScope.wOffset = $window.pageYOffset 
             });
         });
-        
-         
-    //});
+    });
 }])
 
 

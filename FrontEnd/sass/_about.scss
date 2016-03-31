@@ -48,6 +48,7 @@
         z-index:10;
         display:block;
         opacity:0.8; 
+        @include transition(all 0.3s ease);
     }
 }
 .about-process{
@@ -69,12 +70,69 @@
         text-align:center;
         z-index:20;
         color:$grey-text-secondary;
+        @include transition(all 0.3s ease);
         span{
             margin:10px auto 0;
             display:block;
             width:10%;
             height:2px;
             background:$primary-color;
+            @include transition(all 0.3s ease);
+        }
+    }
+    &:hover{
+        .bg-aboutpage-process{
+            opacity:0.7;
+        }
+        h3{
+            color:$primary-color;
+            font-size:20px;
+            font-weight:300;
+            line-height:28px;
+            height:28px;
+            span{
+                margin-top:0;
+                width:20%;
+                height:1px;
+            }
         }
     }
 }
+.services, .clients{
+    background:$sub-bg;
+}
+.quote{
+    background:#1babe3;
+    color:#fff;
+    font-size:22px;
+    line-height:30px;
+    font-weight:300;
+    blockquote{
+        padding:0 20px;
+    }
+    cite{
+        display:block;
+        margin:2% 0 0;
+        font-weight:700;
+        font-size:14px;
+    }
+}
+.client-logo{
+        background:$grey-bg-secondary;
+}
+.client-logo-bg:nth-child(even){
+        background:$grey-bg-secondary;
+} 
+.client-logo-bg:nth-child(odd){
+        background:$grey-bg-primary;
+} 
+.nex-client-btn .block{
+    cursor:pointer;
+    background:#fff;
+    i{
+        font-size:40px;
+        @include animation(client-arrow-move 1.8s  infinite linear);
+    }
+}
+
+
