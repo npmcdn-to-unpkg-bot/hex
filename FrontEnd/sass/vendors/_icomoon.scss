@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('../fonts/icomoon.eot?s8cwmd');
-    src:    url('../fonts/icomoon.eot?s8cwmd#iefix') format('embedded-opentype'),
-        url('../fonts/icomoon.ttf?s8cwmd') format('truetype'),
-        url('../fonts/icomoon.woff?s8cwmd') format('woff'),
-        url('../fonts/icomoon.svg?s8cwmd#icomoon') format('svg');
+    src:    url('../fonts/icomoon.eot?y3r1k3');
+    src:    url('../fonts/icomoon.eot?y3r1k3#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?y3r1k3') format('truetype'),
+        url('../fonts/icomoon.woff?y3r1k3') format('woff'),
+        url('../fonts/icomoon.svg?y3r1k3#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -44,6 +44,18 @@
 }
 .icon-tick:before {
     content: "\e915";
+}
+.icon-profile-behance:before {
+    content: "\e919";
+}
+.icon-profile-dribbble:before {
+    content: "\e91a";
+}
+.icon-profile-linkedin:before {
+    content: "\e91b";
+}
+.icon-profile-twitter:before {
+    content: "\e91c";
 }
 .icon-desktop:before {
     content: "\e90f";
@@ -99,4 +111,4 @@
 .icon-twitter:before {
     content: "\e90d";
 }
- 
+

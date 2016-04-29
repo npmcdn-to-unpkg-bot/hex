@@ -43,13 +43,13 @@ designAppDrirective.directive('ngRepeatOwlCarousel', function() {
             },
             templateUrl: 'views/worklisting.html'
         }
-}]).directive('bannerDir', ['$rootScope', '$location', '$routeParams', function($rootScope, $location, $routeParams){
+}])/*.directive('bannerDir', ['$rootScope', '$location', '$stateParams', function($rootScope, $location, $stateParams){
     return{
         restrict: 'A',
         link: function(scope, element, attrs){
-            $rootScope.$on('$routeChangeSuccess', function(){
+            $rootScope.$on('$stateChangeSuccess', function(){
                 $rootScope.pageName = $location.path().split('/')[1];
-                $rootScope.casestudyName = $routeParams.id;
+                $rootScope.casestudyName = $stateParams.id;
                     if($rootScope.pageName){
                         $rootScope.banner = 'views/banner/bnr-' + $rootScope.pageName + '.html';
                     }else{
@@ -58,7 +58,7 @@ designAppDrirective.directive('ngRepeatOwlCarousel', function() {
             });
         }
     }
-}]).directive('screenDir', [function(){ 
+}])*/.directive('screenDir', [function(){ 
     return{
         restrict: 'A'
     }
@@ -101,7 +101,7 @@ designAppDrirective.directive('ngRepeatOwlCarousel', function() {
             });
         }
     }
-}]).directive('movingDir',['$timeout', '$window', function($timeout, $window){
+}]).directive('movingDir',['$timeout', '$window', '$location', function($timeout, $window, $location){
     var w = angular.element($window);
     return{
         restrict: 'A',
@@ -113,10 +113,10 @@ designAppDrirective.directive('ngRepeatOwlCarousel', function() {
                     "margin-left": element.css("marginLeft")
                 });
             }
-            $('.work-filter li, .approach-menu li').hover(function(){
+            $('.work-filter li').hover(function(){
                 $scope.moving( $(this) );
             });
-            $('.work-filter ul, .approach-menu ul').hover(function(){},
+            $('.work-filter ul').hover(function(){},
             function(){
                 $scope.moving( $(this).find('li.active') );
             });
@@ -126,9 +126,11 @@ designAppDrirective.directive('ngRepeatOwlCarousel', function() {
                 $scope.moving( $(this) );
             });
             w.bind("resize", function(){
-                $timeout(function(){
-                    $scope.moving( $('.work-filter li.active, .approach-menu li.active') );
-                },100);
+                if(  $('.work-filter li.active').length ) {
+                    $timeout(function(){
+                        $scope.moving( $('.work-filter li.active') );
+                    },100);
+                }
             });
             $scope.$on('$viewContentLoaded', function(){
                 $timeout(function(){
@@ -156,6 +158,79 @@ designAppDrirective.directive('ngRepeatOwlCarousel', function() {
                  $('.flip-container .img-flip').eq(eqNumber).find('.card').trigger('click');
                  var prevNumber = eqNumber;
              },2000);
+        }
+    }
+}]).directive('teamDir', ['$timeout', function($timeout){
+    return{
+        restrict: 'A',
+        controller: function  ($scope, designAppFactory){ 
+             var vm = this;
+             vm.teamMemberPopupShow = false;
+             designAppFactory.teamMembersFtry().success(function(response){
+                vm.teamMembers = response;
+             });
+             vm.teamMemberPopup = function(member){
+                 if(member || member == 0 ){
+                    vm.member = vm.teamMembers[member];
+                    vm.teamMemberPopupShow = true;
+                 }else{
+                    vm.teamMemberPopupShow = false;
+                 }
+             }
+        },
+        controllerAs: 'team'
+         
+    }
+}]).directive('teamMemberFinishedDir', ['$timeout', function($timeout){
+    return {
+        restrict: 'A',
+        link: function (scope, element, attr) {
+            if (scope.$last === true) {
+                $timeout(function () {
+                var shadowLimit = 200;
+                var moveEvent = "mousemove";
+                    $('.team .block').on(moveEvent, function(ev){
+
+                        var $shadow = $(this).find('img');
+                        var $this = $(this);
+                        var w      = $this.width();
+                        var h      = $this.height();
+                        var center = { x: w/2, y: h/2 };
+ 
+                        var evX = ev.clientX - $(this).offset().left;
+                        var evY = ev.pageY - $(this).offset().top;
+
+                        var shadowX = (center.x - evX) / 10;
+                        var shadowY = (center.y - evY) / 10;
+
+                        shadowX = (shadowX > shadowLimit) ? shadowLimit : shadowX;
+                        shadowX = (shadowX < shadowLimit*-1) ? shadowLimit*-1 : shadowX;
+                        shadowY = (shadowY > shadowLimit) ? shadowLimit : shadowY;
+                        shadowY = (shadowY < shadowLimit*-1) ? shadowLimit*-1 : shadowY;
+                        
+                        var blur            =  Math.abs(shadowX*shadowY)/90;
+                        var color           = 'px rgba(0,0,0,0.1))';
+                        var CSSvalue        = 'drop-shadow(' + Math.ceil(shadowX) + 'px '+ Math.ceil(shadowY) +'px '+ blur + color;
+ 
+                        $shadow.css({ 
+                            '-webkit-filter': CSSvalue ,
+                            '-moz-filter':    CSSvalue ,
+                            '-ms-filter':     CSSvalue ,
+                            'filter':         CSSvalue
+                        });
+                    }).on('mouseleave', function(){
+                        var $shadow = $(this).find('img');
+                        var CSSDefaultvalue = 'drop-shadow(-12px 5px 0px rgba(0, 0, 0, 0.1))';
+                        $shadow.css({ 
+                            '-webkit-filter': CSSDefaultvalue ,
+                            '-moz-filter':    CSSDefaultvalue ,
+                            '-ms-filter':     CSSDefaultvalue ,
+                            'filter':         CSSDefaultvalue
+                        }); 
+                    });
+                    //drop-shadow on image end
+                });
+            }
         }
     }
 }])

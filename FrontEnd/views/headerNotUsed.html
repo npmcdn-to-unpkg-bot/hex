@@ -1,0 +1,13 @@
+<div class="main-header" ng-class="{'color-change': wOffset > bannerArea, 'larger-width': wOffset > 20}">
+    <div class="layout-container">
+        <a href="#/home" class="main-logo">H<span>E</span>X</a> 
+        <button class="btn nav-btn"><i class="menu-line"></i></button>
+        <ul>
+            <li ng-class="menuClass('work')"><a href="#/work" data-hover="Work">Work</a></li>
+            <li ng-class="menuClass('approach')"><a href="#/approach" data-hover="Approach">Approach</a></li>
+            <li ng-class="menuClass('about')"><a href="#/about" data-hover="About">About</a></li>
+            <li ng-class="menuClass('freebies')"><a href="#freebies" data-hover="Freebies">Freebies</a></li>
+            <li ng-click="contact()" ng-class="menuClass('contact')"><a href="javascript:void(0)" data-hover="Contact">Contact</a></li>
+        </ul>
+    </div>
+</div>

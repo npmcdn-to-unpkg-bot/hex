@@ -63,7 +63,7 @@
     .major-works-box{
         padding-right:10%;
     }
-    //meet-our-team
+    //meet-our-client
     //======================
     .content-half-block{
         padding:22% 15% 0; 
@@ -312,20 +312,20 @@
     //==========
     .block-wrap .block, 
     .block-wrap .prev-next-wrap, 
-    .meet-our-team li,
+    .meet-our-client li,
     .ui-used-fonts, .ui-used-icons{
         height:$height-md-1; // (940/4)*1
     }
-    .stripe-1{
+    .stripe{
         width:$height-md-1;
         height:$height-md-1;
     }
     .work-with-us-panel, 
     .stripe-wrap, 
     .hex-download-stuff, 
-    .inner-banner, 
+    /*.inner-banner, .banner-wrap-inner,*/
     .work-dec-panel, 
-    .meet-our-team,
+    .meet-our-client,
     .content-half-block,
     .approach-image-panel{
         height:$height-md-2; // (940/4)*2 

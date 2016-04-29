@@ -221,19 +221,21 @@
  
 // contact popup animation
 //========================
-.contact-popup.ng-enter{
-    top:-100%;
+.contact-popup.ng-enter, .contact-popup.ng-leave-active{
+    /*top:-100%;
     opacity:0.5;
-    height:0;
+    height:0;*/
     overflow: hidden;
-    @include transition(height 0.3s linear);
+    @include transition(all 0.1s ease-in-out);
     position:fixed;
+    @include scale(0.8);
+    opacity:0; 
 }
 .contact-popup.ng-enter-active{
     top:0;
     opacity:1;
-    position:fixed;
     height:100vh;
+    @include scale(1);
 }
 .contact-popup.ng-leave{
     top:0;
@@ -241,11 +243,9 @@
     position:fixed;
     height:100vh;
     overflow: hidden;
-    @include transition(height 0.3s linear);
+    @include transition(all 0.1s ease-in-out);
 }
 .contact-popup.ng-leave-active{
-    opacity:1;
-    top:0;
-    position:fixed;
-    height:0;
+    opacity:0;
+    @include scale(0.7);
 }

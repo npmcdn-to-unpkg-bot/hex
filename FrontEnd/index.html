@@ -21,75 +21,36 @@
 </head>
 
 <body>
-    <div ng-if="loaderActive"  class="loader-layer angular-animate">HEX</div>
+     
     <!--contact start-->
     <div ng-if="contactShow" ng-include=" 'views/contact.html' " class="contact-popup angular-animate"></div>
     <!--contact end-->
     
     <!--header start-->
-    <header class="main-header" ng-class="{'color-change': wOffset > bannerArea, 'larger-width': wOffset > 20}">
-        <div class="layout-container">
-            <a href="#/home" class="main-logo" >HEX</a> 
-            <button class="btn nav-btn"><i class="menu-line"></i></button>
-            <ul>
-                <li ng-class="menuClass('work')"><a href="#/work" data-hover="WORK">WORK</a></li>
-                <li ng-class="menuClass('approach')"><a href="#/approach" data-hover="APPROACH">APPROACH</a></li>
-                <li ng-class="menuClass('about')"><a href="#/about" data-hover="ABOUT">ABOUT</a></li>
-                <li ng-class="menuClass('freebies')"><a href="#freebies" data-hover="FREEBIES">FREEBIES</a></li>
-                <li ng-click="contact()" ng-class="menuClass('contact')"><a href="javascript:void(0)" data-hover="CONTACT">CONTACT</a></li>
-            </ul>
-        </div>
-    </header>
+    <header ui-view="header"></header> 
     <!--header End-->
-    
-    <section class="banner-wrap" banner-dir>
-        <div ng-include="banner"></div>
+                        
+    <!--banner start-->                                                       
+    <section class="banner-wrap" ng-class="bannerWrapHome ? 'banner-wrap-home' : 'banner-wrap-inner'">  
+         <div ui-view="bannerHome" class="banner-view-home angular-animate" ng-if="stateChangeInnerHome"></div>
+         <div ui-view="bannerInner" class="banner-view-inner layout-container angular-animate" ng-if="!stateChangeInnerHome"></div>
     </section>
+    <!--banner end--> 
+    
     <!--content area start-->
-    <div ng-view class="content-area angular-animate"></div> 
+    <section class="content-area-wrap layout-wrapper">
+        <div ui-view="content" class="content-area angular-animate"></div>
+    </section> 
     <!--content area End-->
+    
     <!-- Footer -->
-    <footer>
-        <section class="menu-block">
-            <div class="layout-container">
-                <span class="footer-logo">HEX</span>
-                <ul class="footer-nav">
-                    <li><a ng-href="#/">Home</a></li>
-                    <li><a ng-href="#/aboutus">About us</a></li>
-                    <li><a ng-href="#/contactus">Contact us</a></li>
-                </ul>
-                <aside class="social-links">
-                    <a href="#" class="icon-fb"></a>
-                    <a href="#" class="icon-linkedin"></a>
-                    <a href="#" class="icon-twitter"></a>
-                </aside>
-            </div>
-        </section>
-        <section class="design-quote">
-           <div class="layout-container">
-                <div class="content-quote">
-                    <div class="messages">
-                        <p>Simplicity is not the goal. It is the by-product of a good idea and modest expectations.</p>
-                        <span class="author">Leo Burnett</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="copy-rights">
-            <div class="layout-container">
-                <span class="copy">&copy; Copyright 2015 - 2016 HEX. All Rights Reserved</span>
-                <div class="powered-by">
-                    <span>Powered by</span>
-                    <a href="http://toobler.com/" target="_blank" class="toobler"><img src="images/toobler.png" alt="Toobler Technologies"></a>
-                </div>
-            </div>
-        </section>
-    </footer>
+    <footer ui-view="footer"></footer>
     <!-- End Footer -->
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/angular-ui-router.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.19/dist/jquery.flip.min.js"></script>

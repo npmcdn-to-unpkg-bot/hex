@@ -1,9 +1,7 @@
-.inner-banner{
-    background:url('/images/banner/banner-inner.jpg') no-repeat center;
+.banner-wrap-inner{
+    background:url('../images/banner/banner-inner.jpg') no-repeat center top;
     text-align:center;
-    height:100vw;
-    max-height:350px;
-    padding-top:145px;
+    
     h1{
         font-size:8vw;
         margin:0;
@@ -15,9 +13,9 @@
         font-size:16px;
     }
 }
-
+ 
 //inner-page content panel
 //=======================
-.portfolio-panel, .casestudy-panel{
+.portfolio-panel, .casestudy-panel, .approach-panel{
     padding-top:30px;
 }

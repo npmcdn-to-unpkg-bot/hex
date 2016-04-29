@@ -136,3 +136,226 @@
 }
 
 
+
+//meet-our-family
+//===============
+.meet-our-family{
+}
+.info-team{
+    position: absolute;
+    left:15px;
+    top:15px;
+    text-align:left;
+    cursor:pointer;
+    z-index:100;
+    h3{
+        font-size:15px;
+        line-height:20px;
+        color:rgba(0,0,0,0.22);
+        text-transform:uppercase;
+        margin:0;
+        font-weight:500;
+        @include transition( all 0.3s linear );
+    }
+    p{
+        font-size:13px;
+        line-height:18px;
+        color:rgba(0,0,0,0.11);
+        margin:0;
+        text-transform:lowercase;
+        font-weight:500;
+        @include transition( all 0.3s linear );
+    }
+}
+.view-popup{
+    width:6px;
+    height:6px;
+    @include border-radius(50%);
+    border:1px solid rgba(0,0,0,0.11);
+    display: block;
+    position: relative;
+    margin:15px 0 0 8px;
+    opacity:0;
+    @include transition(all 0.3s linear);
+    &:after, &:before{
+        position:absolute;
+        display: block;
+        content:'';
+        width:6px;
+        height:6px;
+        @include border-radius(50%);
+        border:1px solid rgba(0,0,0,0.11);
+        top:-1px;
+        @include transition(all 0.2s linear);
+    }
+    &:after{
+        left:0px;
+    }
+    &:before{
+        right:0px;
+    }
+}
+
+.team-listing{
+    .block{
+        @include box-shadow(inset 1px 1px 0 #fff);
+        background:$primary-color;
+        overflow: hidden; 
+        img{
+            @include filter( drop-shadow(-12px 5px 0px rgba(0, 0, 0, 0.1)) );
+            @include transition( all 0.6s linear );
+        }
+        &:hover{
+            img{
+                @include transition( none );
+            } 
+            .view-popup{
+                opacity:1;
+                &:after{
+                    @include animation(moveLeft 1s  both 0.4s);
+                }
+                &:before{
+                    @include animation(moveRight 1s  both 0.4s);
+                }
+            }
+            .info-team{
+                h3{
+                    color:rgba(0,0,0,0.44);
+                }
+                p{
+                    color:rgba(0,0,0,0.33);
+                }
+            }
+        }
+       
+    }
+}
+ 
+@include keyframes(moveLeft){
+    0%, 100%{
+        left:-8px;
+    }
+    33%{
+        left:0;
+    }
+    76%{
+        left:-8px;
+    }
+}
+@include keyframes(moveRight){
+    0%, 100%{
+        right:-8px;
+    }
+    33%{
+        right:0;
+    }
+    76%{
+        right:-8px;
+    }
+}
+
+.profile{
+    background:$primary-color;
+    position:fixed;
+    z-index:100;
+    top:2%;
+    left:2%;
+    bottom:2%;
+    right:2%;
+    overflow:hidden;
+    text-align: center;
+    .icon-close{
+        position:absolute;
+        top:15px;
+        right:15px;
+        color:$sub-title-color;
+        cursor:pointer;
+        opacity:0.1;
+        font-size:20px;
+        @include transition(all 0.3s linear);
+        z-index:1;
+        &:hover{
+            opacity:0.3;
+        }
+    }
+    &.ng-enter{
+        opacity:0;
+        @include transition(all 0.2s ease-in-out);
+        @include scale(0.8);
+    }
+    &.ng-enter-active{
+        opacity:1;
+        @include scale(1);
+    }
+    &.ng-leave{
+        @include transition(all 0.2s ease-in-out);
+    }
+    &.ng-leave-active{
+        @include scale(0.8);
+        opacity:0;
+    }
+}
+.overlay{
+    background:rgba(0,0,0,1);
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:99;
+    &.ng-enter{
+        opacity:0;
+        @include transition(all 0.2s ease-in-out );
+        @include scale(0.8);
+    }
+    &.ng-enter-active{
+        opacity:1;
+        @include scale(1);
+    }
+    &.ng-leave{
+        @include transition(all 0.1s ease-in-out);
+    }
+    &.ng-leave-active{
+        opacity:0;
+        @include scale(0.8);
+    }
+}
+.profile-description{
+    margin:40px 0 30px;
+    h3{
+        font-size:28px;
+        margin:0;
+        color:$title-color;
+        span{
+            color:#eb7b02;
+        }
+    }
+    h4{
+        font-size:12px;
+        text-transform:uppercase;
+        color:$sub-title-color;
+        font-weight:500;
+        font-family:$font-family-base;
+        margin:0 0 25px;
+    }
+    p{
+        font-size:13px;
+        line-height:20px;
+        display:none;
+        color:$sub-title-color;
+    }
+}
+.profile-social-media{
+    margin-bottom:0px;
+    span{
+        font-size:30px;
+        color:$sub-title-color;
+        margin:0 2px;
+        opacity:0.5;
+        cursor: pointer;
+        @include transition(all 0.3s linear);
+        &:hover{
+            opacity:0.8;
+        }
+    }
+}

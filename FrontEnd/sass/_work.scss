@@ -9,7 +9,7 @@
 }
 .work-filter-panel.fixed {
     @include box-shadow( rgba(0, 0, 0, 0.1) 1px 1px 2px);
-    top:41px;
+    top:0;
 }
 .work-filter{
     position: relative;

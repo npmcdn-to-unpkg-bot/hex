@@ -1,79 +1,84 @@
 footer{
-    .menu-block{
-        padding: 20px 0;
-        background-color:$grey-bg-secondary;
+    background:#000;
+    padding:40px 0;
+    blockquote{
         text-align: center;
-        .footer-logo {
-            color:#000;
-            font-family: $title-font;
-            font-size: 22px;
-            display: block;
-        }
-    }
-    .footer-nav{
-        display: inline-block;
-        li{
-            display: inline-block;
-            margin-left: 10px;
-        }
-        a{
-            color:$grey-text-secondary;
-            font-size: 16px;
-            margin-top: 5px;
-        }
-        a:hover{
-            color:$grey-text-primary;
-        }
-    }
-    .social-links{
-        display: block;
-    }
-}
-.design-quote{
-    background-color:$black;
-    .content-quote{
-        background: url(../images/LeoBurnett.png) no-repeat 100% 100% ;
-        @include background-size(40%);
-        padding: 50px 0;
-        .messages{
-            width: 100%;
-            display: inline-block;
-        }
         p{
-            font-size: 16px;
-            font-family: $font-family-base;
-            color: $white;
+            font-size:24px;
+            line-height:40px;
+            font-weight:300;
+            color:#fff;
+            font-family:$font-family-base;
         }
-        .author{
-            display: block;
-            color: $white;
-            font-size: 14px;
-            @include opacity(0.5);
-            margin-top: 25px;
-        }
-    }
-}
-.copy-rights{
-    padding: 20px 0;
-    @include clearfix();
-    span{
-        display: inline-block;
-        font-size: 12px;
-        vertical-align: middle;
-        color:$grey-text-secondary;
-        margin-top:5px;
-        line-height:20px;
-    }
-    .powered-by{
         span{
-            margin-right: 5px;
+            font-size:15px;
+            font-weight:500;
+            color:$grey-text-primary;
+            background:url(../images/ico-spects.png) no-repeat center 0;
+            padding:40px 0 0;
+            margin:10px 0 30px;
+            display:inline-block;
         }
-        .toobler{
-            display: inline-block;
+    }
+    .footer-bottom{
+        border-top:1px solid #202020;
+        padding:30px 0 0;
+    }
+    .copy-right{
+        left: 0;
+        margin: 5px auto 0;
+        max-width: 244px;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        color:#7a7a7a;
+        font-size:12px;
+        font-family:$font-family-base;
+    }
+    .footer-social{
+        float:right;
+        > a{
+            color:#999999;
+            font-size:15px;
+            margin:6px 10px 0 0;
+            text-transform:uppercase;
+            display:inline-block;
         }
+            .social-links{
+                float:right;
+                a{
+                    @include transition(all 0.3s linear);
+                    margin:0 0 0 4px;
+                    span{
+                        position:relative;
+                        @include transition(all 0.3s linear);
+                    }
+                    &:hover{
+                        background:$primary-color;
+                        span{
+                            color:#000;
+                        }
+                    }
+                }
+                .icon-fb{
+                    top:1px;
+                }
+                .icon-twitter{
+                    top:1px;
+                    left:1px;
+                }
+            }
+    }
+    .footer-toobler-hex{
+        float:left;
         img{
-            display: inline-block;
-            vertical-align: middle;
+            float:left; 
+        }
+        span{
+            color:$grey-text-secondary;
+            font-size:11px;
+            float:left;
+            margin:4px 0 0 10px;
         }
     }
 }

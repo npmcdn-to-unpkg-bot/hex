@@ -1,5 +1,5 @@
 <!--start about-panel-->
-<section class="about-panel layout-wrapper">
+<section class="about-panel layout-wrapper content-wrapper">
     <!--start about-->
     <div class="about">
         <div class="layout-container">
@@ -56,7 +56,7 @@
         <div class="layout-container">
             <div class="layout-wrapper">
                 <aside class="layout-sm-6 pull-right-sm">
-                    <div class="content-half-block approach-content-block">
+                    <div class="content-half-block">
                         <h3 class="title">Services</h3>
                         <h4>Understand user behavior, needs and perspectives</h4>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
@@ -64,7 +64,20 @@
                 </aside>
                 <div class="layout-sm-6 block-wrap">
                     <div class="block hide-mobile"></div>
-                    <div class="block stripe-1 hide-mobile"></div>
+                    <div class="stripe white">
+                        <div class="deg left">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
                     <div class="block web-design layout-xs-6">
                         <div class="item-center">
                             <img alt="" src="images/block-icons/icon-webdesign.png">
@@ -104,7 +117,19 @@
                         <div class="block-text">FRONT-END DEV.</div>
                     </div>
                 </div>
-                <div class="block stripe-1">
+                <div class="stripe white">
+                    <div class="deg right">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </div>
                 </div>
                 <div class="block interactive-animation layout-xs-6 layout-sm-3">
                     <div class="item-center">
@@ -122,12 +147,61 @@
         </div>
     </div>
     <!--about services end-->
+    
+    <!--team services end-->
+    <div class="team layout-wrapper" team-dir>
+        <div class="layout-container">
+            <aside class="layout-sm-10">
+                    <div class="content-half-block meet-our-family">
+                        <h3 class="title">Meet our fmily</h3>
+                        <h4>Hex is a digital experience design company with roots in India</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    </div>
+            </aside>
+            <aside class="layout-sm-2 hide-mobile"></aside>
+        </div>
+        <div class="layout-container"> 
+            <div class="block-wrap team-listing">
+                <div class="block layout-sm-3" team-member-finished-dir ng-repeat="member in team.teamMembers" ng-click="team.teamMemberPopup($index)" >
+                    <div class="info-team">
+                        <h3>{{member.name}}</h3>
+                        <p>{{member.desigination}}</p>
+                        <span class="view-popup"></span>
+                    </div>
+                    <img src="images/team/medium/bibin-babu.png" alt="">
+                </div>
+                <div class="overlay angular-animate" ng-if="team.teamMemberPopupShow" ng-click="team.teamMemberPopup()"></div>
+                <aside class="profile layout-container angular-animate" ng-if="team.teamMemberPopupShow">
+                    <span class="icon-close" ng-click="team.teamMemberPopup()"></span>
+                    <div class="layout-sm-6 profile-description-wrap">
+                        <div class="profile-description">
+                            <h3><span>I'm</span>{{team.member.name}}</h3>
+                            <h4>{{team.member.desigination}}</h4>
+                            <p>{{team.member.aboutMe}}</p>
+                            <div class="profile-social-media" ng-if="team.member.socialMedia">
+                                <span class="icon-profile-behance" ng-if="team.member.socialMedia.behance"></span>
+                                <span class="icon-profile-dribbble" ng-if="team.member.socialMedia.dribbble"></span>
+                                <span class="icon-profile-linkedin" ng-if="team.member.socialMedia.linkedin"></span>
+                                <span class="icon-profile-twitter" ng-if="team.member.socialMedia.twitter"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layout-sm-6 profile-photo">
+                        <figure>
+                            <img ng-src="{{team.member.image.large}}" alt="">
+                        </figure>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+    <!--team services end-->
     <!--client services start-->
     <div class="clients layout-wrapper">
         <div class="layout-container">
             <div class="layout-wrapper">
                 <aside class="layout-sm-6">
-                    <div class="content-half-block approach-content-block">
+                    <div class="content-half-block">
                         <h3 class="title">Client</h3>
                         <h4>Understand user behavior, needs and perspectives</h4>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>

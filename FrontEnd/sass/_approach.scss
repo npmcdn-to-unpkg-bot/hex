@@ -118,3 +118,120 @@
         opacity:0;
     }
 }
+
+.approach-step-panel{
+    position:absolute;
+    top:0;
+    z-index:100;
+    margin-left:-80px;
+    height:60px;
+    width:60px;
+}
+.approach-step-panel.fixed{
+    position:fixed;
+    top:40px;
+    &:hover{
+    }
+}
+.approach-step {
+    background:#fff;
+    @include border-radius(50%);
+    @include box-shadow(0px 2px 0px 0px rgba(199,199,199,1) );
+    width:60px;
+    height:60px;
+    margin:10px 0 0 0;
+    align-items:center;
+    display:flex;
+    text-align: center;
+    justify-content:center;
+    position:absolute;
+    cursor:pointer;
+    @include transition(all 0.3s ease);
+    img{
+        @include transition(all 0.6s ease);
+        opacity:0;
+    }
+    span{
+        @include transition(all 0.6s ease);
+        color:#fff;
+        position:absolute;
+        bottom:-50px;
+        left:-15px;
+        right:-15px;
+        color:#fff;
+        font-size:14px;
+        white-space:nowrap;
+        opacity:0;
+    }
+} 
+ 
+.approach-step:nth-child(1){
+    top:1px;
+    z-index:100;
+}
+.approach-step:nth-child(2){
+    top:3px;
+    z-index:99;
+}
+.approach-step:nth-child(3){
+    top:5px;
+    z-index:98;
+}
+.approach-step:nth-child(4){
+    top:7px;
+    z-index:97;
+}
+.approach-step:nth-child(5){
+    top:9px;
+    z-index:96;
+}
+.approach-step:nth-child(6){
+    top:11px;
+    z-index:95;
+}
+.approach-step-panel{
+    &:hover{
+        height:calc(100vh - 100px);
+        .approach-step{
+            img, span{
+                opacity:1;
+            }
+            span{
+                bottom:-15px;
+                font-size:12px;
+            }
+            &.active{
+                @include animation(logoAnim 0.6s  both);
+                @include transform-origin(top center);
+            }
+        }
+        .approach-step:nth-child(1){
+            top:1px;
+        }
+        .approach-step:nth-child(2){
+            top:90px;
+        }
+        .approach-step:nth-child(3){
+            top:180px;
+        }
+        .approach-step:nth-child(4){
+            top:270px;
+        }
+        .approach-step:nth-child(5){
+            top:360px;
+        }
+        .approach-step:nth-child(6){
+            top:450px;
+        }
+    }
+}
+.approach-step.active{ 
+     z-index:101;
+    top:1px;
+    span, img{
+        opacity:1;
+    }
+    span{
+        bottom:-30px;
+    }
+}

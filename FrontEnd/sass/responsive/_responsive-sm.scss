@@ -45,17 +45,18 @@
             top:20px;
         }
         .nav-btn{
-            top:24px;
+            top:23px;
             position: fixed;
         }
         ul{
             left:0;
             right:0;
             margin:0 auto;
-            top:28px;
-            opacity:0;
+            top:33px; 
+            /*opacity:0;*/
             text-align:right;
-            @include transition(all 0.5s ease); 
+            @include transition(all 0.1s linear); 
+            @include transition-property(background, opacity, top);
             display:block !important;
             li{
                 float:none;
@@ -67,25 +68,27 @@
             }
             li a{
                 font-weight:500;
-                font-size:16px;
+                font-size:14px;
                 display:block;
-                padding:5px 0;
+                padding:0;
                 cursor:pointer;
                 position: relative;
                 color:$grey-text-primary;
+                text-transform:uppercase;
                 @include transition(all 0.5s ease);
+                color:#978535;
                 &:before{
-                    padding:5px 0;
+                    padding:0;
                     position:absolute;
                     top:0;
                     left:0;
                     content:attr(data-hover);
                     max-width:0;
                     @include transition(all 0.5s ease);
-                    color:#000;
+                    color:#978535;
                     display: block;
                     overflow:hidden;
-                    border-bottom:1px solid #000;
+                    border-bottom:1px solid #978535;
                 }
                 &:hover{
                     color:$primary-color;
@@ -117,24 +120,26 @@
                 @include transition(all 0.3s linear);
                 left:97%;
                 margin-left:-26px;
-                top:10px;
+                top:11px;
             }
 
             .main-logo {
                 left:3%;
                 margin-left:0;
-                top:7px;
+                top:8px;
             }
             ul{
                 width:100%;
-                padding:15px 3% 15px 0;
-                height:63px;
+                padding:20px 3% 0 0;
+                height:60px;
                 top:-63px;
+                opacity:0;
                 background:$primary-color;
             }
             &:hover{
                 ul{
                     top:0;
+                    opacity:1;
                 }
                 .main-logo {
                     color:#000;
@@ -151,6 +156,77 @@
                 .main-logo {
                     color:$primary-color;
                 }
+        }
+    }
+    
+    //home-header
+    //==========
+    .home-header{
+        text-align: center;
+        position:absolute;
+        left:0;
+        right:0;
+        top:25px;
+        z-index:100;
+        display:block;
+        .main-logo{
+            font-size:30px;
+            position: absolute;
+            font-family: $title-font;
+            max-width:100px;
+            left:0;
+            right:0;
+            margin:0 auto;
+        }
+        ul{
+            margin-top:12px;
+        }
+        li{
+            margin:0 15px;
+            display:inline-block;
+        }
+        li a{ 
+            font-weight:500;
+            font-size:14px;
+            display:block;
+            padding:0;
+            cursor:pointer;
+            position: relative;
+            color:$grey-text-primary;
+            text-transform:uppercase;
+            @include transition(all 0.5s ease);
+            color:#978535;
+            &:before{
+                padding:0;
+                position:absolute;
+                top:0;
+                left:0;
+                content:attr(data-hover);
+                max-width:0;
+                @include transition(all 0.5s ease);
+                color:#978535;
+                display: block;
+                overflow:hidden;
+                border-bottom:1px solid #978535;
+            }
+            &:hover{
+                color:$primary-color;
+                &:before{
+                    max-width:100%;
+                }
+            }
+        }
+        ul.pull-left{
+            float:left;
+            li{
+                float:left;
+            }
+        }
+        ul.pull-right{
+            float:right;
+            li{
+                float:right;
+            }
         }
     }
     // banner 
@@ -306,6 +382,12 @@
             }
         }
     }
+    
+    .banner-wrap-inner{
+        padding-top:145px;
+        height:350px;
+    }
+    
     // common sm end
     //====================
     
@@ -468,7 +550,7 @@
         @extend %next-prev-arrow;
     }
 
-    //meet-our-team
+    //meet-our-client
     //======================
     .content-half-block{
         padding:10% 10% 0;
@@ -483,7 +565,7 @@
             line-height:24px;
         }
     }
-    .meet-our-team{
+    .meet-our-client{
         position: relative;
         overflow:hidden;
         li{
@@ -493,9 +575,13 @@
             margin:0;
             padding:0;
             position: absolute;
-            p{
+            align-items:center;
+            display: flex;
+            justify-content:center;
+            text-align:center;
+           /* p{
                 font-size:15px;
-            }
+            }*/
         }
         li:nth-child(3n), li:nth-child(4n-2) {
             background:$grey-bg-primary;
@@ -550,17 +636,51 @@
             height:50% !important;
         }
     }
-    .stripe-1 {
-      color: white;
-      background: repeating-linear-gradient(
-        45deg,
-        #606dbc,
-        #606dbc 10px,
-        #465298 10px,
-        #465298 20px
-      );
+    .stripe {
       float:left;
       display: block;
+      overflow: hidden;
+        .deg{
+            width:147%;
+            height:147%;
+            display: block;
+            margin-top:8px;
+            .line{
+                height:10%;
+                width:100%;
+                display: block;
+                margin-top:-1px;
+            }
+            .line{
+                background:#000;
+            }
+            .line:nth-child(2n){
+                background:#151516;
+            }
+            &.left{
+                @include transform(rotate(-45deg) translateX(0px) translateY(-22.5%));
+            }
+            &.right{
+                @include transform(rotate(45deg) translateX(-22.5%) translateY(0));
+            }
+            &.bottom{
+                margin-top:7px;
+                .line{
+                    background:#151516;
+                }
+                .line:nth-child(2n){
+                    background:#000;
+                }
+            }
+        }
+        &.white{
+            .line{
+                background:#f2f2f2;
+            }
+            .line:nth-child(2n){
+                background:#fff;
+            }
+        }
     }
 
 //====================================
@@ -568,14 +688,14 @@
 
     // inner common banner
     //=====================
-    .inner-banner{
+    .banner-wrap-inner{
         text-align:left;
         h1{
             font-size:50px;
         }
     }
     .bnr-casestudy{
-        padding-top:150px;
+        /*padding-top:150px;*/
         h1{
             line-height:1.2;
             margin:0;
@@ -611,10 +731,11 @@
         }
         text-align: left;
         li{
-            padding:24px 6px;
+            padding:24px 6px 0;
             font-size:15px;
             font-weight:400;
             margin:0 15px;
+            height:63px;
         }
     }
      .move{
@@ -683,8 +804,8 @@
     
     //==================================
     // animation
-    /*start animation meet-our-team*/
-    .meet-our-team li{
+    /*start animation meet-our-client*/
+    .meet-our-client li{
         -webkit-transition: all 1s ease 0s;
         transition:all 1s ease 0s;
         &:nth-child(odd){
@@ -704,7 +825,7 @@
                 top:50%;
         }
     }
-    .meet-our-team li.ng-enter, .meet-our-team li.ng-leave{
+    .meet-our-client li.ng-enter, .meet-our-client li.ng-leave{
         &:nth-child(odd){
                 left:25%;
                 top:25%;
@@ -722,28 +843,28 @@
                 top:25%;
         }
     }
-    .meet-our-team li.ng-enter {
+    .meet-our-client li.ng-enter {
       opacity:0;
       -webkit-transition: 0s !important;
       transition: 0s !important;
     }
-    .meet-our-team li.ng-enter-active {
+    .meet-our-client li.ng-enter-active {
         opacity:0.2;
     }
-    .meet-our-team li.ng-leave {
+    .meet-our-client li.ng-leave {
         -webkit-transition: all 1s ease 0s !important;
         transition:all 1s ease 0s !important;
         opacity:0.2;
         z-index:100;
     }
-    .meet-our-team li.ng-leave-active {
+    .meet-our-client li.ng-leave-active {
         opacity:0;
     }
-    .meet-our-team li.ng-move {
+    .meet-our-client li.ng-move {
     }
-    .meet-our-team li.ng-move-active {
+    .meet-our-client li.ng-move-active {
     }
-    /*end animation meet-our-team*/ 
+    /*end animation meet-our-client*/ 
     //===========================
     
     //work block animation
@@ -1152,14 +1273,14 @@
             position:static;
         }
         li{
-            height:66px;
-            padding-top:26px;
+            height:63px;
+            padding-top:24px;
             font-size:15px;
             margin-right:20px;
         }
         .step-count{
-            width:66px;
-            height:66px;
+            width:63px;
+            height:63px;
             font-size:22px;
             line-height:66px;
             margin-right:20px;
@@ -1346,11 +1467,19 @@
                 width:22px;
                 height:22px;
                 padding:3px 2px;
+                margin-top:-2px;
+            }
+            .checkbox:checked + .chekcbox-icon{
+                padding:3px 2px;
             }
         }
     }
     .submit-query{
         margin:15px 0 0 40%;
+    }
+    .contact-popup{
+        position:fixed;
+        border:none;
     }
     
     // about page
@@ -1361,25 +1490,88 @@
     .about-content{
         margin-bottom:50px;
     }
+    .content-half-block.meet-our-family{
+        padding:10% 0;
+        height:auto;
+    }
+    .team-listing{
+        .block{
+            img{
+                width:100%;
+            }
+        }
+    }
+    
+    .profile{
+        height:90vh;
+        max-height:570px;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+    }
+    .profile-description-wrap{
+        align-items:center;
+        display:flex;
+        height:100%;
+        justify-content:center;
+    }
+    .profile-description{
+        h3{
+            font-size:32px;
+            margin-bottom:10px;
+        }
+        h4{
+            font-size:15px;
+            margin-bottom:40px;
+        }
+        p{
+            display:block;
+            font-size:16px;
+            font-weight:300;
+            line-height:24px;
+            margin:0 auto;
+            margin-bottom:50px;
+            max-width:350px;
+        }
+    }
+    .profile-social-media{
+        span{
+            font-size:40px;
+        }
+    }
+    .profile-photo{
+        position:relative;
+        height:100%;
+        z-index:0;
+        img{
+            margin: auto;
+            position:absolute;
+            bottom:0;
+            left:0;
+            right:0;
+        }
+    }
     //height set
     //==========
     .block-wrap .block, 
     .block-wrap 
     .prev-next-wrap, 
-    .meet-our-team li, 
+    .meet-our-client li, 
     .ui-used-fonts, .ui-used-icons{
         height:$height-sm-1; // (720/4)*1
     }
-    .stripe-1{
+    .stripe{
         width:$height-sm-1;
         height:$height-sm-1;
     }
     .work-with-us-panel, 
     .stripe-wrap, 
     .hex-download-stuff, 
-    .inner-banner, 
+    /*.inner-banner, .banner-wrap-inner, */
     .work-dec-panel, 
-    .meet-our-team,
+    .meet-our-client,
     .content-half-block,
     .approach-image-panel{
         height:$height-sm-2; // (720/4)*2  
@@ -1544,10 +1736,10 @@
         padding-left:30px;
         padding-right:30px;
     }
-    .meet-our-team li{
+    .meet-our-client li{
         background:$grey-bg-secondary;
     }
-    .meet-our-team li:nth-child(2n){
+    .meet-our-client li:nth-child(2n){
         background:$grey-bg-primary;
     }
     
@@ -1573,6 +1765,10 @@
     }
     .icon-type-list{
         right:40px;
+    }
+    .banner-wrap-inner{
+        padding:100px 0 60px;
+        min-height:300px;
     }
     footer {
         .menu-block {
@@ -1607,20 +1803,55 @@
     }
     //==================
     //===== home end ====
-    
+    //work block 
+    //=================
+    .work-panel{
+        padding:76px 0 15px;
+    }
     .work-filter-panel{
+        z-index:99;
+        
+    }
+    .work-filter{
         margin:0 -25px;
     }
-.mail-us-panel{
-    bottom:-100%;
-    height:auto;
-    .layout-container{
-        padding:60px 15px;
+    .mail-us-panel{
+        bottom:-100%;
+        height:auto;
+        .layout-container{
+            padding:60px 15px;
+        }
+        &.mail-us-panel-show{
+            bottom:0;
+        }
     }
-    &.mail-us-panel-show{
-        bottom:0;
+    footer {
+        .footer-social, blockquote{
+            display:none;
+        }
+        .footer-bottom{
+            padding:0;
+            border:none;
+        }
+        .footer-toobler-hex{
+            text-align: center;
+            float:none;
+            img{
+                float:none;
+            }
+            span{
+                float:none;
+                display:inline-block;
+                text-align: left;
+            }
+        }
+        .copy-right{
+            margin:10px auto 0;
+            font-size:11px;
+            position:static;
+            display:block;
+        }
     }
-}
     //block mobile additional style
     //===========================
     
@@ -1637,7 +1868,7 @@
                 margin-top:2vw;
             }
         }
-        .requirment, .mobileapp-design, .interactive-animation {
+        .requirment, .mobileapp-design, .interactive-animation, .qa-assurance {
             background-color:$grey-bg-primary;
         }
         .front-end-dev{
@@ -1683,7 +1914,7 @@
     div.f-none-mobile{
         float:none !important;
     }
-    .hide-mobile, .approach-image-panel, .block-wrap .stripe-1{
+    .hide-mobile, .approach-image-panel, .block-wrap .stripe, .approach-step-panel{
         display:none !important;
     }
 //end
@@ -1699,14 +1930,14 @@
 
 // menu on scroll hide
 //====================
-@media (min-width: $screen-sm) and (max-width: ($screen-sm + 100)) {
-    .larger-width{
+@media (min-width: $screen-sm) and (max-width: ($screen-sm + 130)) {
+    .larger-width, .approach-step-panel{
         display:none;
     }
 //end
 }
-@media (min-width: $screen-md) and (max-width: ($screen-md + 100)) {
-    .larger-width{
+@media (min-width: $screen-md) and (max-width: ($screen-md + 130)) {
+    .larger-width, .approach-step-panel{
         display:none;
     }
 //end

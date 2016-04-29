@@ -1,11 +1,3 @@
-jQuery(document).ready(function($) {
-    //mobile menu button
-    //==================
-    $('.nav-btn').on('click', function(){
-        $('.main-header ul').slideToggle(500);
-    });   
-});
-
 var functionDownRunning = false;
 var functionUpRunning = false;
 $(window).bind('mousewheel DOMMouseScroll', function(event){

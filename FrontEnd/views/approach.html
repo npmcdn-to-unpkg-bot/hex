@@ -1,24 +1,33 @@
 <!--start approach-panel-->
-<section class="approach-panel layout-wrapper">
-    <!--start approach-menu-panel-->
-    <div class="approach-menu-panel" ng-class="{'fixed': wOffset > bnrHeight}">
-        <div class="layout-container">
-            <div class="approach-menu layout-wrapper">
-                <span class="step-count" ng-bind="stepCount(scrollValue)"></span>
-                <ul>
-                    <li class="active" ng-class="{ 'active': step == 1 }">RESEARCH</li>
-                    <li ng-class="{ 'active': step == 2 }">UX</li>
-                    <li ng-class="{ 'active': step == 3 }">UI</li>
-                    <li ng-class="{ 'active': step == 4 }">FRONT-END</li>
-                    <li ng-class="{ 'active': step == 5 }">QA</li>
-                    <li ng-class="{ 'active': step == 6 }">LAUNCH</li>
-                </ul>
-                <div class="move" moving-dir></div>
+<section class="approach-panel layout-wrapper content-wrapper">
+    <div class="layout-container">
+        <div class="approach-step-panel" ng-class="{'fixed': wOffset > bnrHeight}" ng-hide="step == 6">
+           <div class="approach-step active" ng-class="{'active': step == 1}" ng-click="approachScroll('stepResearch')">
+                <img src="images/ico-research.png" alt="" >
+                <span>RESEARCH</span>
+            </div>
+            <div class="approach-step" ng-class="{'active': step == 2 }" ng-click="approachScroll('stepUX')">
+                <img src="images/ico-ux-design.png" alt="">
+                <span>UX DESIGN</span>
+            </div>
+            <div class="approach-step" ng-class="{'active': step == 3 }" ng-click="approachScroll('stepUI')">
+                <img src="images/ico-ui-design.png" alt="">
+                <span>UI DESIGN</span>
+            </div>
+            <div class="approach-step" ng-class="{'active': step == 4 }" ng-click="approachScroll('stepFrontEnd')">
+                <img src="images/ico-front-end.png" alt="">
+                <span>FRONT-END</span>
+            </div>
+            <div class="approach-step" ng-class="{'active': step == 5 }" ng-click="approachScroll('stepQA')">
+                <img src="images/ico-qa.png" alt="">
+                <span>QA</span>
+            </div>
+            <div class="approach-step" ng-class="{'active': step == 6 }" ng-click="approachScroll('stepLaunch')">
+                <img src="images/ico-launch.png" alt="">
+                <span>LAUNCH</span>
             </div>
         </div>
     </div>
-    <!--end approach-menu-panel-->
-
     <!--start approach-research-panel-->
     <div class="approach-research-panel">
         <div class="layout-container">
@@ -27,11 +36,24 @@
                     <div class="content-half-block approach-content-block">
                         <h3 class="title">Research &amp; Concept</h3>
                         <h4>Understand user behavior, needs and perspectives</h4>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 150s.</p>
                     </div>
                 </aside>
                 <div class="layout-sm-3 hide-mobile block-wrap">
-                    <div class="block stripe-1 layout-wrapper"></div>
+                    <div class="stripe white hidden">
+                        <div class="deg right">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
                     <div class="block discussion layout-xs-12">
                         <div class="item-center">
                             <img src="images/block-icons/ico-discussion.png" alt="">
@@ -105,8 +127,21 @@
                     </div>
                 </aside>
                 <div class="layout-sm-6 block-wrap">
-                    <div class="block stripe-1"></div>
                     <div class="block layout-sm-6 hidden hide-mobile"></div>
+                    <div class="stripe white">
+                        <div class="deg right">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
                     <div class="block layout-xs-6 prototyping">
                         <div class="item-center">
                             <img src="images/block-icons/ico-prototyping.png" alt="">
@@ -172,7 +207,20 @@
                 </aside>
                 <div class="layout-sm-6 block-wrap">
                     <div class="block layout-sm-6 hidden hide-mobile"></div>
-                    <div class="block stripe-1"></div> 
+                    <div class="stripe white">
+                        <div class="deg left">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
                     <div class="block layout-xs-6 interactivity">
                         <div class="item-center">
                             <img src="images/block-icons/ico-interactivity.png" alt="">
@@ -191,7 +239,20 @@
                             <div class="block-text">ILLUSTRATION</div>
                         </div>
                     </div>
-                    <div class="block stripe-1"></div> 
+                    <div class="stripe white">
+                        <div class="deg left">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -234,7 +295,20 @@
                 <div class="layout-sm-6 block-wrap hide-mobile">
                     <div class="block layout-sm-6"></div>
                     <div class="block layout-sm-6"></div>
-                    <div class="block stripe-1"></div> 
+                    <div class="stripe white">
+                        <div class="deg right">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="layout-wrapper block-wrap">
@@ -278,8 +352,21 @@
                     </aside>
                 </div>
                 <div class="layout-sm-6 block-wrap">
-                    <div class="block stripe-1"></div>
-                    <div class="block hidden hide-mobile"></div> 
+                    <div class="block layout-sm-6 hidden hide-mobile"></div>
+                    <div class="stripe white">
+                        <div class="deg right">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
                     <div class="block layout-xs-6 quality">
                         <div class="item-center">
                             <img src="images/block-icons/ico-quality.png" alt="">
@@ -292,13 +379,26 @@
                             <div class="block-text">TESTING</div>
                         </div>
                     </div>
+                    <div class="stripe white">
+                        <div class="deg right">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
                     <div class="block layout-xs-6 qa-assurance">
                         <div class="item-center">
                             <img src="images/block-icons/ico-qa-assurance.png" alt="">
                             <div class="block-text">QUALITY ASSURANCE</div>
                         </div>
                     </div>
-                    <div class="block stripe-1"></div>
                 </div>
             </div>
         </div>

@@ -3,19 +3,47 @@
         "id": 0,
         "name": "Bobin George",
         "desigination": "CEO",
-        "image": "images/team/bobin-george.png"
+        "aboutMe": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        "image": {
+            "medium": "images/team/medium/bobin-george.png",
+            "large": "images/team/large/bobin-george.png"
+        },
+        "socialMedia": {
+            "linkedin": "link",
+            "twitter": "link"
+        }
     },
     {
         "id": 1,
         "name": "Jerry Don",
         "desigination": "CTO",
-        "image": "images/team/jerry-don.png"
+        "aboutMe": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        "image": {
+            "medium": "images/team/medium/jerry-don.png",
+            "large": "images/team/large/jerry-don.png"
+        },
+        "socialMedia": {
+            "behance": "link",
+            "dribbble": "link",
+            "linkedin": "link",
+            "twitter": "link"
+        }
     },
     {
         "id": 2,
         "name": "Dinu Danial",
         "desigination": "Project Manager",
-        "image": "images/team/dinu-danial.png"
+        "aboutMe": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+        "image": {
+            "medium": "images/team/medium/dinu-danial.png",
+            "large": "images/team/large/dinu-danial.png"
+        },
+        "socialMedia": {
+            "behance": "link",
+            "dribbble": "link",
+            "linkedin": "link",
+            "twitter": "link"
+        }
     },
     {
         "id": 3,

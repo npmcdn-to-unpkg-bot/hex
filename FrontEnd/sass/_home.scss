@@ -10,7 +10,9 @@
     left:0;
     right:0;
 }
-
+.home-header{
+    display:none;
+}
 //start great company start
 //=========================
 svg{
@@ -489,10 +491,10 @@ svg{
     }
     //casestudy
     //==============
-    .mobileapp-design, .discussion, .quality, .interactive-animation, .coding, .interactivity, .testing, .prototyping, .research, .requirment, .wireframe, .mvc-framework, .web-design, .work-with-us-link, .wireframe{
+    .mobileapp-design, .discussion, .quality, .interactive-animation, .coding, .interactivity, .testing, .prototyping, .research, .requirment, .wireframe, .mvc-framework, .web-design, .work-with-us-link, .wireframe, .qa-assurance{
         background:$grey-bg-secondary;
     }
-    .branding, .front-end-dev, .qa-assurance, .qa-testing, .script, .illustration, .layout, .journy, .architecture, .study, .sketch, .deployed, .cup, .hex, .sketch{
+    .branding, .front-end-dev, .qa-testing, .script, .illustration, .layout, .journy, .architecture, .study, .sketch, .deployed, .cup, .hex, .sketch{
         background:$grey-bg-primary; 
     }
     
@@ -602,8 +604,8 @@ svg{
 .img-middle{
     @extend %img-middle;
 }
-//meet-our-team-panel
-.meet-our-team-panel{
+//meet-our-client-panel
+.meet-our-client-panel{
     background:#fff;
 }
 .content-half-block{
@@ -617,11 +619,11 @@ svg{
         line-height: 26px;
     }
 }
-.meet-our-team{
+.meet-our-client{
     li{
         text-align: center;
         padding:10% 0 9%;
-        figure{
+        /*figure{
             margin-bottom:5px;
         }
         h5{
@@ -631,7 +633,7 @@ svg{
         p{
             color:$grey-text-primary;
             font-size:16px;
-        }
+        }*/
     }
 }
 //hex-download-stuff
@@ -719,43 +721,164 @@ svg{
         }
     }
 }
-.content-area{
-    position:relative;
-}
 .hidden{
     visibility:hidden !important;
 }
 
-.loader-layer{
-    background:$primary-color;
-    position:fixed;
-    height:0%;
+
+
+// view banner animation
+//======================
+.banner-view-inner.ng-enter{
+    @include transition(all 0.6s linear);
+    @include animation(flipInX 0.6s  both 0.3s);
+    position:absolute;
     left:0;
     right:0;
-    /*display:none;*/
-    z-index:1002;
+    margin:0 auto;
+}
+.banner-view-inner.ng-enter-active{ 
+}
+.banner-view-inner.ng-leave{
+    @include transition(all 0.6s linear);
+    @include animation(flipOutX 0.6s  both -0.2s); 
+    position:absolute;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+.banner-view-inner.ng-leave-active{ 
+}
+//flipIn keyframe
+//================
+@include keyframes(flipInX) {
+    from{
+        @include perspective(400px);
+        @include transform(rotate3d(1, 0, 0, 90deg));
+        @include animation-timing-function(ease-in);
+        opacity:0;
+    }
+    40%{
+        @include perspective(400px);
+        @include transform(rotate3d(1, 0, 0, -20deg));
+        @include animation-timing-function(ease-in);
+    }
+    60%{
+        @include perspective(400px);
+        @include transform(rotate3d(1, 0, 0, 10deg));
+        opacity:1;
+    }
+    80%{
+        @include perspective(400px);
+        @include transform(rotate3d(1, 0, 0, -5deg));
+    }
+    to{
+        @include perspective(400px);
+    }
+}
+@include keyframes(flipOutX) {
+    from{
+        @include perspective(400px)
+    }
+    30%{
+        @include perspective(400px);
+        @include transform(rotate3d(1, 0, 0, -20deg));
+    }
+    to{
+        @include perspective(400px);
+        @include transform(rotate3d(1, 0, 0, 90deg)); 
+    }
+}
+
+// banner home animation
+//=====================================
+.banner-wrap{
+    @include transition(height 0.2s linear);
+    overflow: hidden;
+}
+.banner-wrap-home{
+    height:100vh;
+}
+.banner-view-home.ng-leave{
+    position:absolute;
     top:0;
-    opacity:0;
-    
-}
- 
-
-
-
-
-.loader-layer.ng-enter {
+    left:0;
+    right:0;
+    @include transition(all 0.6s linear );
     opacity:1;
-    display: block;
-    height:100%;
-    border:1px solid red;
-    @include transition(all 0.3s linear);
-    height:0;
+    .banner{
+        @include animation(flipOutX 0.4s  both -0.1s);
+    }
 }
-.loader-layer.ng-enter-active, .loader-layer.ng-leave{
-    border:3px solid green;
-    height:100%;
-    display: block;
+.banner-view-home.ng-leave-active{
+    opacity:0;
 }
-.loader-layer.ng-leave {
-    height:0;
+.banner-view-home.ng-enter{
+    @include transition(all 0.6s linear );
+    .banner{
+        @include animation(flipInX 0.6s  both);
+    }
 }
+.banner-view-home.ng-enter-active{
+    .banner{
+    }
+}
+// content-area page change
+//=========================
+.content-area-wrap{
+    position:relative;
+    min-height:90vh;
+}
+.content-area.ng-leave{
+    opacity:1;
+    @include transition(all 0.8s linear );
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    z-index:100;
+}
+.content-area.ng-leave-active{
+    opacity:0;
+}
+.content-area.ng-enter{
+    left:0;
+    right:0;
+    position:absolute;
+    opacity:0;
+    top:0;
+    @include transition(all 0.8s linear );
+    z-index:10;
+}
+.content-area.ng-enter-active{
+    opacity:1;
+}
+
+//logo animation
+//==============
+.logo-animate.main-logo{
+    @include animation(logoAnim 0.6s  both);
+    @include transform-origin(top center);
+}
+
+@include keyframes(logoAnim){
+    20%{
+        @include transform( rotate3d(0, 0, 1, 15deg) );
+    }
+    40%{
+        @include transform( rotate3d(0, 0, 1, -10deg) );
+    }
+    60%{
+        @include transform( rotate3d(0, 0, 1, 5deg) );
+    }
+    80%{
+        @include transform( rotate3d(0, 0, 1, -5deg) );
+    }
+    to{
+        @include transform( rotate3d(0, 0, 1, 0deg) );
+    }
+}
+
+
+ 
+ 

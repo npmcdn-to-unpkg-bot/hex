@@ -113,6 +113,9 @@
             margin-top:36px;
         }
     }
+    footer{
+        padding:70px 0 50px;
+    }
     //image-flip-panel
     //================
 /*    .image-flip-panel{
@@ -141,11 +144,11 @@
     //==========
     .block-wrap .block, 
     .block-wrap .prev-next-wrap, 
-    .meet-our-team li, 
+    .meet-our-client li, 
     .ui-used-fonts, .ui-used-icons{
         height:$height-lg-1; // (1014/4)*1
     }
-    .stripe-1{
+    .stripe{
         width:$height-lg-1;
         height:$height-lg-1; 
     }
@@ -153,9 +156,9 @@
     .work-with-us-panel, 
     .stripe-wrap, 
     .hex-download-stuff, 
-    .inner-banner, 
+    /*.inner-banner, .banner-wrap-inner,*/
     .work-dec-panel, 
-    .meet-our-team,
+    .meet-our-client,
     .content-half-block,
     .approach-image-panel{
         height:$height-lg-2; // (1014/4)*2
